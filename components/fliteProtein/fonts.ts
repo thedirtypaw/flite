@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 export const basic = localFont({
   src: [
     {
-      path: '/fonts/Basic.woff2', // note: this path starts with '/' which refers to the public folder at the project root
+      path: './fonts/Basic.woff2', // note: this path starts with '/' which refers to the public folder at the project root
       weight: '400',
       style: 'normal',
     },

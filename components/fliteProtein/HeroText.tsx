@@ -1,6 +1,9 @@
 import * as React from "react";
 import { HeroTextProps } from "./types";
 import { basic } from './fonts';
+import { Geist, Geist_Mono } from "next/font/google";
+
+
 
 export const HeroText: React.FC<HeroTextProps> = ({
   title,
@@ -8,7 +11,7 @@ export const HeroText: React.FC<HeroTextProps> = ({
   subheading,
 }) => {
   return (
-    <div className={'flex flex-col justify-center max-w-full h-52 w-[467px] ${basic.className}'}>
+    <div className={`flex flex-col justify-center max-w-full h-52 w-[467px] ${basic.className}`}>
       <div className="text-7xl tracking-tighter leading-tight text-fuchsia-900 max-md:text-4xl">
         {title}
       </div>
