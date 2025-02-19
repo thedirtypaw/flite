@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.className} antialiased`}
+        className={`bg-[#f8f8f1] ${geistSans.className} antialiased`}
       >
         {children}
       </body>

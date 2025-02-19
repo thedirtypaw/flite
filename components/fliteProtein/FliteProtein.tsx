@@ -2,6 +2,14 @@ import * as React from "react";
 import { NavItem } from "./NavItem";
 import { HeroText } from "./HeroText";
 import { HeroImage } from "./HeroImage";
+import { TwoColumns } from "./TwoColumns";
+import { ArticleBox } from "./ArticleBox";
+import { getLimitedArticles } from "@/lib/articles";
+
+export async function getStaticProps() {
+  const articles = getLimitedArticles();
+  return { props: { articles } };
+}
 
 const navItems = [
   { label: "Landing", width: "54px", isActive: true },
@@ -12,8 +20,14 @@ const navItems = [
 ];
 
 export const FliteProtein: React.FC = () => {
+  
+  // fetch 3 articles
+  const articles = getLimitedArticles(3);
+
   return (
-    <div className="flex overflow-hidden flex-col items-center bg-white">
+    // asta e body
+    <div className="flex w-full overflow-hidden flex-col  bg-[#f8f8f1]">
+    {/*Container navbar */}
       <div className="flex flex-wrap gap-10 justify-between items-center py-5 pr-10 pl-5 w-full max-md:pr-5 max-md:max-w-full">
         <div className="flex gap-2.5 justify-center items-start self-stretch py-2.5 my-auto min-h-[61px] w-[130px]">
           <div className="flex justify-between items-start py-0.5 pr-3 pl-3 min-h-[44px] w-[130px]">
@@ -35,20 +49,43 @@ export const FliteProtein: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-center py-28 pr-16 pl-24 w-full max-md:px-5 max-md:py-24 max-md:max-w-full">
-        <div className="flex flex-col items-center self-stretch pt-8 pb-40 my-auto bg-white min-h-[398px] min-w-[240px] w-[486px] max-md:pb-24 max-md:max-w-full">
+     {/*Container de text si poza */}
+     <div className="flex flex-wrap justify-center items-center px-[5%] w-full max-md:px-5 max-md:py-24 max-md:max-w-full">
+  
           <HeroText
             title="Flite Protein"
             heading="Creating the best vegan protein powder in a biodiverse setting"
             subheading="Cras porta, ante vel ullamcorper mollis, est libero eleifend orci, et posuere nisl arcu sodales mi."
           />
-        </div>
-        <HeroImage
-          mainImage="/grafica_pisica.png"
-          overlayImage="/grafica_pisica.png"
-          mainImageAlt="Protein powder background"
-          overlayImageAlt="Protein powder product"
+        
+          <HeroImage
+            mainImage="/grafica_pisica.png"
+            mainImageAlt="Protein powder background" 
+            />
+         
+        
+      
+      </div>
+      
+      <div className=" flex flex-wrap justify-center px-[5%] w-[90%] mx-auto">
+        <TwoColumns
+        title="What we're doing"
+        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pretium sem. Phasellus in dapibus neque. Donec vel turpis augue. Sed sed magna tellus. Donec eu orci turpis. Donec nibh felis, malesuada non massa vel, vestibulum vehicula tortor. Curabitur condimentum purus sed lacus malesuada pellentesque. Quisque et metus ut magna porta porttitor eget volutpat sem. Aliquam ultricies odio mi. Vivamus bibendum dolor eu turpis tempor, sagittis luctus lacus ornare. Sed fringilla lorem ac magna euismod egestas. Pellentesque nibh tellus, maximus sit amet accumsan sed, vehicula fringilla felis. In sed magna vitae tellus blandit porttitor. Sed metus ipsum, egestas et ipsum sed, ultricies venenatis sem. Integer congue neque eget dolor ullamcorper, et lacinia nulla porta."
         />
+      </div>
+
+      <div className=" flex flex-wrap justify-center px-[5%] w-[90%] mx-auto">
+         {articles.map((article) => 
+        <ArticleBox 
+          key={article.id}
+          description={article.description}
+          image={article.image}
+          imageAlt={article.imagePath}
+          thumb={article.imageThumb}
+          tags={article.tags}
+          title={article.title}
+          />
+         )}
       </div>
     </div>
   );

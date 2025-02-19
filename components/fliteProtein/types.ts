@@ -12,7 +12,19 @@ export interface HeroTextProps {
 
 export interface HeroImageProps {
   mainImage: string;
-  overlayImage: string;
   mainImageAlt: string;
-  overlayImageAlt: string;
+}
+
+export interface TwoColumnProps {
+  title: string;
+  paragraph: string;
+}
+
+export interface ArticleProps {
+  image: string;
+  imageAlt: string;
+  thumb: string;
+  title: string;
+  tags: string[];
+  description: string;
 }
