@@ -4,7 +4,7 @@ import { HeaderProps } from "./types";
 
 const HeaderItems: HeaderProps[] = [
   { label: "Home", href: "/", isActive: true },
-  { label: "Knwledge Base", href: "/knowledge" },
+  { label: "Knowledge Base", href: "/knowledge" },
   { label: "About Us", href: "/about" },
   { label: "Bio 2.0", href: "/bio" },
   { label: "Contact", href: "/contact" },
