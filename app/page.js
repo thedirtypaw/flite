@@ -1,27 +1,19 @@
-"use server";
+export const dynamic = "force-static";
 
 import Image from "next/image";
 import { FliteProtein } from "../components/fliteProtein/FliteProtein";
-import { NavItem } from "../components/fliteProtein/NavItem";
+import { HeaderItems } from "../components/fliteProtein/Header";
 import { HeroText } from "../components/fliteProtein/HeroText";
 import { HeroImage } from "../components/fliteProtein/HeroImage";
-import { getArticles } from "@/lib/articles";
-
+import { getLimitedArticles } from "@/lib/articles";
 
 export default async function Home() {
-  const articles = await getArticles();
+  const articles = await getLimitedArticles(4);
   return (
-    <>
-    
-      {/* Other page content */}
-      <main>
+    <main>
       <div className="min-h-screen">
-      {/* Insert the navigation bar at the top */}
-      <FliteProtein/>
+        <FliteProtein />
       </div>
-       
-      </main>
-    
-    </>
+    </main>
   );
 }

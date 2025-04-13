@@ -3,25 +3,25 @@
   date: "2025-02-15"
   tags: ["starch", "fibers", "weight control", "baking"] 
   image: "/blog/images/starchesbig.jpg"
-  thumb: "/blog/images/starches_thumb.jpg"
+  thumb: "/blog/images/starches_thumb.png"
 
 - id: "articol2"
   title: "The differences between insoluble and soluble fibers, and how they affect our digestion"
   date: "2025-02-12"
   tags: ["starch", "fibers", "weight control"]
   image: "/blog/images/starchesbig.jpg"
-  thumb: "/blog/images/starches_thumb.jpg"
+  thumb: "/blog/images/fibers_thumb.png"
 
 - id: "articol3"
   title: "Good fats & Bad fats, their differences and why it's usually not that simple"
   date: "2025-01-18"
   tags: ["new research", "fats", "everyday cooking", "weight control"]
   image: "/blog/images/starchesbig.jpg"
-  thumb: "/blog/images/starches_thumb.jpg"
+  thumb: "/blog/images/fats_thumb.png"
 
 - id: "articol4"
   title: "Spreading out protein intake over the course of the day and its effects"
   date: "2024-12-24"
   tags: ["protein", "everyday cooking", "weight control"]
   image: "/blog/images/starchesbig.jpg"
-  thumb: "/blog/images/starches_thumb.jpg"
+  thumb: "/blog/images/proteins_thumb.png"

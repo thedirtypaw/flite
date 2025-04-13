@@ -6,29 +6,33 @@ import { ArticleProps } from './types';
 
 export const ArticleBox: React.FC<ArticleProps> = ({
   title,
-  image,
-  imageAlt,
   thumb,
   tags,
   description,
 }) => {
   return (
-    <div className="max-w-xs border rounded-lg shadow-lg p-4 bg-white hover:scale-105 transition-transform">
+    <div className="flex flex-wrap justify-start w-[45%] border rounded-lg shadow-lg m-4 p-4 bg-white hover:scale-105 transition-transform">
       {/* Display thumbnail image */}
-      <Image
-        src={image}
-        alt={title}
-        width={300}
-        height={200}
-        className="rounded-lg"
-      />
+        {thumb ? (
+          <Image
+            src={thumb}
+            alt={title}
+            width={750}
+            height={190}
+            className="rounded-lg"
+          />
+        ) : (
+          <div className="w-[750px] h-[190px] bg-gray-100 rounded-lg flex items-center justify-center text-sm text-gray-400">
+            No image
+          </div>
+        )}
       {/* Display the article title */}
-      <h3 className="mt-3 text-xl font-semibold">{title}</h3>
+      <h3 className=" mt-5 text-xl font-semibold">{title}</h3>
       {/* Display the description */}
       <p className="text-sm text-gray-700 mb-2">{description}</p>
       {/* Display the tags */}
-      <p className="text-xs text-gray-500">
-        {tags.join(', ')}
+      <p className=" my-3 flex flex-wrap justify-start text-lg text-gray-500">
+      {tags?.join(', ') || ''}
       </p>
     </div>
   );
