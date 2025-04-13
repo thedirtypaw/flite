@@ -2,7 +2,7 @@
   command = "npm run build"
   publish = "out"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  # This plugin must be **removed or commented out** for export mode
-  # If needed, delete or comment this whole block
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
