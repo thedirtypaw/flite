@@ -1,0 +1,15 @@
+{
+  "name": "sanity",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "sanity": "^3.0.0",
+    "@sanity/vision": "^3.0.0",
+    "@sanity/image-url": "^1.0.0",
+    "styled-components": "^6.0.0"
+  }
+}

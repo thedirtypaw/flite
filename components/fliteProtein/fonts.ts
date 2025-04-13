@@ -12,3 +12,16 @@ export const basic = localFont({
   // Optionally, you can set a variable if you want to use it in your CSS:
   // variable: '--font-basic',
 });
+
+export const degular = localFont({
+  src: [
+    {
+      path: './fonts/Degular.woff2', // note: this path starts with '/' which refers to the public folder at the project root
+      weight: '700',
+      style: 'normal',
+    },
+    // If you have additional weights or formats, add them here.
+  ],
+  // Optionally, you can set a variable if you want to use it in your CSS:
+  // variable: '--font-basic',
+});

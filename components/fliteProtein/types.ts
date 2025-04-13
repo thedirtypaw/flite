@@ -1,7 +1,13 @@
-export interface NavItemProps {
+export interface HeaderProps {
   label: string;
   isActive?: boolean;
-  width: string;
+  href: string;
+}
+
+export interface FooterProps {
+  label: string;
+  isActive?: boolean;
+  href: string;
 }
 
 export interface HeroTextProps {
@@ -21,8 +27,6 @@ export interface TwoColumnProps {
 }
 
 export interface ArticleProps {
-  image: string;
-  imageAlt: string;
   thumb: string;
   title: string;
   tags: string[];
