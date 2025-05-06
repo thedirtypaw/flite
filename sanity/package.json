@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sanity dev",
-    "build": "sanity build",
+    "build": "sanity build && copy _redirects .sanity\\_redirects",
     "deploy": "sanity deploy"
   },
   "dependencies": {
