@@ -12,4 +12,5 @@
     "@sanity/image-url": "^1.0.0",
     "styled-components": "^6.0.0"
   }
+  
 }
