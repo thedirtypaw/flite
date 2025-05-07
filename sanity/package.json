@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sanity dev",
-    "build": "sanity build && npx shx cp _redirects .sanity/_redirects",
+    "build": "sanity build dist && copy _redirects dist\\_redirects",
     "deploy": "sanity deploy"
   },
   "dependencies": {
