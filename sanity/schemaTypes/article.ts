@@ -11,6 +11,9 @@ export default defineType({
     { name: 'mainImage', title: 'Cover Image', type: 'image', options: { hotspot: true } },
     { name: 'gallery', title: 'Gallery Images', type: 'array', of: [{ type: 'image' }] },
     { name: 'tags', title: 'Tags', type: 'array', of: [{ type: 'string' }] },
-    { name: 'body', title: 'Article Body', type: 'array', of: [{ type: 'block' }] }
+    { name: 'body', title: 'Article Body', type: 'array', of: [{ type: 'block' }] },
+    { name: 'thumbImage', title: 'Thumbnail Filename (from /public/blog/images/)', type: 'string' },
+    { name: 'fullImage', title: 'Full Image Filename (from /public/blog/images/)', type: 'string' },
+    
   ]
 })
