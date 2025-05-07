@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sanity dev",
-    "build": "sanity build && copy _redirects .sanity\\_redirects",
+    "build": "sanity build && npx shx cp _redirects .sanity/_redirects",
     "deploy": "sanity deploy"
   },
   "dependencies": {
-    "sanity": "^3.83.0",
-    "@sanity/vision": "^3.0.0",
     "@sanity/image-url": "^1.0.0",
+    "@sanity/vision": "^3.0.0",
+    "sanity": "^3.83.0",
     "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "shx": "^0.4.0"
   }
-  
 }
