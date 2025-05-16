@@ -1,14 +1,15 @@
 import { notFound } from 'next/navigation'
 import { client } from '../../../lib/sanityClient'
 import SeoHead from '../../../components/SeoHead'
-import {Article} from '../../../components/fliteProtein/Article'
-import type { JSX } from 'react'
+import { Article } from '../../../components/fliteProtein/Article'
 
-export default async function Page({
-  params
-}: {
-  params: { slug: string }
-}): Promise<JSX.Element> {
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
+export default async function Page({ params }: Props) {
   const query = `*[_type == "article" && slug.current == $slug][0]{
     _id,
     title,
