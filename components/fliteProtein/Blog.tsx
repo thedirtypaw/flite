@@ -4,6 +4,7 @@ import { HeroImage } from "./HeroImage";
 import { TwoColumns } from "./TwoColumns";
 import { ArticleBox } from "./ArticleBox";
 import { getLimitedArticles } from "../../lib/articles";
+import { urlFor } from '../../lib/imageURL'
 
 
 
@@ -74,7 +75,7 @@ export const FliteProtein: React.FC<{ articles: any[] }> = ({ articles }) => {
               key={article._id}
               href={`/blog/${article.slug}`}
               description={article.excerpt}
-              thumb={article.mainImage}
+              thumb={urlFor(article.thumbImage).format('webp').url()}
               tags={article.tags}
               title={article.title}
               body={article.body}

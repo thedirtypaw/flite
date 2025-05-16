@@ -1,50 +1,56 @@
+import { urlFor } from '../../../sanity/lib/image'
+import { PortableText } from '@portabletext/react'
 import { notFound } from 'next/navigation'
-import { client } from '../../../lib/sanityClient'
-import SeoHead from '../../../components/SeoHead'
-import { Article } from '../../../components/fliteProtein/Article'
+import { getArticle } from '../../../lib/getArticle'
+import { Metadata } from 'next'
+import { generateJsonLd } from '../../../components/generateJsonLd'
 
 
 
-export default async function Page({ params }: any) {
-  const query = `*[_type == "article" && slug.current == $slug][0]{
-    _id,
-    title,
-    description,
-    slug,
-    publishedAt,
-    _updatedAt,
-    articleType,
-    tags,
-    mainImage{
-      asset->{url}
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await Promise.resolve(params)
+  const article = await getArticle(slug)
+  if (!article) return {}
+
+  return {
+    title: article.title,
+    description: article.description,
+    openGraph: {
+      images: [urlFor(article.mainImage).width(1200).height(627).url()],
     },
-    body
-  }`
+  }
+}
 
-  const article = await client.fetch(query, { slug: params.slug })
-
+export default async function ArticlePage({ params }: Props) {
+  const { slug } = await Promise.resolve(params)
+  const article = await getArticle(slug)
   if (!article) return notFound()
 
   return (
-    <>
-      <SeoHead
-        title={article.title}
-        description={article.description}
-        keywords={article.tags?.join(', ')}
-        url={`https://flite.ro/article/${article.slug.current}`}
-        image={article.mainImage?.asset?.url}
-        article={article}
-      />
-      <main className="min-h-screen flex flex-col">
-        <Article
-          title={article.title}
-          tags={article.tags}
-          thumb={article.mainImage?.asset?.url}
-          body={article.body}
-          description={article.description}
-          href={`/article/${article.slug.current}`}
+    <article className="max-w-3xl mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold mb-2">{article.title}</h1>
+      <p className="text-sm text-gray-500 mb-6">
+        {new Date(article.publishedAt).toLocaleDateString()}
+      </p>
+      {article.mainImage && (
+        <img
+          src={urlFor(article.mainImage).width(900).url()}
+          alt={article.title}
+          className="w-full rounded-md mb-8"
         />
-      </main>
-    </>
+      )}
+      <div className="prose prose-gray max-w-none">
+        <PortableText value={article.body} />
+      </div>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(generateJsonLd(article)) }}
+            />
+
+    </article>
   )
 }

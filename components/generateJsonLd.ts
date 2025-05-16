@@ -1,3 +1,5 @@
+import { urlFor } from '../sanity/lib/image'
+
 export function generateJsonLd(article) {
     const baseUrl = 'https://flite.ro'
     const url = `${baseUrl}/article/${article.slug.current}`
@@ -33,7 +35,8 @@ export function generateJsonLd(article) {
       'headline': article.title,
       'datePublished': article.publishedAt,
       'dateModified': article._updatedAt,
-      'image': article.mainImage?.asset?.url || '',
+      'image': article.mainImage ? urlFor(article.mainImage).width(1200).height(627).format('webp').url() : '',
+
       'author': {
         '@type': 'Organization',
         'name': 'Flite'

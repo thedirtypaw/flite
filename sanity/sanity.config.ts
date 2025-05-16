@@ -3,6 +3,8 @@ import { deskTool } from 'sanity/desk'
 import { schemaTypes } from './schemaTypes'
 import { visionTool } from '@sanity/vision'
 import { structureTool } from 'sanity/structure'
+import './style/override.css'
+
 
 export default defineConfig({
   name: 'default',

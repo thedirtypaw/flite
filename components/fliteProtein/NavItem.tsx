@@ -1,20 +1,25 @@
-import * as React from "react";
-import { NavItemProps } from "./types";
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useCallback } from 'react'
+import { NavItemProps } from './types'
 
 export const NavItem: React.FC<NavItemProps> = ({ label, isActive, width }) => {
+  const router = useRouter()
+
+  const go = useCallback(() => {
+    router.push(`/${label.toLowerCase()}`)
+  }, [label])
+
   return (
     <div
-      className={`flex items-center self-stretch my-auto rounded-lg w-[${width}]`}
+      className={`nav-item flex justify-center items-center transition-all ease-in-out duration-300 h-full font-bold uppercase tracking-wide ${
+        isActive ? 'opacity-100' : 'opacity-50'
+      }`}
+      onClick={go}
+      style={{ width }}
     >
-      <div className="flex gap-2 items-center self-stretch py-2 my-auto">
-        <div
-          className={`gap-2 self-stretch my-auto ${
-            isActive ? "text-blue-600" : ""
-          }`}
-        >
-          {label}
-        </div>
-      </div>
+      {label}
     </div>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
 import KnowledgePage from '../../components/fliteProtein/KnowledgePage'
 import SeoHead from '../../components/SeoHead'
 
-export default async function Knowledge() {
+export default  function Knowledge() {
   return (
     <>
       <SeoHead
