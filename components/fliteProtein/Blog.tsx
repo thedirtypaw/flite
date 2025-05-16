@@ -71,13 +71,14 @@ export const FliteProtein: React.FC<{ articles: any[] }> = ({ articles }) => {
       <div className=" flex flex-wrap justify-stretch px-[5%] w-[90%] mx-auto">
           {articles.map((article) => (
               <ArticleBox
-                key={article._id}
-                href={`/blog/${article.slug}`}
-                description={article.excerpt}
-                thumb={article.thumbImage}
-                tags={article.tags}
-                title={article.title}
-              />
+              key={article._id}
+              href={`/blog/${article.slug}`}
+              description={article.excerpt}
+              thumb={article.mainImage}
+              tags={article.tags}
+              title={article.title}
+              body={article.body}
+            />
             ))}
 
       </div>
