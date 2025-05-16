@@ -2,36 +2,32 @@ import { urlFor } from '../../../sanity/lib/image'
 import { PortableText } from '@portabletext/react'
 import { notFound } from 'next/navigation'
 import { getArticle } from '../../../lib/getArticle'
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { generateJsonLd } from '../../../components/generateJsonLd'
 
 
 
 type PageProps = {
-  params: { slug: string }
-}
+  params: Promise<{ slug: string }>;
+};
 
-export async function generateMetadata(
-  { params }: PageProps,
-  _parent?: ResolvingMetadata
-): Promise<Metadata> {
-  const { slug } = await Promise.resolve(params)
-  const article = await getArticle(slug)
-  if (!article) return {}
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await getArticle(slug);
+  if (!article) return {};
   return {
     title: article.title,
     description: article.description,
     openGraph: {
       images: [urlFor(article.mainImage).width(1200).height(627).url()],
     },
-  }
+  };
 }
 
-
 export default async function ArticlePage({ params }: PageProps) {
-  const { slug } = await Promise.resolve(params)
-  const article = await getArticle(slug)
-  if (!article) return notFound()
+  const { slug } = await params;
+  const article = await getArticle(slug);
+  if (!article) return notFound();
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-12">
