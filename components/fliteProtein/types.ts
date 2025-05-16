@@ -34,3 +34,9 @@ export interface ArticleProps {
   href: string;
   body: any;
 }
+
+export type NavItemProps = {
+  label: string
+  isActive: boolean
+  width: number
+}
