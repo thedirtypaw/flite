@@ -5,8 +5,7 @@ import { Article } from '../../../components/fliteProtein/Article'
 
 
 
-export default async function Page ({params}: {params: { slug: string }
-}) {
+export default async function Page({ params }: any) {
   const query = `*[_type == "article" && slug.current == $slug][0]{
     _id,
     title,
