@@ -31,4 +31,6 @@ export interface ArticleProps {
   title: string;
   tags: string[];
   description: string;
+  href: string;
+  body: any;
 }

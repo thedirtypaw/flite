@@ -90,7 +90,9 @@ const CTAButton = ({ text, href }) => {
     animate();
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement); // ✅ safe
+      }
     };
   }, []);
 

@@ -1,15 +1,17 @@
 import * as React from "react";
-import { NavItem } from "./Header";
 import { HeroText } from "./HeroText";
 import { HeroImage } from "./HeroImage";
 import { TwoColumns } from "./TwoColumns";
 import { ArticleBox } from "./ArticleBox";
-import { getLimitedArticles } from "@/lib/articles";
+import { getLimitedArticles } from "../../lib/articles";
 
-export async function getStaticProps() {
-  const articles = getLimitedArticles();
+
+
+export async function getServerSideProps() {
+  const articles = await getLimitedArticles();
   return { props: { articles } };
 }
+
 
 const navItems = [
   { label: "Landing", width: "54px", isActive: true },
@@ -19,11 +21,9 @@ const navItems = [
   { label: "Docs", width: "35px" },
 ];
 
-export const FliteProtein: React.FC = () => {
-  
-  // fetch 3 articles
-  const articles = getLimitedArticles(4);
+export const FliteProtein: React.FC<{ articles: any[] }> = ({ articles }) => {
 
+  
   return (
     // asta e body
     <div className="flex w-full overflow-hidden flex-col  bg-[#f8f8f1]">
@@ -41,13 +41,7 @@ export const FliteProtein: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-5 items-center self-stretch my-auto text-sm font-medium tracking-normal leading-none text-gray-800 whitespace-nowrap min-h-[36px] min-w-[240px] w-[303px]">
-          <div className="flex gap-5 items-center self-stretch my-auto min-w-[240px]">
-            {navItems.map((item, index) => (
-              <NavItem key={index} {...item} />
-            ))}
-          </div>
-        </div>
+        
       </div>
      {/*Container de text si poza */}
      <div className="flex flex-wrap justify-center items-center px-[5%] w-full max-md:px-5 max-md:py-24 max-md:max-w-full">
@@ -75,18 +69,20 @@ export const FliteProtein: React.FC = () => {
       </div>
 
       <div className=" flex flex-wrap justify-stretch px-[5%] w-[90%] mx-auto">
-         {articles.map((article) => 
-        <ArticleBox 
-          key={article.id}
-          description={article.description}
-          image={article.image}
-          imageAlt={article.imagePath}
-          thumb={article.imageThumb}
-          tags={article.tags}
-          title={article.title}
-          />
-         )}
+          {articles.map((article) => (
+              <ArticleBox
+                key={article._id}
+                href={`/blog/${article.slug}`}
+                description={article.excerpt}
+                thumb={article.thumbImage}
+                tags={article.tags}
+                title={article.title}
+              />
+            ))}
+
       </div>
     </div>
   );
 };
+
+export default FliteProtein;

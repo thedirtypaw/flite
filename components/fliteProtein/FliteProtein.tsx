@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Header } from "./Header";
-import { Footer } from"./Footer";
+
 import { HeroText } from "./HeroText";
 import { HeroImage } from "./HeroImage";
 import { TwoColumns } from "./TwoColumns";
 import { ArticleBox } from "./ArticleBox";
-import { getLimitedArticles } from "@/lib/articles";
+import { getLimitedArticles } from "../../lib/articles";
 import  CTAButton  from "./CTAbutton";
 import { urlFor } from "../../lib/imageURL"
 
@@ -14,16 +13,15 @@ export async function getStaticProps() {
   return { props: { articles } };
 }
 
-export const FliteProtein: React.FC = async () => {
-  
+export default async function FliteProtein() {
   const articles = await getLimitedArticles(100);
+  console.log("🧪 FliteProtein loaded");
 
   return (
     // asta e body
     <div className="flex w-full overflow-hidden flex-col  bg-[#f8f8f1]">
 
-    {/* Header */}
-    <Header />
+    
      
     {/*Container de text si poza */}
      <div className="flex flex-wrap justify-center items-center px-[5%] w-full max-md:px-5 max-md:py-24 max-md:max-w-full">
@@ -53,8 +51,9 @@ export const FliteProtein: React.FC = async () => {
          {articles.map((article) => 
         <ArticleBox 
           key={article._id}
+          href={`/blog/${article.slug}`}
           description={article.description}
-          thumb={article.mainImage ? urlFor(article.mainImage).width(750).height(190).url() : ''}
+          thumb={article.thumbImage}
           tags={article.tags}
           title={article.title}
           />
@@ -67,7 +66,7 @@ export const FliteProtein: React.FC = async () => {
         </div>
 
      {/* Footer */}
-     <Footer />
+     
 
     </div>
   );

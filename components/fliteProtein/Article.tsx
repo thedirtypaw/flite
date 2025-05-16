@@ -1,31 +1,32 @@
 import * as React from "react";
-import { ArticleProps, } from "./types";
+import { ArticleProps } from "./types";
+import { PortableText } from '@portabletext/react';
+import { urlFor } from '../../lib/imageURL'
+
+const components = {
+  types: {
+    image: ({ value }) => (
+      <figure>
+        <img
+          src={urlFor(value).format('webp').url()}
+          alt={value.caption || ""}
+          loading="lazy"
+        />
+        {value.caption && <figcaption>{value.caption}</figcaption>}
+      </figure>
+    )
+  }
+};
 
 export const Article: React.FC<ArticleProps> = ({
-  image,
-  imageAlt,
   thumb,
   tags,
   title,
-  
-  
+  body,
 }) => {
   return (
-    <div className="flex p-4 m-5 rounded-lg bg-[#c2d8ba] relative items-center w-[45%] h-auto">
-      
-      <div className="flex" >
-        <img loading="lazy" src={thumb} alt={imageAlt} className="object-cover relative inset-0 w-full h-full" />
-      </div>
-    
-      <div className="flex" >
-        {title}
-      </div>
-      
-      <div className="flex" >
-        {tags}
-      </div>
-
-    </div>   
-   
+    <article className="prose prose-invert max-w-none">
+      <PortableText value={body} components={components} />
+    </article>
   );
 };
