@@ -2,20 +2,22 @@ import { urlFor } from '../../../sanity/lib/image'
 import { PortableText } from '@portabletext/react'
 import { notFound } from 'next/navigation'
 import { getArticle } from '../../../lib/getArticle'
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { generateJsonLd } from '../../../components/generateJsonLd'
 
 
 
-type Props = {
+type PageProps = {
   params: { slug: string }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PageProps,
+  _parent?: ResolvingMetadata
+): Promise<Metadata> {
   const { slug } = await Promise.resolve(params)
   const article = await getArticle(slug)
   if (!article) return {}
-
   return {
     title: article.title,
     description: article.description,
@@ -25,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function ArticlePage({ params }: Props) {
+
+export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await Promise.resolve(params)
   const article = await getArticle(slug)
   if (!article) return notFound()
