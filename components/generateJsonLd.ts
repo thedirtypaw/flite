@@ -37,9 +37,10 @@ export function generateJsonLd(article) {
       'dateModified': article._updatedAt,
       'image': article.mainImage ? urlFor(article.mainImage).width(1200).height(627).format('webp').url() : '',
 
-      'author': {
-        '@type': 'Organization',
-        'name': 'Flite'
+      "author": {
+        "@type": "Organization",
+        "name": "Flite",
+        "url": "https://flite.ro"
       },
       'publisher': {
         '@type': 'Organization',

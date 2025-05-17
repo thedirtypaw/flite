@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Flite',
   description: 'Real Food For Real Gut Health.',
+  keywords: ['vegan protein', 'gut health', 'real food', 'biodiversity', 'Flite'],
   openGraph: {
     title: 'Flite',
     description: 'Real Food For Real Gut Health.',
