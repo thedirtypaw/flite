@@ -1,56 +1,35 @@
+import Link from 'next/link'
+import { urlFor } from '../../sanity/lib/image'
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArticleProps } from './types';
+type Props = {
+  href: string
+  title: string
+  description: string
+  thumb: string | null
+  tags?: string[]
+  body?: any
+}
 
-export const ArticleBox: React.FC<ArticleProps> = ({
-  href,
-  title,
-  thumb,
-  tags,
-  description,
-}) => {
-
-  console.log('ArticleBox href:', href)
-  if (!href) {
-    console.error("❌ Missing href for ArticleBox:", title);
-    return null;
-  }
-  
-  console.log("🧪 thumb prop received:", thumb);
-
-
+export default function ArticleBox({ href, title, description, thumb, tags }: Props) {
   return (
     <Link
       href={href}
-      className="
-        flex flex-col w-[45%]
-        border shadow-lg
-        m-4 p-4
-        bg-white
-        hover:scale-105 transition-transform
-        cursor-pointer
-      "
+      className="bg-[#defade] border border-[#c2f0b1] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all group w-full md:w-[48%] lg:w-[31%] m-2"
     >
-      {thumb ? (
-        <Image
-          src={`/blog/images/${thumb}`}
+      {thumb && (
+        <img
+          src={urlFor({ _ref: thumb }).format('webp').url()}
           alt={title}
-          width={320}
-          height={180}
-          className="object-cover w-full h-40"
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
         />
-      ) : (
-        <div className="w-full h-40 flex items-center justify-center bg-gray-200">
-          No image
-        </div>
       )}
-      <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-      <p className="text-sm text-gray-700 mb-2">{description}</p>
-      <p className="my-3 flex flex-wrap justify-start text-lg text-gray-500">
-        {tags?.join(', ')}
-      </p>
+      <div className="p-4">
+        <div className="text-xs font-medium text-green-700 uppercase mb-1">
+          {Array.isArray(tags) ? tags.join(', ') : ''}
+        </div>
+        <h3 className="text-lg font-bold mb-1 text-gray-900">{title}</h3>
+        <p className="text-sm text-gray-700 line-clamp-3">{description}</p>
+      </div>
     </Link>
-  );
-};
+  )
+}
