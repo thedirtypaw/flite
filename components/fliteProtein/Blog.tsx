@@ -2,7 +2,7 @@ import * as React from "react";
 import { HeroText } from "./HeroText";
 import { HeroImage } from "./HeroImage";
 import { TwoColumns } from "./TwoColumns";
-import { ArticleBox } from "./ArticleBox";
+import  ArticleBox  from "./ArticleBox";
 import { getLimitedArticles } from "../../lib/articles";
 import { urlFor } from '../../lib/imageURL'
 
