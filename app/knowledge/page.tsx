@@ -1,49 +1,72 @@
-import KnowledgePage from '../../components/fliteProtein/KnowledgePage'
-import SeoHead from '../../components/SeoHead'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Knowledge Base – Flite',
-  description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-  keywords: ['gut health', 'nutrition', 'articles', 'vegan research', 'knowledge base'],
-  openGraph: {
-    title: 'Knowledge Base – Flite',
-    description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-    url: 'https://flite.ro/knowledge',
-    images: [
-      {
-        url: 'https://flite.ro/og-knowledge.webp',
-        width: 1200,
-        height: 627,
-        alt: 'Knowledge Base – Flite',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Knowledge Base – Flite',
-    description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-    images: ['https://flite.ro/og-knowledge.webp'],
-  },
+type ArticleInput = {
+  title: string
+  description: string
+  slug: { current: string }
+  publishedAt: string
+  mainImage?: { asset?: { _ref?: string } }
+  articleType?: string
 }
 
-export default async function KnowledgePageWrapper() {
-  const pageContent = await KnowledgePage()
+type PageInput = {
+  title: string
+  description: string
+  url: string
+}
 
-  return (
-    <>
-      <SeoHead
-        title={metadata.title as string}
-        description={metadata.description as string}
-        image="https://flite.ro/og-knowledge.webp"
-        url="https://flite.ro/knowledge"
-      />
+type JsonLdInput =
+  | { type: 'page', data: PageInput }
+  | { type: 'article', data: ArticleInput }
 
-      <main className="min-h-screen flex flex-col">
-        <section className="flex-grow flex flex-col justify-start">
-          {pageContent}
-        </section>
-      </main>
-    </>
-  )
+export function generateJsonLd(input: JsonLdInput): object {
+  switch (input.type) {
+    case 'page':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: input.data.title,
+        description: input.data.description,
+        url: input.data.url
+      }
+
+    case 'article': {
+      const article = input.data
+      const baseUrl = 'https://flite.ro'
+      const slug = article.slug?.current || 'article'
+      const imageBase = article.mainImage?.asset?._ref
+        ? `https://cdn.sanity.io/images/5senu7u5/production/${article.mainImage.asset._ref
+            .replace('-webp', '')
+            .replace(/-(\d+x\d+)\..+$/, '')}.jpg?rect=0,229,942,492&w=1200&h=627&fm=webp`
+        : ''
+
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.description,
+        datePublished: article.publishedAt,
+        image: imageBase,
+        author: {
+          '@type': 'Organization',
+          name: 'Flite',
+          url: 'https://flite.ro'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Flite',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://flite.ro/logo.png'
+          }
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${baseUrl}/article/${slug}`
+        },
+        url: `${baseUrl}/article/${slug}`
+      }
+    }
+
+    default:
+      return {}
+  }
 }
