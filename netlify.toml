@@ -1,0 +1,5 @@
+[functions]
+included_files = ["sanity/**", "lib/**", "public/**"]
+
+[build]
+ignore = "false"
