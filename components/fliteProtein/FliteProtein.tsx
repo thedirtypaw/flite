@@ -48,7 +48,6 @@ export default async function FliteProtein() {
           <ArticleBox
           key={article._id}
           href={`/article/${article.slug.current}`}
-          description={article.description}
           thumb={article.thumbRef}
           tags={article.tags}
           title={article.title}
