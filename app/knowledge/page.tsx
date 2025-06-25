@@ -29,17 +29,9 @@ export const metadata: Metadata = {
   },
 }
 
-type PageProps = {
-  searchParams: {
-    tag?: string
-    sort?: string
-  }
-}
-
-export default async function KnowledgePage(props: PageProps) {
-  const searchParams = await props.searchParams
-  const tag = searchParams.tag?.toLowerCase()
-  const sort = searchParams.sort
+export default async function KnowledgePage({ searchParams }: any) {
+  const tag = searchParams?.tag?.toLowerCase()
+  const sort = searchParams?.sort
 
 
   const rawArticles = tag
