@@ -74,11 +74,11 @@ export const FliteProtein: React.FC<{ articles: any[] }> = ({ articles }) => {
               <ArticleBox
               key={article._id}
               href={`/blog/${article.slug}`}
-              description={article.excerpt}
               thumb={urlFor(article.thumbImage).format('webp').url()}
               tags={article.tags}
               title={article.title}
               body={article.body}
+              publishedAt={article.publishedAt}
             />
             ))}
 
