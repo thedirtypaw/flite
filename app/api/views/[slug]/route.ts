@@ -3,9 +3,9 @@ import { client } from '../../../../sanity/lib/client'
 
 export async function POST(
   req: NextRequest,
-  context: { params: { slug: string } }
+  context: { params: Record<string, string> }
 ) {
-  const { slug } = context.params
+  const slug = context.params.slug
 
   const query = `*[_type == "article" && slug.current == $slug][0]._id`
   const articleId = await client.fetch(query, { slug })
