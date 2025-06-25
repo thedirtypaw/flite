@@ -53,6 +53,7 @@ export default async function FliteProtein() {
           tags={article.tags}
           title={article.title}
           body={article.body}
+          publishedAt={article.publishedAt} 
         />
         ))}
       </div>

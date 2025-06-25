@@ -13,18 +13,20 @@ export function TagBar({
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="flex items-center gap-3 px-[5%] py-4 overflow-x-auto whitespace-nowrap relative">
+    <div className="flex items-center gap-3 px-[5%] py-4 overflow-x-visible whitespace-nowrap relative">
       <span className="text-sm text-[#949494] font-semibold mr-2">
         Popular Tags:
       </span>
       {uniqueTags.map((tag: string, index: number) => (
-        <span
+        <a
           key={`tag-${index}`}
+          href={`/knowledge?tag=${encodeURIComponent(tag)}`}
           className="text-base text-[#949494] hover:text-[#f771aa] transition-colors cursor-pointer"
         >
           {tag}
-        </span>
+        </a>
       ))}
+
       <button
         title="Sort tags"
         onClick={() => setOpen(!open)}
@@ -33,7 +35,7 @@ export function TagBar({
         <SlidersHorizontal className="w-8 h-8" />
       </button>
       {open && (
-        <div className="absolute right-5 top-10 bg-white border border-gray-200 rounded shadow-md z-10 w-48">
+        <div className="absolute right-5 top-full mt-2 bg-white border border-gray-200 rounded shadow-md z-50 w-48">
           {sortingOptions.map((option, idx) => (
             <div
               key={`sort-${idx}`}

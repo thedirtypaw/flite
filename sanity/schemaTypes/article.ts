@@ -119,7 +119,14 @@ export default defineType({
         ]
       },
       validation: Rule => Rule.required()
+    }),
+    defineField({
+      name: 'views',
+      title: 'Views',
+      type: 'number',
+      readOnly: true,
+      initialValue: 0,
     })
-
+    
   ]
 })

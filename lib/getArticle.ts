@@ -9,7 +9,9 @@ export async function getArticle(slug: string) {
       description,
       publishedAt,
       mainImage,
-      body
+      body,
+      tags,
+      views
     }`,
     { slug }
   )
