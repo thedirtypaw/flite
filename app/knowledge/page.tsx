@@ -1,8 +1,12 @@
+// app/knowledge/page.tsx
+
 import { Metadata } from 'next'
 import { getArticles, getArticlesByTag } from '../../lib/getArticles'
 import ArticleBox from '../../components/fliteProtein/ArticleBox'
 import SeoHead from '../../components/SeoHead'
-import { TagBar } from '../../components/fliteProtein/TagBar'
+import TagBar from '../../components/fliteProtein/TagBar'
+import SortDropdown from '../../components/fliteProtein/SortDropdown'
+
 
 export const metadata: Metadata = {
   title: 'Knowledge Base – Flite',
@@ -29,21 +33,20 @@ export const metadata: Metadata = {
   },
 }
 
+// ✅ TEMP FIX for Netlify: disable type constraint
 export default async function KnowledgePage({ searchParams }: any) {
-  const tag = searchParams?.tag?.toLowerCase()
+  const tag = searchParams?.tag
   const sort = searchParams?.sort
-
 
   const rawArticles = tag
     ? await getArticlesByTag(tag)
     : await getArticles()
 
-  // Flatten all tags
   const rawTags = rawArticles.flatMap((article) =>
     Array.isArray(article.tags) ? article.tags : []
-  ) as string[]
+  )
 
-  const uniqueTags = Array.from(new Set(rawTags)).sort()
+  const uniqueTags = Array.from(new Set(rawTags)) as string[]
   const sortingOptions = ['Newest First', 'Oldest First', 'A–Z', 'Z–A']
 
   const articles = [...rawArticles].sort((a, b) => {
@@ -55,7 +58,7 @@ export default async function KnowledgePage({ searchParams }: any) {
       case 'Z–A':
         return b.title.localeCompare(a.title)
       default:
-        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime() // Newest First
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     }
   })
 
@@ -73,12 +76,11 @@ export default async function KnowledgePage({ searchParams }: any) {
           {tag ? `Articles tagged "${tag}"` : 'Knowledge Base'}
         </h1>
 
-        {/* Tag and Sort Menu - Fully Independent */}
         <div className="w-full mb-10">
-          <TagBar uniqueTags={uniqueTags} sortingOptions={sortingOptions} />
+          <TagBar tags={uniqueTags} />
+          <SortDropdown />
         </div>
 
-        {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {articles.map((article) => (
             <ArticleBox
@@ -89,12 +91,11 @@ export default async function KnowledgePage({ searchParams }: any) {
               tags={article.tags}
               publishedAt={article.publishedAt}
               body={article.body}
+              views={article.views}
             />
           ))}
         </div>
       </main>
-
-
     </>
   )
 }

@@ -9,6 +9,7 @@ type Props = {
   publishedAt: string
   body?: any
   className?: string
+  views: number
 }
 
 export default function ArticleBox({
