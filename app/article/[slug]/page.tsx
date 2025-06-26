@@ -5,11 +5,9 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import ClientArticle from './ClientArticle'
 
-type PageProps = {
-  params: { slug: string }
-}
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const article = await getArticle(params.slug)
   if (!article) return {}
   return {
@@ -21,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function ArticlePage({ params }: PageProps) {
+export default async function ArticlePage({ params }: any) {
   const article = await getArticle(params.slug)
   if (!article) return notFound()
 
