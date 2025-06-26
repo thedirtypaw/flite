@@ -79,6 +79,7 @@ export const FliteProtein: React.FC<{ articles: any[] }> = ({ articles }) => {
               title={article.title}
               body={article.body}
               publishedAt={article.publishedAt}
+              views={article.views || 0}
             />
             ))}
 
