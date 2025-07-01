@@ -49,7 +49,7 @@ export type Article = {
   publishedAt: string
   views?: number
   description?: string
-  thumbRef?: string
+  thumb?: string
   mainImage?: any
   body?: any
 }

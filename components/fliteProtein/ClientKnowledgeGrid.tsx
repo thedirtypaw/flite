@@ -59,17 +59,17 @@ export default function ClientKnowledgeGrid({ sort }: Props) {
       {!articles
         ? Array.from({ length: 12 }).map((_, i) => <SkeletonArticleBox key={i} />)
         : sorted.map(article => (
-            <ArticleBox
-              key={article._id}
-              href={`/article/${article.slug.current}`}
-              title={article.title}
-              thumb={article.thumbRef}
-              tags={article.tags}
-              publishedAt={article.publishedAt}
-              body={article.body}
-              views={article.views}
-            />
-          ))}
+          <ArticleBox
+            key={article._id}
+            href={`/article/${article.slug.current}`}
+            title={article.title}
+            thumb={article.thumb}
+            tags={article.tags}
+            publishedAt={article.publishedAt}
+            body={article.body}
+            views={article.views ?? 0}
+          />
+        ))}
     </div>
   )
 }
