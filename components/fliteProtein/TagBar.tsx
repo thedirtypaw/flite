@@ -45,11 +45,12 @@ export default function TagBar({ tags }: Props) {
         </span>
 
         {tags.map((tag, i) => {
-          const isSelected = selectedTags.includes(tag)
+          const tagForUrl = tag.replace(/\s+/g, '-')
+          const isSelected = selectedTags.includes(tagForUrl)
           return (
             <span
               key={i}
-              onClick={() => toggleTag(tag)}
+              onClick={() => toggleTag(tagForUrl)}
               className={`group relative flex items-center gap-2 px-4 py-1.5 rounded-full border cursor-pointer transition-all font-semibold ${
                 isSelected
                   ? 'border-pink-600 text-pink-600 font-bold'
