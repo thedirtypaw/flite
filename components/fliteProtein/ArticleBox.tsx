@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { urlFor } from '../../sanity/lib/image'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   href: string
@@ -12,6 +15,8 @@ type Props = {
   views: number
 }
 
+
+
 export default function ArticleBox({
   href,
   title,
@@ -20,6 +25,9 @@ export default function ArticleBox({
   publishedAt,
   className = '',
 }: Props) {
+  
+  const router = useRouter()
+  
   return (
     <Link
   href={href}
@@ -43,6 +51,7 @@ export default function ArticleBox({
             ))}
           </div>
         )}
+
 
         <p className="text-xs text-muted-foreground">
           {new Date(publishedAt).toLocaleDateString('en-US', {

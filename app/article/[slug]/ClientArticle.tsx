@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '../../../sanity/lib/image'
+import Link from 'next/link'
 
 export default function ClientArticle({
   article,
@@ -22,13 +23,13 @@ export default function ClientArticle({
       {article.tags?.length > 0 && (
         <div className="flex flex-wrap gap-2 text-sm font-medium text-green-800 mb-2">
           {article.tags.map((tag: string, i: number) => (
-            <a
-              key={i}
-              href={`/knowledge?tag=${encodeURIComponent(tag)}`}
-              className="hover:underline text-green-900"
-            >
-              {tag}
-            </a>
+            <Link
+            key={i}
+            href={`/knowledge/${tag}`}
+            className="hover:underline text-green-900"
+          >
+            {tag}
+          </Link>
           ))}
         </div>
       )}

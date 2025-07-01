@@ -1,17 +1,22 @@
-// components/fliteProtein/SortDropdown.tsx
-
 'use client'
 
-export default function SortDropdown() {
+type Props = {
+  sort: 'latest' | 'oldest' | 'az' | 'za' | 'views'
+  setSort: (sort: Props['sort']) => void
+}
+
+export default function SortDropdown({ sort, setSort }: Props) {
   return (
     <select
-      className="border border-green-300 rounded-md px-3 py-2 text-sm text-green-900 bg-white hover:border-green-600"
-      disabled
+      value={sort}
+      onChange={(e) => setSort(e.target.value as Props['sort'])}
+      className="border text-sm px-3 py-2 rounded-md bg-white text-green-900 cursor-pointer"
     >
-      <option>Newest First</option>
-      <option>Oldest First</option>
-      <option>A–Z</option>
-      <option>Z–A</option>
+      <option value="latest">Latest</option>
+      <option value="oldest">Oldest</option>
+      <option value="views">Popularity</option>
+      <option value="az">A–Z</option>
+      <option value="za">Z–A</option>
     </select>
   )
 }

@@ -40,3 +40,16 @@ export type NavItemProps = {
   isActive: boolean
   width: number
 }
+
+export type Article = {
+  _id: string
+  slug: { current: string }
+  title: string
+  tags: string[]
+  publishedAt: string
+  views?: number
+  description?: string
+  thumbRef?: string
+  mainImage?: any
+  body?: any
+}

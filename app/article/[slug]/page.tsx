@@ -7,6 +7,7 @@ import ClientArticle from './ClientArticle'
 
 
 
+
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const article = await getArticle(params.slug)
   if (!article) return {}
