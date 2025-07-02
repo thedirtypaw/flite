@@ -26,9 +26,8 @@ export async function searchArticles(query: string, tags: string[] = []) {
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
 
-  // More reliable GROQ search using string contains
-  const lowerQuery = query.toLowerCase()
-  const searchFilter = `(lower(title) match "*${lowerQuery}*" || lower(description) match "*${lowerQuery}*" || lower(string::join(tags, " ")) match "*${lowerQuery}*")`
+  // Most reliable GROQ search syntax
+  const searchFilter = `(title match "*${query}*" || description match "*${query}*" || "${query}" in tags[])`
 
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
@@ -42,6 +41,7 @@ export async function searchArticles(query: string, tags: string[] = []) {
     }`
   )
 }
+
 
 export async function getArticlesByTag(tags: string[]) {
   // Handle empty tags array - return all articles
