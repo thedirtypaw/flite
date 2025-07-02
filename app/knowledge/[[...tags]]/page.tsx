@@ -147,9 +147,9 @@ return (
       {/* Search results count */}
       {searchQuery && (
         <div className="text-center mb-6 text-gray-600">
-          {articleCount > 0 
+          {articleCount > 0
             ? `Found ${articleCount} article${articleCount === 1 ? '' : 's'}`
-            : 'No articles found'
+            : 'No article found with that description'
           }
         </div>
       )}
