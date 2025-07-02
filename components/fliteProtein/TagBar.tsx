@@ -22,7 +22,6 @@ export default function TagBar({ tags }: Props) {
 const toggleTag = useCallback(
   (tag: string) => {
     const base = '/knowledge'
-    // tag is already hyphenated when passed from tagForUrl
     const nextTags = selectedTags.includes(tag)
       ? selectedTags.filter((t) => t !== tag)
       : [...selectedTags, tag]
@@ -46,18 +45,25 @@ const toggleTag = useCallback(
         </span>
 
         {tags.map((tag, i) => {
-          const tagForUrl = tag.replace(/\s+/g, '-')
-          const isSelected = selectedTags.includes(tagForUrl)
-          return (
-            <span
-              key={i}
-              onClick={() => toggleTag(tag)} // Pass original tag, let toggleTag handle conversion
-            // ... rest of the JSX
-            >
-              {tag} {/* Display original tag name */}
-            </span>
-          )
-        })}
+  const tagForUrl = tag.replace(/\s+/g, '-')
+  const isSelected = selectedTags.includes(tagForUrl)
+  return (
+    <span
+      key={i}
+      onClick={() => toggleTag(tagForUrl)}
+      className={`group relative flex items-center gap-2 px-4 py-1.5 rounded-full border cursor-pointer transition-all font-semibold ${
+        isSelected
+          ? 'border-pink-600 text-pink-600 font-bold'
+          : 'border-green-300 text-green-900 hover:border-pink-600 hover:text-pink-600'
+      }`}
+    >
+      {isSelected && (
+        <span className="w-3 h-3 group-hover:rotate-180 group-hover:scale-125 transition-transform text-pink-600 flex items-center justify-center">×</span>
+      )}
+      {tag}
+    </span>
+  )
+})}
       </div>
 
       <SortDropdown sort={sort} setSort={setSort} />
