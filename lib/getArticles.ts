@@ -43,6 +43,21 @@ export async function searchArticles(query: string, tags: string[] = []) {
 }
 
 export async function getArticlesByTag(tags: string[]) {
+  // Handle empty tags array - return all articles
+  if (tags.length === 0) {
+    return client.fetch(
+      `*[_type == "article"] | order(publishedAt desc){
+        _id,
+        title,
+        slug,
+        publishedAt,
+        views,
+        tags,
+        "thumb": thumbImage.asset._ref
+      }`
+    )
+  }
+  
   const tagFilters = tags.map(tag => `"${tag}" in tags`).join(' && ')
   
   return client.fetch(
