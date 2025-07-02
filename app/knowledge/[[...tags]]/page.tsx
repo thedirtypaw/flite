@@ -30,9 +30,16 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function KnowledgePage({ params }: { params: { tags?: string[] } }) {
-  const tagList = params?.tags && Array.isArray(params.tags)
-      ? params.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
+export default async function KnowledgePage({ 
+  params 
+}: { 
+  params: Promise<{ tags?: string[] }> 
+}) {
+  // Await the params Promise in Next.js 15
+  const resolvedParams = await params
+  
+  const tagList = resolvedParams?.tags && Array.isArray(resolvedParams.tags)
+      ? resolvedParams.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
       : []
   
   const uniqueTags = await getAllTags()
