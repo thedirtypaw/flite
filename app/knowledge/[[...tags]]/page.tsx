@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import { Metadata } from 'next'
 import { getArticlesByTag, getAllTags } from '../../../lib/getArticles'
 import SeoHead from '../../../components/SeoHead'
@@ -31,12 +31,11 @@ export const metadata: Metadata = {
 }
 
 export default async function KnowledgePage({ params }: { params: { tags?: string[] } }) {
-    const tagList = Array.isArray(params.tags)
-    
-    ? params.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
-    : []
+  const tagList = params?.tags && Array.isArray(params.tags)
+      ? params.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
+      : []
+  
   const uniqueTags = await getAllTags()
-
   const filteredArticles = tagList.length > 0
     ? await getArticlesByTag(tagList)
     : []
