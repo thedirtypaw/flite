@@ -30,8 +30,9 @@ export const metadata: Metadata = {
 }
 
 export default async function KnowledgePage({ params }: { params: { tags?: string[] } }) {
-    const tagList = Array.isArray(params.tags)
-    ? params.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
+  const resolvedParams = await params;
+  const tagList = Array.isArray(resolvedParams.tags)
+    ? resolvedParams.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
     : []
   const uniqueTags = await getAllTags()
 
