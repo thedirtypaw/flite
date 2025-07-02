@@ -47,6 +47,7 @@ export default function ClientArticle({
         <img
           src={urlFor(article.mainImage).width(900).url()}
           alt={article.title}
+          loading="lazy" 
           className="w-full rounded-md mb-8"
         />
       )}

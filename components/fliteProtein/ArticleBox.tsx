@@ -37,6 +37,7 @@ export default function ArticleBox({
         <img
           src={urlFor({ _ref: thumb }).format('webp').url()}
           alt={title}
+          loading="lazy" 
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
         />
       )}

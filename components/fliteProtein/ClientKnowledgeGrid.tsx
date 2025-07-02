@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useMemo, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import ArticleBox from './ArticleBox'
@@ -8,9 +6,10 @@ import { Article } from './types'
 
 type Props = {
   sort: 'latest' | 'oldest' | 'az' | 'za' | 'views'
+  searchQuery?: string  // ← ADD THIS
 }
 
-export default function ClientKnowledgeGrid({ sort }: Props) {
+function ClientKnowledgeGrid({ sort, searchQuery = '' }: Props) {
   const [articles, setArticles] = useState<Article[] | null>(null)
 
   const pathname = usePathname()
@@ -29,11 +28,28 @@ export default function ClientKnowledgeGrid({ sort }: Props) {
 
   const filtered = useMemo(() => {
     if (!articles) return []
-    if (selectedTags.length === 0) return articles
-    return articles.filter(article =>
-      selectedTags.every(tag => article.tags?.includes(tag))
-    )
-  }, [articles, selectedTags])
+    
+    let result = articles
+    
+    // Filter by tags
+    if (selectedTags.length > 0) {
+      result = result.filter(article =>
+        selectedTags.every(tag => article.tags?.includes(tag))
+      )
+    }
+    
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim()
+      result = result.filter(article =>
+        article.title.toLowerCase().includes(query) ||
+        article.body?.toLowerCase().includes(query) ||
+        article.tags?.some(tag => tag.toLowerCase().includes(query))
+      )
+    }
+    
+    return result
+  }, [articles, selectedTags, searchQuery])
 
   const sorted = useMemo(() => {
     if (!filtered) return []
@@ -73,3 +89,5 @@ export default function ClientKnowledgeGrid({ sort }: Props) {
     </div>
   )
 }
+
+export default ClientKnowledgeGrid
