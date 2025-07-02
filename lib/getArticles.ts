@@ -22,13 +22,13 @@ export async function getArticles() {
 }
 
 export async function searchArticles(query: string, tags: string[] = []) {
-  const tagFilter = tags.length > 0 
+  const tagFilter = tags.length > 0
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
-  
-  // Enhanced search: title, description, AND tags
+
   const searchFilter = `(title match "*${query}*" || description match "*${query}*" || tags match "*${query}*")`
-  
+
+
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
       _id,
