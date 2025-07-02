@@ -1,33 +1,67 @@
-
 import { Metadata } from 'next'
 import { getArticlesByTag, getAllTags } from '../../../lib/getArticles'
 import SeoHead from '../../../components/SeoHead'
-import KnowledgeWrapper from '../../../components/fliteProtein/KnowledgeWrapper'
+import ClientSearchWrapper from '../../../components/fliteProtein/ClientSearchWrapper'
 import ArticleBox from '../../../components/fliteProtein/ArticleBox'
 
-export const metadata: Metadata = {
-  title: 'Knowledge Base – Flite',
-  description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-  keywords: ['gut health', 'nutrition', 'articles', 'vegan research', 'knowledge base'],
-  openGraph: {
-    title: 'Knowledge Base – Flite',
-    description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-    url: 'https://flite.ro/knowledge',
-    images: [
-      {
-        url: 'https://flite.ro/og-knowledge.webp',
-        width: 1200,
-        height: 627,
-        alt: 'Knowledge Base – Flite',
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const tagList = resolvedParams?.tags || [];
+  const articles = tagList.length ? await getArticlesByTag(tagList) : [];
+  
+  if (articles.length >= 5) {
+    return {
+      title: `${tagList.join(', ')} Articles – Flite`,
+      description: `${articles.length} science-backed articles about ${tagList.join(', ')}`,
+      keywords: ['gut health', 'nutrition', 'articles', 'vegan research', 'knowledge base'],
+      openGraph: {
+        title: `${tagList.join(', ')} Articles – Flite`,
+        description: `${articles.length} science-backed articles about ${tagList.join(', ')}`,
+        url: `https://flite.ro/knowledge/${tagList.join('/')}`,
+        images: [
+          {
+            url: 'https://flite.ro/og-knowledge.webp',
+            width: 1200,
+            height: 627,
+            alt: `${tagList.join(', ')} Articles – Flite`,
+          },
+        ],
       },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Knowledge Base – Flite',
+      twitter: {
+        card: 'summary_large_image',
+        title: `${tagList.join(', ')} Articles – Flite`,
+        description: `${articles.length} science-backed articles about ${tagList.join(', ')}`,
+        images: ['https://flite.ro/og-knowledge.webp'],
+      },
+    }
+  }
+
+  return {
+    title: 'Knowledge Base – Flite', // Generic fallback
     description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
-    images: ['https://flite.ro/og-knowledge.webp'],
-  },
+    keywords: ['gut health', 'nutrition', 'articles', 'vegan research', 'knowledge base'],
+    robots: { index: false }, // noindex for <5 articles
+    alternates: { canonical: 'https://flite.ro/knowledge' }, // Always point to main
+    openGraph: {
+      title: 'Knowledge Base – Flite',
+      description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
+      url: 'https://flite.ro/knowledge',
+      images: [
+        {
+          url: 'https://flite.ro/og-knowledge.webp',
+          width: 1200,
+          height: 627,
+          alt: 'Knowledge Base – Flite',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Knowledge Base – Flite',
+      description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
+      images: ['https://flite.ro/og-knowledge.webp'],
+    },
+  }
 }
 
 export default async function KnowledgePage({ 
@@ -47,13 +81,16 @@ export default async function KnowledgePage({
     ? await getArticlesByTag(tagList)
     : []
 
+  const articleCount = filteredArticles.length;
+  const shouldIndex = articleCount >= 5;
+
   return (
     <>
       <SeoHead
-        title={metadata.title as string}
-        description={metadata.description as string}
+        title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles – Flite` : 'Knowledge Base – Flite'}
+        description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
         image="https://flite.ro/og-knowledge.webp"
-        url="https://flite.ro/knowledge"
+        url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
       />
       <main className="min-h-screen px-[5%] py-10 bg-[#f8f8f1]">
         <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
@@ -62,7 +99,7 @@ export default async function KnowledgePage({
 
         {tagList.length > 0 ? (
           <>
-            <KnowledgeWrapper tags={uniqueTags} tagList={tagList} />
+            <ClientSearchWrapper tags={uniqueTags} tagList={tagList} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredArticles
                 .filter((a) => !!a.slug?.current)
@@ -73,11 +110,10 @@ export default async function KnowledgePage({
                     {...article}
                   />
                 ))}
-
             </div>
           </>
         ) : (
-          <KnowledgeWrapper tags={uniqueTags} tagList={[]} />
+          <ClientSearchWrapper tags={uniqueTags} tagList={[]} />
         )}
       </main>
     </>
