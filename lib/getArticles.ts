@@ -22,7 +22,7 @@ export async function getArticles() {
 }
 
 export async function getArticlesByTag(tags: string[]) {
-  const tagFilters = tags.map(tag => `"${tag}" in tags`).join(' || ')
+  const tagFilters = tags.map(tag => `"${tag}" in tags`).join(' && ')
   
   return client.fetch(
     `*[_type == "article" && ${tagFilters}] | order(publishedAt desc){
