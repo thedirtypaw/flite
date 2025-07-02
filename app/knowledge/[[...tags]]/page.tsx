@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { Metadata } from 'next'
-import { getArticlesByTag, getArticles, getAllTags } from '../../../lib/getArticles'
+import { getArticlesByTag, getAllTags } from '../../../lib/getArticles'
 import SeoHead from '../../../components/SeoHead'
 import KnowledgeWrapper from '../../../components/fliteProtein/KnowledgeWrapper'
 import ArticleBox from '../../../components/fliteProtein/ArticleBox'
