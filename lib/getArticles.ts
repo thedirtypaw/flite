@@ -26,8 +26,8 @@ export async function searchArticles(query: string, tags: string[] = []) {
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
 
-  // Most reliable GROQ search syntax
-  const searchFilter = `(title match "*${query}*" || description match "*${query}*" || "${query}" in tags[])`
+  // Simple exact match first - just like the working getArticlesByTag pattern
+  const searchFilter = `"${query}" in tags`
 
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
