@@ -130,10 +130,11 @@ export default async function KnowledgePage({
   }
 
   // Updated app/knowledge/[[...tags]]/page.tsx - just the return section
+// app/knowledge/[[...tags]]/page.tsx - Replace the return section
 return (
   <>
     <SeoHead
-      title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles – Flite` : searchQuery ? `Search: ${searchQuery} – Flite` : 'Knowledge Base – Flite'}
+      title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles  Flite` : searchQuery ? `Search: ${searchQuery}  Flite` : 'Knowledge Base  Flite'}
       description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : searchQuery ? `Search results for "${searchQuery}" in our science-backed articles.` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
       image="https://flite.ro/og-knowledge.webp"
       url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
@@ -153,15 +154,14 @@ return (
         </div>
       )}
 
-      {/* Always show search wrapper */}
       <ClientSearchWrapper 
         tags={uniqueTags} 
         tagList={tagList}
         initialSearchQuery={searchQuery}
       />
 
-      {/* Articles grid - FIXED: Show articles for both search and tags */}
-      {filteredArticles.length > 0 ? (
+      {/* FIXED: Show articles for both search and tags */}
+      {filteredArticles.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArticles
             .filter((a) => !!a.slug?.current)
@@ -172,24 +172,6 @@ return (
                 {...article}
               />
             ))}
-        </div>
-      ) : (searchQuery || tagList.length > 0) ? (
-        <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">
-            {searchQuery 
-              ? `No articles found for "${searchQuery}"${tagList.length > 0 ? ` in ${tagList.join(', ')}` : ''}`
-              : `No articles found for ${tagList.join(', ')}`
-            }
-          </p>
-          <p className="text-gray-400 mt-2">
-            Try different keywords or browse all articles
-          </p>
-        </div>
-      ) : (
-        <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">
-            Use the search field above to find articles
-          </p>
         </div>
       )}
     </main>

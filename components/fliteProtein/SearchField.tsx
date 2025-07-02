@@ -51,7 +51,7 @@ function SearchField({ onSearch, placeholder = "Search articles...", initialValu
 
   // Fetch suggestions with debounce
   const fetchSuggestions = async (searchQuery: string) => {
-    if (searchQuery.length < 3) {
+    if (searchQuery.length < 2) { // Changed from 3 to 2 letters
       setSuggestions({ articles: [], tags: [] })
       setShowDropdown(false)
       setIsLoading(false)
@@ -100,7 +100,7 @@ function SearchField({ onSearch, placeholder = "Search articles...", initialValu
 
   const handleTagClick = (tag: string) => {
     const encodedTag = tag.replace(/\s+/g, '-').toLowerCase()
-    router.push(`${pathname}/${encodedTag}`)
+    router.push(`/knowledge/${encodedTag}`) // Navigate to tag page directly
     setShowDropdown(false)
     setQuery('')
   }
@@ -148,18 +148,19 @@ function SearchField({ onSearch, placeholder = "Search articles...", initialValu
       {showDropdown && (suggestions.articles.length > 0 || suggestions.tags.length > 0) && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-white border-2 border-pink-200 rounded-2xl shadow-lg z-50 max-h-96 overflow-y-auto">
           
-          {/* Tags section */}
+          {/* Categories section - Full width clickable */}
           {suggestions.tags.length > 0 && (
-            <div className="p-4 border-b border-gray-100">
-              <h4 className="text-sm font-semibold text-gray-600 mb-2">Tags</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="border-b border-gray-100">
+              <h4 className="text-sm font-semibold text-gray-600 mb-2 px-4 pt-4">Categories</h4>
+              <div className="pb-4">
                 {suggestions.tags.map((tag) => (
                   <button
                     key={tag}
                     onClick={() => handleTagClick(tag)}
-                    className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm hover:bg-pink-200 transition-colors duration-200"
+                    className="w-full text-left px-4 py-3 hover:bg-pink-50 transition-colors duration-200 flex items-center gap-3"
                   >
-                    #{tag}
+                    <span className="w-2 h-2 bg-pink-400 rounded-full flex-shrink-0"></span>
+                    <span className="text-pink-700 font-medium">#{tag}</span>
                   </button>
                 ))}
               </div>
@@ -197,7 +198,7 @@ function SearchField({ onSearch, placeholder = "Search articles...", initialValu
           )}
 
           {/* Search option */}
-          {query.length >= 3 && (
+          {query.length >= 2 && ( // Changed from 3 to 2
             <div className="p-4 border-t border-gray-100">
               <button
                 onClick={() => handleSuggestionSearch(query)}

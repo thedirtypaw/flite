@@ -6,7 +6,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const query = searchParams.get('q')
   
-  if (!query || query.length < 3) {
+  if (!query || query.length < 2) { // Changed from 3 to 2 letters
     return NextResponse.json({ articles: [], tags: [] })
   }
 
