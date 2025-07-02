@@ -8,7 +8,7 @@ export async function getAllTags(): Promise<string[]> {
   return Array.from(new Set(tags))
 }
 
-async function getArticles() {
+export async function getArticles() {
   return await client.fetch(`*[_type == "article"] | order(publishedAt desc)[0...12]{
     _id,
     slug,
