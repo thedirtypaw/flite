@@ -105,7 +105,12 @@ export default async function KnowledgePage({
   const searchQuery = resolvedSearchParams?.q || ''
   const uniqueTags = await getAllTags()
   
-           // All articles when no search/tags
+  // Get articles based on search or tags
+  const filteredArticles = searchQuery
+    ? await searchArticles(searchQuery, tagList)  // Search results
+    : tagList.length > 0
+      ? await getArticlesByTag(tagList)           // Tag filtered results
+      : await getArticlesByTag([])                // All articles when no search/tags
 
   const articleCount = filteredArticles.length;
   const shouldIndex = articleCount >= 5 && !searchQuery;
