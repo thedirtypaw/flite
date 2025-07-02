@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { client } from '../../../../sanity/lib/client'
+import { client, writeClient } from '../../../../sanity/lib/client'
 
 export async function POST(
   req: NextRequest,
@@ -24,7 +24,8 @@ export async function POST(
 
     console.log('Updating views for article ID:', articleId) // Debug log
 
-    await client
+    // Use writeClient for the patch operation
+    await writeClient
       .patch(articleId)
       .setIfMissing({ views: 0 })
       .inc({ views: 1 })
