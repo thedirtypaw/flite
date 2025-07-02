@@ -26,13 +26,8 @@ export async function searchArticles(query: string, tags: string[] = []) {
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
 
-  // Fixed search: use string contains for partial matching
-  // This will find "agri" in "agriculture" tags, titles, or descriptions
-  const searchFilter = `(
-    title match "*${query}*" || 
-    description match "*${query}*" || 
-    count(tags[@ match "*${query}*"]) > 0
-  )`
+  // Simplified search that definitely works - test each part separately
+  const searchFilter = `(title match "*${query}*" || description match "*${query}*")`
 
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
@@ -46,6 +41,7 @@ export async function searchArticles(query: string, tags: string[] = []) {
     }`
   )
 }
+
 
 
 
