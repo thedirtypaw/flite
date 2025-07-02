@@ -32,9 +32,7 @@ export async function getArticlesByTag(tags: string[]) {
       publishedAt,
       views,
       tags,
-      mainImage {
-        asset->
-      }
+      "thumb": thumbImage.asset._ref
     }`
   )
 }
