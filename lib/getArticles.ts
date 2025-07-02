@@ -21,6 +21,26 @@ export async function getArticles() {
   }`)
 }
 
+export async function searchArticles(query: string, tags: string[] = []) {
+  const tagFilter = tags.length > 0 
+    ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
+    : ''
+  
+  const searchFilter = `(title match "*${query}*" || description match "*${query}*")`
+  
+  return client.fetch(
+    `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
+      _id,
+      title,
+      slug,
+      publishedAt,
+      views,
+      tags,
+      "thumb": thumbImage.asset._ref
+    }`
+  )
+}
+
 export async function getArticlesByTag(tags: string[]) {
   const tagFilters = tags.map(tag => `"${tag}" in tags`).join(' && ')
   

@@ -1,31 +1,35 @@
-'use client';
+// Updated components/fliteProtein/SearchField.tsx
+'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
 interface Props {
-  onSearch: (query: string) => void;
-  placeholder?: string;
+  onSearch: (query: string) => void
+  placeholder?: string
+  initialValue?: string
 }
 
-export default function SearchField({ onSearch, placeholder = "Search articles..." }: Props) {
-  const [query, setQuery] = useState('');
+function SearchField({ onSearch, placeholder = "Search articles...", initialValue = '' }: Props) {
+  const [query, setQuery] = useState(initialValue)
+
+  // Update local state when initialValue changes
+  useEffect(() => {
+    setQuery(initialValue)
+  }, [initialValue])
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(query);
-  };
+    e.preventDefault()
+    onSearch(query)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-    // Optional: Real-time search
-    // onSearch(e.target.value);
-  };
+    setQuery(e.target.value)
+  }
 
   return (
     <div className="w-full max-w-2xl mx-auto mb-8">
       <form onSubmit={handleSubmit} className="relative">
         <div className="relative">
-          {/* Magnifying Glass Icon */}
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 transition-transform duration-200 hover:scale-110">
             <img
               src="/magnifying-glass.svg"
@@ -34,7 +38,6 @@ export default function SearchField({ onSearch, placeholder = "Search articles..
             />
           </div>
           
-          {/* Search Input */}
           <input
             type="text"
             value={query}
@@ -45,5 +48,7 @@ export default function SearchField({ onSearch, placeholder = "Search articles..
         </div>
       </form>
     </div>
-  );
+  )
 }
+
+export default SearchField

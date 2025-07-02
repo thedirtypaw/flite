@@ -1,15 +1,33 @@
+// Updated app/knowledge/[[...tags]]/page.tsx
 import { Metadata } from 'next'
-import { getArticlesByTag, getAllTags } from '../../../lib/getArticles'
+import { getArticlesByTag, getAllTags, searchArticles } from '../../../lib/getArticles'
 import SeoHead from '../../../components/SeoHead'
 import ClientSearchWrapper from '../../../components/fliteProtein/ClientSearchWrapper'
 import ArticleBox from '../../../components/fliteProtein/ArticleBox'
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata({ 
+  params, 
+  searchParams 
+}: { 
+  params: Promise<{ tags?: string[] }>,
+  searchParams: Promise<{ q?: string }>
+}): Promise<Metadata> {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
   const tagList = resolvedParams?.tags || [];
-  const articles = tagList.length ? await getArticlesByTag(tagList) : [];
+  const searchQuery = resolvedSearchParams?.q;
   
-  if (articles.length >= 5) {
+  // Get articles based on search or tags
+  const articles = searchQuery 
+    ? await searchArticles(searchQuery, tagList)
+    : tagList.length 
+      ? await getArticlesByTag(tagList) 
+      : [];
+  
+  // SEO Rules: Only index if ≥5 articles AND no search query
+  const shouldIndex = articles.length >= 5 && !searchQuery;
+  
+  if (shouldIndex && tagList.length > 0) {
     return {
       title: `${tagList.join(', ')} Articles – Flite`,
       description: `${articles.length} science-backed articles about ${tagList.join(', ')}`,
@@ -37,11 +55,17 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   }
 
   return {
-    title: 'Knowledge Base – Flite', // Generic fallback
-    description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
+    title: searchQuery 
+      ? `Search: ${searchQuery} – Flite`
+      : 'Knowledge Base – Flite',
+    description: searchQuery
+      ? `Search results for "${searchQuery}" in our science-backed articles.`
+      : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
     keywords: ['gut health', 'nutrition', 'articles', 'vegan research', 'knowledge base'],
-    robots: { index: false }, // noindex for <5 articles
-    alternates: { canonical: 'https://flite.ro/knowledge' }, // Always point to main
+    robots: { index: false }, // noindex for search results and <5 articles
+    alternates: {
+      canonical: 'https://flite.ro/knowledge'
+    },
     openGraph: {
       title: 'Knowledge Base – Flite',
       description: 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.',
@@ -65,56 +89,100 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 export default async function KnowledgePage({ 
-  params 
+  params,
+  searchParams
 }: { 
-  params: Promise<{ tags?: string[] }> 
+  params: Promise<{ tags?: string[] }>,
+  searchParams: Promise<{ q?: string }>
 }) {
-  // Await the params Promise in Next.js 15
   const resolvedParams = await params
+  const resolvedSearchParams = await searchParams
   
   const tagList = resolvedParams?.tags && Array.isArray(resolvedParams.tags)
       ? resolvedParams.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
       : []
   
+  const searchQuery = resolvedSearchParams?.q || ''
   const uniqueTags = await getAllTags()
-  const filteredArticles = tagList.length > 0
-    ? await getArticlesByTag(tagList)
-    : []
+  
+  // Get articles based on search or tags
+  const filteredArticles = searchQuery
+    ? await searchArticles(searchQuery, tagList)
+    : tagList.length > 0
+      ? await getArticlesByTag(tagList)
+      : []
 
   const articleCount = filteredArticles.length;
-  const shouldIndex = articleCount >= 5;
+  const shouldIndex = articleCount >= 5 && !searchQuery;
+
+  // Dynamic title based on context
+  const getPageTitle = () => {
+    if (searchQuery && tagList.length > 0) {
+      return `"${searchQuery}" in ${tagList.join(', ')}`
+    }
+    if (searchQuery) {
+      return `Search: "${searchQuery}"`
+    }
+    if (tagList.length > 0) {
+      return `Articles tagged: ${tagList.join(', ')}`
+    }
+    return 'Knowledge Base'
+  }
 
   return (
     <>
       <SeoHead
-        title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles – Flite` : 'Knowledge Base – Flite'}
-        description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
+        title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles – Flite` : searchQuery ? `Search: ${searchQuery} – Flite` : 'Knowledge Base – Flite'}
+        description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : searchQuery ? `Search results for "${searchQuery}" in our science-backed articles.` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
         image="https://flite.ro/og-knowledge.webp"
         url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
       />
       <main className="min-h-screen px-[5%] py-10 bg-[#f8f8f1]">
         <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
-          {tagList.length ? `Articles tagged: ${tagList.join(', ')}` : 'Knowledge Base'}
+          {getPageTitle()}
         </h1>
 
-        {tagList.length > 0 ? (
-          <>
-            <ClientSearchWrapper tags={uniqueTags} tagList={tagList} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredArticles
-                .filter((a) => !!a.slug?.current)
-                .map((article) => (
-                  <ArticleBox
-                    key={article._id}
-                    href={`/article/${article.slug.current}`}
-                    {...article}
-                  />
-                ))}
-            </div>
-          </>
-        ) : (
-          <ClientSearchWrapper tags={uniqueTags} tagList={[]} />
+        {/* Search results count */}
+        {searchQuery && (
+          <div className="text-center mb-6 text-gray-600">
+            {articleCount > 0 
+              ? `Found ${articleCount} article${articleCount === 1 ? '' : 's'}`
+              : 'No articles found'
+            }
+          </div>
         )}
+
+        {/* Always show search wrapper */}
+        <ClientSearchWrapper 
+          tags={uniqueTags} 
+          tagList={tagList}
+          initialSearchQuery={searchQuery}
+        />
+
+        {/* Articles grid */}
+        {filteredArticles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredArticles
+              .filter((a) => !!a.slug?.current)
+              .map((article) => (
+                <ArticleBox
+                  key={article._id}
+                  href={`/article/${article.slug.current}`}
+                  {...article}
+                />
+              ))}
+          </div>
+        ) : searchQuery ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">
+              No articles found for "{searchQuery}"
+              {tagList.length > 0 && ` in ${tagList.join(', ')}`}
+            </p>
+            <p className="text-gray-400 mt-2">
+              Try different keywords or browse all articles
+            </p>
+          </div>
+        ) : null}
       </main>
     </>
   )
