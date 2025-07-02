@@ -34,7 +34,7 @@ function TagBar({ tags, sort, setSort }: Props) {
         <span
           className={`px-3 py-1 rounded-full border cursor-pointer transition-all font-semibold text-green-900 ${
             selectedTags.length === 0 ? 'border-pink-600 text-pink-600 font-bold' : 'border-green-300'
-          }`}
+            }`}
           onClick={() => router.push('/knowledge')}
         >
           All Categories
@@ -47,14 +47,15 @@ function TagBar({ tags, sort, setSort }: Props) {
             <span
               key={i}
               onClick={() => toggleTag(tagForUrl)}
-              className={`group relative flex items-center gap-2 px-4 py-1.5 rounded-full border cursor-pointer transition-all font-semibold ${
-                isSelected
+              className={`group relative flex items-center gap-2 px-4 py-1.5 rounded-full border cursor-pointer transition-all font-semibold ${isSelected
                   ? 'border-pink-600 text-pink-600 font-bold'
                   : 'border-green-300 text-green-900 hover:border-pink-600 hover:text-pink-600'
-              }`}
+                }`}
             >
               {isSelected && (
-                <span className="w-3 h-3 group-hover:rotate-180 group-hover:scale-125 transition-transform text-pink-600 flex items-center justify-center"></span>
+                <span className="w-3 h-3 group-hover:rotate-180 group-hover:scale-125 transition-transform text-pink-600 flex items-center justify-center">
+                  ×
+                </span>
               )}
               {tag}
             </span>

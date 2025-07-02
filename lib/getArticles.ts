@@ -26,7 +26,8 @@ export async function searchArticles(query: string, tags: string[] = []) {
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
   
-  const searchFilter = `(title match "*${query}*" || description match "*${query}*")`
+  // Enhanced search: title, description, AND tags
+  const searchFilter = `(title match "*${query}*" || description match "*${query}*" || tags match "*${query}*")`
   
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
