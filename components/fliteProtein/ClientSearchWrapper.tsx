@@ -25,20 +25,16 @@ function ClientSearchWrapper({ tags, tagList, initialSearchQuery = '' }: Props) 
   }, [searchParams])
 
   const handleSearch = (query: string) => {
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams()
     
     if (query.trim()) {
       params.set('q', query.trim())
+      // Navigate to base knowledge page with search query
+      router.push(`/knowledge?${params.toString()}`)
     } else {
-      params.delete('q')
+      // If no query, go to base knowledge page
+      router.push('/knowledge')
     }
-    
-    // Navigate to the same path with updated search params
-    const newUrl = params.toString() 
-      ? `${pathname}?${params.toString()}`
-      : pathname
-    
-    router.push(newUrl)
   }
 
   return (
