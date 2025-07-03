@@ -1,4 +1,3 @@
-// Updated components/fliteProtein/ClientSearchWrapper.tsx
 'use client'
 
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
@@ -6,13 +5,15 @@ import { useState, useEffect } from 'react'
 import SearchField from './SearchField'
 import KnowledgeWrapper from './KnowledgeWrapper'
 
+// components/fliteProtein/ClientSearchWrapper.tsx
 interface Props {
   tags: string[]
   tagList: string[]
   initialSearchQuery?: string
+  articles: any[]  // 🔥 ADD THIS!
 }
 
-function ClientSearchWrapper({ tags, tagList, initialSearchQuery = '' }: Props) {
+function ClientSearchWrapper({ tags, tagList, initialSearchQuery = '', articles }: Props) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -29,10 +30,8 @@ function ClientSearchWrapper({ tags, tagList, initialSearchQuery = '' }: Props) 
     
     if (query.trim()) {
       params.set('q', query.trim())
-      // Navigate to base knowledge page with search query
       router.push(`/knowledge?${params.toString()}`)
     } else {
-      // If no query, go to base knowledge page
       router.push('/knowledge')
     }
   }
@@ -44,7 +43,11 @@ function ClientSearchWrapper({ tags, tagList, initialSearchQuery = '' }: Props) 
         placeholder="Search articles..."
         initialValue={searchQuery}
       />
-      <KnowledgeWrapper tags={tags} tagList={tagList} />
+      <KnowledgeWrapper 
+        tags={tags} 
+        tagList={tagList} 
+        articles={articles} 
+      />
     </>
   )
 }

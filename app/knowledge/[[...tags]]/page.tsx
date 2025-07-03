@@ -111,12 +111,7 @@ export default async function KnowledgePage({
     : tagList.length > 0
       ? await getArticlesByTag(tagList)           // Tag filtered results
       : await getArticlesByTag([])                // All articles when no search/tags
-
-      console.log('Search Query:', searchQuery)
-      console.log('Tag List:', tagList)
-      console.log('Filtered Articles:', filteredArticles)
-      console.log('Articles with slugs:', filteredArticles.filter(a => !!a.slug?.current))
-      
+    
 
   const articleCount = filteredArticles.length;
   const shouldIndex = articleCount >= 5 && !searchQuery;
@@ -135,52 +130,27 @@ export default async function KnowledgePage({
     return 'Knowledge Base'
   }
 
-  // Updated app/knowledge/[[...tags]]/page.tsx - just the return section
-// app/knowledge/[[...tags]]/page.tsx - Replace the return section
-return (
-  <>
-    <SeoHead
-      title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles  Flite` : searchQuery ? `Search: ${searchQuery}  Flite` : 'Knowledge Base  Flite'}
-      description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : searchQuery ? `Search results for "${searchQuery}" in our science-backed articles.` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
-      image="https://flite.ro/og-knowledge.webp"
-      url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
-    />
-    <main className="min-h-screen px-[5%] py-10 bg-[#f8f8f1]">
-      <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
-        {getPageTitle()}
-      </h1>
 
-      {/* Search results count */}
-      {searchQuery && (
-        <div className="text-center mb-6 text-gray-600">
-          {articleCount > 0
-            ? `Found ${articleCount} article${articleCount === 1 ? '' : 's'}`
-            : 'No article found with that description'
-          }
-        </div>
-      )}
-
-      <ClientSearchWrapper 
-        tags={uniqueTags} 
-        tagList={tagList}
-        initialSearchQuery={searchQuery}
+  return (
+    <>
+      <SeoHead
+        title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles  Flite` : searchQuery ? `Search: ${searchQuery}  Flite` : 'Knowledge Base  Flite'}
+        description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : searchQuery ? `Search results for "${searchQuery}" in our science-backed articles.` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
+        image="https://flite.ro/og-knowledge.webp"
+        url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
       />
-
-      {/* FIXED: Show articles for both search and tags */}
-      {filteredArticles.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredArticles
-            .filter((a) => !!a.slug?.current)
-            .map((article) => (
-              <ArticleBox
-                key={article._id}
-                href={`/article/${article.slug.current}`}
-                {...article}
-              />
-            ))}
-        </div>
-      )}
-    </main>
-  </>
-)
+      <main className="min-h-screen px-[5%] py-10 bg-[#f8f8f1]">
+        <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
+          Knowledge Base
+        </h1>
+  
+        <ClientSearchWrapper 
+          tags={uniqueTags} 
+          tagList={tagList}
+          initialSearchQuery={searchQuery}
+          articles={filteredArticles}
+        />
+      </main>
+    </>
+  )
 }

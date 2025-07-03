@@ -1,0 +1,473 @@
+○ Compiling /knowledge/[[...tags]] ...
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ Compiled /knowledge/[[...tags]] in 3.6s (4958 modules)
+Search Query: 
+Tag List: []
+Filtered Articles: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+Articles with slugs: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+Search Query:
+Tag List: []
+Filtered Articles: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+Articles with slugs: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+ GET /knowledge 200 in 4109ms
+ ✓ Compiled /favicon.ico in 335ms (3159 modules)
+ GET /favicon.ico 200 in 415ms
+ GET /favicon.ico 200 in 11ms
+ ○ Compiling /api/articles ...
+ ✓ Compiled /api/articles in 532ms (4979 modules)
+Search Query: 
+Tag List: []
+Filtered Articles: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+Articles with slugs: [
+  {
+    _id: '2b832764-191c-4ed7-87a7-2b55cc0027ac',
+    publishedAt: '2025-05-07T13:07:00.000Z',
+    slug: { _type: 'slug', current: 'resistant-wheat-starch' },
+    tags: [
+      'new research',
+      'starch',
+      'fibers',
+      'everyday cooking',
+      'weight control'
+    ],
+    thumb: 'image-a716c8a88419cc7ee585074da43ade117ee47b04-659x190-png',
+    title: 'What Is Resistant Wheat Starch And Why Is It The Hottest New Ingredient in the Baking World',
+    views: null
+  },
+  {
+    _id: '2c71b9b8-90ec-4d81-80c5-7c80e587b0e1',
+    publishedAt: '2025-04-30T12:55:00.000Z',
+    slug: { _type: 'slug', current: 'role-of-bees' },
+    tags: [ 'agriculture', 'biodiversity', 'energy saving' ],
+    thumb: 'image-15b7b1320facc03654b93ce836d9dbb5a1627396-942x950-jpg',
+    title: 'The Massive Role of Bees in our lives',
+    views: 12
+  },
+  {
+    _id: '9eff7ead-b7e4-4bfd-a7eb-920b41a7e096',
+    publishedAt: '2025-04-25T12:03:00.000Z',
+    slug: { _type: 'slug', current: 'ideal-protein' },
+    tags: [ 'protein', 'muscle growth', 'weight control' ],
+    thumb: 'image-845c24427cef12b01fc9013987b9d1f1f02154b4-600x400-jpg',
+    title: 'Ideal Protein 2 quantity & quality',
+    views: null
+  },
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  },
+  {
+    _id: 'a36d016a-ee9a-404e-8e15-c21f9825224e',
+    publishedAt: '2025-04-14T13:08:00.000Z',
+    slug: { _type: 'slug', current: 'good-bad-fats' },
+    tags: [ 'everyday cooking', 'new research', 'fats', 'weight control' ],
+    thumb: 'image-465fea65dbf3ce207b4b2a4a0ac99ab62aabc17b-660x194-png',
+    title: 'Good fats & Bad fats, their differences and why its usually not that simple',
+    views: null
+  },
+  {
+    _id: '79ac80d0-e2e4-40d8-a751-5f9d3083bbfa',
+    publishedAt: '2025-04-13T12:04:00.000Z',
+    slug: { _type: 'slug', current: 'diverse-proteins' },
+    tags: [ 'new research', 'protein', 'fats' ],
+    thumb: 'image-4d7b23e342ab832e50ecee2f11770e659df4df28-660x194-png',
+    title: 'Diversifying proteins and if that matters and when',
+    views: 2
+  },
+  {
+    _id: 'd5e6d0c0-f03b-4102-b972-e00779a2795f',
+    publishedAt: '2025-02-10T15:29:00.000Z',
+    slug: { _type: 'slug', current: 'soluble-fibers' },
+    tags: [ 'starch', 'fibers', 'weight control' ],
+    thumb: 'image-bf50f5364c600e0ba235fb165280baf947f25575-2560x2500-jpg',
+    title: 'The differences between insoluble and soluble fibers, and how they affect our digestion',
+    views: null
+  }
+]
+ GET /knowledge 200 in 95ms
+ GET /api/articles 200 in 655ms
+ GET /favicon.ico 200 in 4ms
+ ✓ Compiled /api/search-suggestions in 267ms (4967 modules)
+ GET /api/search-suggestions?q=agri 200 in 417ms
+Search Query: agri
+Tag List: []
+Filtered Articles: [
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  }
+]
+Articles with slugs: [
+  {
+    _id: '9bc82501-7f76-4a98-a9f8-4fe8f485867e',
+    publishedAt: '2025-04-18T12:51:00.000Z',
+    slug: { _type: 'slug', current: 'hedges' },
+    tags: [ 'new research', 'agriculture', 'biodiversity' ],
+    thumb: 'image-2d3f030326a8da6dd0a55865061d610625a4389b-1024x768-jpg',
+    title: 'The Role of Hedges in biodiverse agriculture',
+    views: 1
+  }
+]
+ GET /knowledge?q=agri 200 in 124ms

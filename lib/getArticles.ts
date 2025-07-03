@@ -21,13 +21,21 @@ export async function getArticles() {
   }`)
 }
 
-export async function searchArticles(query: string, tags: string[] = []) {
+export // lib/getArticles.ts - Replace the searchArticles function
+async function searchArticles(query: string, tags: string[] = []) {
   const tagFilter = tags.length > 0
     ? tags.map(tag => `"${tag}" in tags`).join(' && ') + ' && '
     : ''
 
-  // Simplified search that definitely works - test each part separately
-  const searchFilter = `(title match "*${query}*" || description match "*${query}*")`
+  // Enhanced search: title, description, tags, body, keywords, articleSection
+  const searchFilter = `(
+    title match "*${query}*" || 
+    description match "*${query}*" || 
+    count(tags[@ match "*${query}*"]) > 0 ||
+    count(keywords[@ match "*${query}*"]) > 0 ||
+    articleSection match "*${query}*" ||
+    pt::text(body) match "*${query}*"
+  )`
 
   return client.fetch(
     `*[_type == "article" && ${tagFilter}${searchFilter}] | order(publishedAt desc){
@@ -41,6 +49,7 @@ export async function searchArticles(query: string, tags: string[] = []) {
     }`
   )
 }
+
 
 
 
