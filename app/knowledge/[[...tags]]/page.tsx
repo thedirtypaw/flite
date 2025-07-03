@@ -17,12 +17,12 @@ export async function generateMetadata({
   const tagList = resolvedParams?.tags || [];
   const searchQuery = resolvedSearchParams?.q;
   
-  // Get articles based on search or tags
+  // This makes shouldIndex = false (0 < 5)
   const articles = searchQuery 
-    ? await searchArticles(searchQuery, tagList)
-    : tagList.length 
-      ? await getArticlesByTag(tagList) 
-      : [];
+  ? await searchArticles(searchQuery, tagList)
+  : tagList.length 
+    ? await getArticlesByTag(tagList) 
+    : [];
   
   // SEO Rules: Only index if ≥5 articles AND no search query
   const shouldIndex = articles.length >= 5 && !searchQuery;
@@ -111,6 +111,12 @@ export default async function KnowledgePage({
     : tagList.length > 0
       ? await getArticlesByTag(tagList)           // Tag filtered results
       : await getArticlesByTag([])                // All articles when no search/tags
+
+      console.log('Search Query:', searchQuery)
+      console.log('Tag List:', tagList)
+      console.log('Filtered Articles:', filteredArticles)
+      console.log('Articles with slugs:', filteredArticles.filter(a => !!a.slug?.current))
+      
 
   const articleCount = filteredArticles.length;
   const shouldIndex = articleCount >= 5 && !searchQuery;
