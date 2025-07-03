@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <Header />
         <div
           key={typeof window !== 'undefined' ? window.location.pathname : ''}
-          className="transition-opacity duration-200 opacity-0 animate-fade-in"
         >
           {children}
         </div>
