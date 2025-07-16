@@ -9,28 +9,42 @@ import { HeaderProps } from "./types";
 const HeaderItems: HeaderProps[] = [
   { label: "Home", href: "/homepage" },
   { label: "Knowledge Base", href: "/knowledge" },
-  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
   { label: "Bio 2.0", href: "/bio" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about" },
 ];
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setActivePath(pathname);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="w-full bg-[#f8f8f1]">
-      <div className="flex flex-wrap justify-between items-center py-5 px-10 max-md:px-5 max-md:max-w-full">
+    <header className={`w-full bg-[#f8f8f1] sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'shadow-md' : ''
+    }`}>
+      <div className="flex flex-wrap justify-between items-center py-5 px-[5%] max-md:px-5 max-md:max-w-full">
         <div className="flex items-center">
           <img
             loading="lazy"
-            src="/logo.png"
+            src={isScrolled ? "/logo-small.png" : "/logo.png"}
             alt="Flite Protein Logo"
-            className="h-10 w-auto"
+            className={`w-auto transition-all duration-300 ${
+              isScrolled ? 'h-8' : 'h-10'
+            }`}
           />
         </div>
 

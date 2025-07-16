@@ -35,7 +35,7 @@ export default async function FliteProtein() {
       </div>
 
       {/* Two-column paragraph block */}
-      <div className="flex flex-wrap justify-center px-[5%] w-[90%] mx-auto">
+      <div className="flex flex-wrap justify-center px-[5%] w-full mx-auto">
         <TwoColumns
           title="What we're doing"
           paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pretium sem. Phasellus in dapibus neque. Donec vel turpis augue. Sed sed magna tellus. Donec eu orci turpis. Donec nibh felis, malesuada non massa vel, vestibulum vehicula tortor. Curabitur condimentum purus sed lacus malesuada pellentesque. Quisque et metus ut magna porta porttitor eget volutpat sem. Aliquam ultricies odio mi. Vivamus bibendum dolor eu turpis tempor, sagittis luctus lacus ornare. Sed fringilla lorem ac magna euismod egestas. Pellentesque nibh tellus, maximus sit amet accumsan sed, vehicula fringilla felis. In sed magna vitae tellus blandit porttitor. Sed metus ipsum, egestas et ipsum sed, ultricies venenatis sem. Integer congue neque eget dolor ullamcorper, et lacinia nulla porta."
@@ -43,7 +43,7 @@ export default async function FliteProtein() {
       </div>
 
       {/* Article preview blocks */}
-      <div className="flex flex-wrap justify-stretch px-[5%] w-[90%] mx-auto">
+      <div className="flex flex-wrap justify-stretch px-[5%] w-full mx-auto">
         {articles.map((article) => (
           <ArticleBox
           key={article._id}
@@ -59,9 +59,10 @@ export default async function FliteProtein() {
       </div>
 
       {/* CTA */}
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 px-[5%]">
         <CTAButton text="GET STARTED" href="http://eepurl.com/i-ryhA" />
       </div>
     </div>
   )
 }
+
