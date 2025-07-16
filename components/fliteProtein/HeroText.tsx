@@ -9,7 +9,7 @@ export const HeroText: React.FC<HeroTextProps> = ({
   subheading,
 }) => {
   return (
-    <div className={`relative flex flex-col justify-center p-4 max-lg:justify-stretch max-xl:text-center h-auto w-[45%] max-xl:w-[75%] ${degular.className}`}>
+    <div className={`relative flex flex-col justify-center max-lg:justify-stretch max-xl:text-center h-auto w-[45%] max-xl:w-[75%] ${degular.className}`}>
       {/* ✅ Ensure animation is properly called */}
       <div className="text-[clamp(2rem,8vw,6rem)] text-pink-700 font-extra-bold leading-none">
         {title}

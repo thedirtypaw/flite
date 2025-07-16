@@ -7,7 +7,7 @@ export const HeroImage: React.FC<HeroImageProps> = ({
   
 }) => {
   return (
-    <div className="flex flex-col relative p-4 items-center sm:mt-[60px] lg:mt-[40px] w-[45%] h-auto">
+    <div className="flex flex-col relative items-center sm:mt-[60px] lg:mt-[40px] w-[45%] h-auto">
       <img
         loading="lazy"
         src={mainImage}

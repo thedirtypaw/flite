@@ -5,7 +5,9 @@
   --breakpoint-3xl: 1920px;
 }
 
-
+.content-padding {
+  @apply px-[5%] max-md:px-5;
+}
 
 body {
   color: var(--foreground);
