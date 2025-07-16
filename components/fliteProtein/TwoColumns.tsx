@@ -8,7 +8,7 @@ export const TwoColumns: React.FC<TwoColumnProps> = ({
   paragraph,
 }) => {
   return (
-    <div className={`flex flex-col justify-center max-lg:justify-stretch max-xl:text-center h-auto max-xl:w-[75%] ${basic.className}`}>
+    <div className={`flex flex-col justify-center mt-12 max-lg:justify-stretch max-xl:text-center h-auto max-xl:w-[75%] ${basic.className}`}>
       <div className= "text-[min(max(2rem,6vw),80px)] tracking-tight leading-[1.2] text-[#a23865] ">
         {title}
       </div>
