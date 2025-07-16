@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-[#f8f8f1] ${geistSans.className} antialiased`}>
+      <body className={`${geistSans.className} antialiased`}>
         <Header />
         <div
           key={typeof window !== 'undefined' ? window.location.pathname : ''}

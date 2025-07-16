@@ -1,7 +1,7 @@
 import * as React from "react";
 import { TwoColumnProps } from "./types";
 import { basic } from './fonts';
-
+import { GlobalH2 } from './fonts';
 
 export const TwoColumns: React.FC<TwoColumnProps> = ({
   title,
@@ -9,11 +9,11 @@ export const TwoColumns: React.FC<TwoColumnProps> = ({
 }) => {
   return (
     <div className={`flex flex-col justify-center mt-12 max-lg:justify-stretch max-xl:text-center h-auto max-xl:w-[75%] ${basic.className}`}>
-      <div className= "text-[min(max(2rem,6vw),80px)] tracking-tight leading-[1.2] text-[#a23865] ">
+      <GlobalH2>
         {title}
-      </div>
+      </GlobalH2>
       
-      <div className= "columns-2 gap-12 py-[2%] text-[min(max(1rem,2vw),24px)] tracking-normal leading-[1.2] text-pink-300 max-md:text-24px">
+      <div className= "columns-2 gap-12 py-[2%] tracking-normal leading-[1.2]  max-md:text-24px">
         {paragraph}
       </div>
     </div>

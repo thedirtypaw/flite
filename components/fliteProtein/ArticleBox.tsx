@@ -30,29 +30,28 @@ export default function ArticleBox({
   
   return (
     <Link
-  href={href}
-  className={`bg-[#defade] border border-[#c2f0b1] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all group ${className}`}
->
+      href={href}
+      className={`bg-[#f6ebd4] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${className}`}
+    >
       {thumb && (
         <img
           src={urlFor({ _ref: thumb }).format('webp').url()}
           alt={title}
           loading="lazy" 
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
+          className="w-full h-48 object-cover rounded-t-xl"
         />
       )}
 
       <div className="p-4">
-        <h3 className="text-lg font-bold mb-1 text-gray-900">{title}</h3>
+        <h3 className="text-[#a23865] text-lg font-bold mb-1 group-hover:text-[#8a2d54] transition-colors">{title}</h3>
 
         {tags?.length > 0 && (
-          <div className="flex flex-wrap gap-2 text-xs font-semibold text-green-900 uppercase mb-1">
+          <div className="flex flex-wrap gap-2 text-xs font-semibold text-[#e39ba5] uppercase mb-1">
             {tags.map((tag, i) => (
               <span key={i}>{tag}</span>
             ))}
           </div>
         )}
-
 
         <p className="text-xs text-muted-foreground">
           {new Date(publishedAt).toLocaleDateString('en-US', {

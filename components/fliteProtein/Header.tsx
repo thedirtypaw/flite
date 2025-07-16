@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={`w-full bg-[#f8f8f1] content-padding sticky top-0 z-50 transition-all duration-300 ${
+    <header className={`w-full bg-[#ffffe1] content-padding sticky top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'shadow-sm' : ''
     }`}>
       <div className={`flex flex-wrap justify-between items-center content-padding transition-all duration-300 ${

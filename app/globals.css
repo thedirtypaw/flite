@@ -9,9 +9,16 @@
   @apply px-[5%] max-md:px-5;
 }
 
+p {
+  font-size: 1.125rem; /* 18px - equivalent to text-lg */
+  line-height: 1.6;
+}
+
 body {
   color: var(--foreground);
+  color: #e39ba5;
   background: var(--sds-color-text-utilities-text-on-measurement); 
+  background: #ffffe1; 
 }
 
 @keyframes fade-in {

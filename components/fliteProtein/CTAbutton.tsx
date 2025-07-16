@@ -100,7 +100,7 @@ const CTAButton = ({ text, href }) => {
     <div className="flex justify-center my-10">
       <a
         href={href}
-        className="relative flex items-center justify-center w-[500px] h-[100px] px-10 py-5 text-lg font-semibold text-white rounded-xl overflow-hidden bg-gray-900 transition-transform hover:scale-105"
+        className="relative flex items-center justify-center w-[500px] h-[100px] px-10 py-5 text-[2rem] font-bold font-gabarito text-white rounded-xl overflow-hidden bg-gray-900 transition-transform hover:scale-105"
       >
         <span ref={mountRef} className="absolute inset-0" />
         <span className="relative z-20">{text}</span>
