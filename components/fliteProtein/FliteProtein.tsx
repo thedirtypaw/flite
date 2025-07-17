@@ -46,56 +46,40 @@ export default async function FliteProtein() {
       <div className="flex flex-wrap justify-center content-padding w-full mx-auto">
         <TwoColumns
           title="What we're doing"
-          column1Text="This isn't just another protein powder - it's the magic of our triple-processing method. Germination awakens dormant peas, increasing bioavailability and creating natural enzymes. Hydrolysis breaks proteins into easily digestible peptides your body absorbs instantly."
+          column1Text="This isn't just another protein powder - it's the magic of our triple-processing method. Germination awakens dormant peas, increasing bioavailability and creating natural enzymes. Hydrolysis breaks proteins into easily digestible peptides your body absorbs instantly. Fermentation adds beneficial probiotics while creating bioactive compounds that support gut health and immune function. The result is a protein powder that nourishes your entire system with the concentrated power of what peas were always meant to become."
           column1Button={
             <a
-              href="/download1"
-              className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+              href="/path-to-pea-protein-sheet.pdf"
+              download
+              className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
             >
-              Download #1
+              <img
+                src="/download.svg"
+                alt="Download"
+                className="w-8 h-8 flex-shrink-0"
+                style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(7151%) hue-rotate(320deg) brightness(95%) contrast(95%)' }}
+              />
+              Download Product Sheet for Pea Protein Powder
             </a>
           }
-          column2Text="Fermentation adds beneficial probiotics while creating bioactive compounds that support gut health and immune function. The result is a protein powder that nourishes your entire system with the concentrated power of what peas were always meant to become."
+          column2Text="Our germinated and fermented pea fiber represents a new approach to functional fiber ingredients. The dual-processing method transforms natural pea fiber components through germination, which activates and modifies the fiber structure, followed by fermentation that further develops the material. This creates a fiber ingredient with enhanced functional properties compared to conventional pea fiber, offering improved performance characteristics while maintaining the natural benefits of plant-based fiber."
           column2Button={
             <a
-              href="/download2"
-              className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
+              href="/path-to-pea-fiber-sheet.pdf"
+              download
+              className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
             >
-              Download #2
+              <img
+                src="/download.svg"
+                alt="Download"
+                className="w-8 h-8 flex-shrink-0"
+                style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(7151%) hue-rotate(320deg) brightness(95%) contrast(95%)' }}
+              />
+              Download Product Sheet for Pea Fiber
             </a>
           }
         />
-      </div>
 
-      {/* Download buttons */}
-      <div className="flex flex-wrap justify-between content-padding w-full mx-auto mt-4">
-        <div className="columns-2 gap-12 w-full ">
-          <a
-            href="/path-to-pea-protein-sheet.pdf"
-            download
-            className="flex items-center gap-2 text-[#e3176e] hover:underline body-text mb-4 break-inside-avoid"
-          >
-            <img
-              src="/download.svg"
-              alt="Download"
-              className="w-8 h-8 flex-shrink-0"
-            />
-            Download Product Sheet for Pea Protein Powder
-          </a>
-
-          <a
-            href="/path-to-pea-fiber-sheet.pdf"
-            download
-            className="flex items-center gap-2 text-[#e3176e] hover:underline body-text mb-4 break-inside-avoid"
-          >
-            <img
-              src="/download.svg"
-              alt="Download"
-              className="w-8 h-8 flex-shrink-0"
-            />
-            Download Product Sheet for Pea Fiber
-          </a>
-        </div>
       </div>
 
 
@@ -115,7 +99,10 @@ export default async function FliteProtein() {
       <div className="flex flex-wrap justify-center content-padding w-full mx-auto">
         <TwoColumns
           title="Why we're doing it"
-          paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pretium sem. Phasellus in dapibus neque. Donec vel turpis augue. Sed sed magna tellus. Donec eu orci turpis. Donec nibh felis, malesuada non massa vel, vestibulum vehicula tortor. Curabitur condimentum purus sed lacus malesuada pellentesque. Quisque et metus ut magna porta porttitor eget volutpat sem. Aliquam ultricies odio mi. Vivamus bibendum dolor eu turpis tempor, sagittis luctus lacus ornare. Sed fringilla lorem ac magna euismod egestas. Pellentesque nibh tellus, maximus sit amet accumsan sed, vehicula fringilla felis. In sed magna vitae tellus blandit porttitor. Sed metus ipsum, egestas et ipsum sed, ultricies venenatis sem. Integer congue neque eget dolor ullamcorper, et lacinia nulla porta."
+          column1Text="The food system is broken and needs fundamental change. Industrial agriculture drives 25% of global emissions while destroying biodiversity, with animal husbandry alone accounting for 15% of global emissions. Meanwhile, consumers are demanding better – they want sustainable, nutrient-dense food with short ingredient lists, clear labeling, and a genuine connection to where their food comes from. Conventional protein isolates, whether plant-based or animal, fall short with poor bioavailability, digestibility issues, and often contain allergens, trace chemicals, and synthetic additives that consumers increasingly reject."
+          column2Text="The current system locks incumbents into centralized production and fragile supply chains while making it difficult for farmers to transition to biodiversity-positive farming. Farmers want technical and financial support to shift to profitable regenerative practices, but EU policy ambitions for sustainable agriculture are slow to implement, and market mechanisms like biodiversity credits remain in their infancy. Our approach bridges this gap by creating a direct pathway for farmers to participate in food innovation while producing ingredients that meet the growing demand for traceable, local, and truly sustainable nutrition."
+          column1Button
+          column2Button
         />
       </div>
 
