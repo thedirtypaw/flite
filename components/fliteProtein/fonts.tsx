@@ -38,7 +38,7 @@ export const GlobalH2: React.FC<{ children: React.ReactNode; className?: string 
   className = ""
 }) => {
   return (
-    <h2 className={`text-[min(max(2rem,6vw),80px)] tracking-tight leading-[1.2] text-[#a23865] font-bold ${gabarito.className} ${className}`}>
+    <h2 className={`text-[min(max(2rem,6vw),60px)] tracking-tight leading-[1.2] text-[#a23865] font-bold ${gabarito.className} ${className}`}>
       {children}
     </h2>
   );

@@ -5,7 +5,10 @@ import { GlobalH2 } from './fonts';
 
 export const TwoColumns: React.FC<TwoColumnProps> = ({
   title,
-  paragraph,
+  column1Text,
+  column1Button,
+  column2Text,
+  column2Button,
 }) => {
   return (
     <div className={`flex flex-col justify-center mt-12 max-lg:justify-stretch max-xl:text-center h-auto max-xl:w-[75%] ${basic.className}`}>
@@ -13,9 +16,25 @@ export const TwoColumns: React.FC<TwoColumnProps> = ({
         {title}
       </GlobalH2>
       
-      <div className= "columns-2 gap-12 py-[2%] tracking-normal leading-[1.2]  max-md:text-24px">
-        {paragraph}
+      {/* Two columns on large screens, single column on mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-[2%]">
+        {/* Column 1 */}
+        <div className="flex flex-col">
+          <p className="tracking-normal leading-[1.2] max-md:text-24px mb-6">
+            {column1Text}
+          </p>
+          {column1Button}
+        </div>
+        
+        {/* Column 2 */}
+        <div className="flex flex-col">
+          <p className="tracking-normal leading-[1.2] max-md:text-24px mb-6">
+            {column2Text}
+          </p>
+          {column2Button}
+        </div>
       </div>
     </div>
   );
 };
+

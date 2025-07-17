@@ -10,8 +10,14 @@
 }
 
 p {
-  font-size: 1.125rem; /* 18px - equivalent to text-lg */
-  line-height: 1.6;
+  font-size: 1.25rem; /* 18px - equivalent to text-lg */
+  line-height: 1.4;
+}
+
+/* Body text utility class for non-p elements */
+.body-text {
+  font-size: 1.25rem; /* 18px */
+  line-height: 1.2;
 }
 
 body {

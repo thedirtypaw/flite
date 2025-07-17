@@ -1,7 +1,6 @@
 import * as React from "react";
 import { HeroTextProps } from "./types";
-import { degular } from "./fonts";
-// import HeroTextAnimation from "./HeroTextAnimation"; // ✅ Fix Import (Default Export Now Exists)
+import { basic, gabarito } from "./fonts"; // Import the fonts
 
 export const HeroText: React.FC<HeroTextProps> = ({
   title,
@@ -9,19 +8,19 @@ export const HeroText: React.FC<HeroTextProps> = ({
   subheading,
 }) => {
   return (
-    <div className={`relative flex flex-col justify-center max-lg:justify-stretch max-xl:text-center h-auto w-[45%] max-xl:w-[75%] ${degular.className}`}>
-      {/* Brand name as div - animatable, not H1 for SEO */}
-      <div className="text-[clamp(2rem,8vw,6rem)] text-pink-700 font-extra-bold leading-none">
+    <div className="relative flex flex-col max-lg:justify-stretch max-xl:text-center w-[45%] max-xl:w-[75%]">
+      {/* Brand name - using gabarito font */}
+      <div className={`text-[clamp(2rem,8vw,6rem)] text-pink-700 font-black leading-none ${gabarito.className}`}>
         {title}
       </div>
 
-      {/* Main page description as H1 - SEO priority */}
-      <h1 className="text-[min(max(1rem,2vw),36px)] tracking-normal leading-[1.2] text-[#d87294] max-md:text-24px">
+      {/* Main page description as H1 - using basic font */}
+      <h1 className={`text-[min(max(1rem,2vw),36px)] mt-2 tracking-normal leading-[1.2] text-[#a23865] max-md:text-24px ${basic.className}`}>
         {heading}
       </h1>
       
-      {/* Supporting text remains as div */}
-      <div className="text-[min(max(1rem,2vw),24px)] tracking-normal leading-[1.2] text-pink-300 max-md:text-24px">
+      {/* Supporting text - using basic font */}
+      <div className={`body-text tracking-normal mt-8 leading-[1.2] text-[#d87294] max-md:text-24px ${basic.className}`}>
         {subheading}
       </div>
     </div>

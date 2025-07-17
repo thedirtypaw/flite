@@ -13,7 +13,7 @@ export interface FooterProps {
 export interface HeroTextProps {
   title: string;
   heading: string;
-  subheading: string;
+  subheading: string | React.ReactNode;
 }
 
 export interface HeroImageProps {
@@ -23,7 +23,10 @@ export interface HeroImageProps {
 
 export interface TwoColumnProps {
   title: string;
-  paragraph: string;
+  column1Text: string;
+  column1Button: React.ReactNode;
+  column2Text: string;
+  column2Button: React.ReactNode;
 }
 
 export interface ArticleProps {
