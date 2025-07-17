@@ -49,7 +49,7 @@ export default async function FliteProtein() {
           column1Text="This isn't just another protein powder - it's the magic of our triple-processing method. Germination awakens dormant peas, increasing bioavailability and creating natural enzymes. Hydrolysis breaks proteins into easily digestible peptides your body absorbs instantly. Fermentation adds beneficial probiotics while creating bioactive compounds that support gut health and immune function. The result is a protein powder that nourishes your entire system with the concentrated power of what peas were always meant to become."
           column1Button={
             <a
-              href="/path-to-pea-protein-sheet.pdf"
+              href="/pea_powder_sheet.pdf"
               download
               className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
             >
