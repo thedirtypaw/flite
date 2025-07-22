@@ -1,14 +1,12 @@
 // Updated app/knowledge/[[...tags]]/page.tsx
 import { Metadata } from 'next'
 import { getArticlesByTag, getAllTags, searchArticles } from '../../../lib/getArticles'
-import SeoHead from '../../../components/SeoHead'
 import ClientSearchWrapper from '../../../components/fliteProtein/ClientSearchWrapper'
-import ArticleBox from '../../../components/fliteProtein/ArticleBox'
 
-export async function generateMetadata({ 
-  params, 
-  searchParams 
-}: { 
+export async function generateMetadata({
+  params,
+  searchParams
+}: {
   params: Promise<{ tags?: string[] }>,
   searchParams: Promise<{ q?: string }>
 }): Promise<Metadata> {
@@ -16,17 +14,17 @@ export async function generateMetadata({
   const resolvedSearchParams = await searchParams;
   const tagList = resolvedParams?.tags || [];
   const searchQuery = resolvedSearchParams?.q;
-  
+
   // This makes shouldIndex = false (0 < 5)
-  const articles = searchQuery 
-  ? await searchArticles(searchQuery, tagList)
-  : tagList.length 
-    ? await getArticlesByTag(tagList) 
-    : [];
-  
+  const articles = searchQuery
+    ? await searchArticles(searchQuery, tagList)
+    : tagList.length
+      ? await getArticlesByTag(tagList)
+      : [];
+
   // SEO Rules: Only index if ≥5 articles AND no search query
   const shouldIndex = articles.length >= 5 && !searchQuery;
-  
+
   if (shouldIndex && tagList.length > 0) {
     return {
       title: `${tagList.join(', ')} Articles – Flite`,
@@ -55,7 +53,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: searchQuery 
+    title: searchQuery
       ? `Search: ${searchQuery} – Flite`
       : 'Knowledge Base – Flite',
     description: searchQuery
@@ -88,30 +86,30 @@ export async function generateMetadata({
   }
 }
 
-export default async function KnowledgePage({ 
+export default async function KnowledgePage({
   params,
   searchParams
-}: { 
+}: {
   params: Promise<{ tags?: string[] }>,
   searchParams: Promise<{ q?: string }>
 }) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
-  
+
   const tagList = resolvedParams?.tags && Array.isArray(resolvedParams.tags)
-      ? resolvedParams.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
-      : []
-  
+    ? resolvedParams.tags.map((t) => decodeURIComponent(t).replace(/-/g, ' '))
+    : []
+
   const searchQuery = resolvedSearchParams?.q || ''
   const uniqueTags = await getAllTags()
-  
+
   // Get articles based on search or tags
   const filteredArticles = searchQuery
     ? await searchArticles(searchQuery, tagList)  // Search results
     : tagList.length > 0
       ? await getArticlesByTag(tagList)           // Tag filtered results
       : await getArticlesByTag([])                // All articles when no search/tags
-    
+
 
   const articleCount = filteredArticles.length;
   const shouldIndex = articleCount >= 5 && !searchQuery;
@@ -133,23 +131,19 @@ export default async function KnowledgePage({
 
   return (
     <>
-      <SeoHead
-        title={shouldIndex && tagList.length ? `${tagList.join(', ')} Articles  Flite` : searchQuery ? `Search: ${searchQuery}  Flite` : 'Knowledge Base  Flite'}
-        description={shouldIndex && tagList.length ? `${articleCount} science-backed articles about ${tagList.join(', ')}` : searchQuery ? `Search results for "${searchQuery}" in our science-backed articles.` : 'Science-backed articles for gut health. Dive into research, insights, and practical guidance.'}
-        image="https://flite.ro/og-knowledge.webp"
-        url={shouldIndex && tagList.length ? `https://flite.ro/knowledge/${tagList.join('/')}` : 'https://flite.ro/knowledge'}
-      />
-      <main className="min-h-screen px-[5%] py-10 bg-[#f8f8f1]">
-        <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
-          Knowledge Base
-        </h1>
-  
-        <ClientSearchWrapper 
-          tags={uniqueTags} 
-          tagList={tagList}
-          initialSearchQuery={searchQuery}
-          articles={filteredArticles}
-        />
+      <main className="flex flex-col w-full overflow-hidden">
+        <div className="content-padding">
+          <h1 className="text-4xl font-bold text-center mb-10 text-green-900">
+            Knowledge Base
+          </h1>
+
+          <ClientSearchWrapper
+            tags={uniqueTags}
+            tagList={tagList}
+            initialSearchQuery={searchQuery}
+            articles={filteredArticles}
+          />
+        </div>
       </main>
     </>
   )

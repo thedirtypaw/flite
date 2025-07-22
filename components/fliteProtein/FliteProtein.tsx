@@ -6,7 +6,6 @@ import { TwoColumns } from './TwoColumns'
 import ArticleBox from './ArticleBox'
 import CTAButton from './CTAbutton'
 import { getLimitedArticles } from '../../lib/articles'
-import SeoHead from '../../components/SeoHead'
 import { GlobalH2 } from './fonts';
 
 export default async function FliteProtein() {
@@ -15,13 +14,6 @@ export default async function FliteProtein() {
 
   return (
     <div className="flex w-full overflow-hidden content-padding flex-col ">
-      <SeoHead
-        title="Flite Protein"
-        description="Creating the best vegan protein powder in a biodiverse setting"
-        image="https://flite.ro/og-home.webp"
-        url="https://flite.ro"
-      />
-
       {/* Text + image section */}
 
       <div className="flex flex-wrap justify-between mt-24 items-center content-padding w-full max-md:py-24 max-md:max-w-full">

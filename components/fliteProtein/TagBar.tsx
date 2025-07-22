@@ -29,7 +29,7 @@ function TagBar({ tags, sort, setSort }: Props) {
   )
 
   return (
-    <div className="flex flex-wrap justify-between items-start md:items-center gap-4 mb-6">
+    <div className="content-padding flex flex-wrap justify-between items-start md:items-center gap-4 mb-6">
       <div className="flex flex-wrap gap-2 max-w-[75%]">
         <span
           className={`px-3 py-1 rounded-full border cursor-pointer transition-all font-semibold text-green-900 ${

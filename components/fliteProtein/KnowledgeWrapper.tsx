@@ -42,7 +42,7 @@ function KnowledgeWrapper({ tags, tagList, searchQuery = '', articles }: Props) 
       </div>
 
       {/* Article area - consistent height */}
-      <div className="min-h-[200px]">
+      <div className="content-padding min-h-[200px]">
         {sortedArticles.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sortedArticles

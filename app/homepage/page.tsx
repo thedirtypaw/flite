@@ -1,5 +1,4 @@
 import FliteProtein from '../../components/fliteProtein/FliteProtein'
-import SeoHead from '../../components/SeoHead'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -44,14 +43,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <SeoHead
-        title={metadata.title as string}
-        description={metadata.description as string}
-        image="https://flite.ro/og-home.webp"
-        url="https://flite.ro"
-      />
-
-      <main className="min-h-screen flex flex-col">
+            <main className="min-h-screen flex flex-col">
         <section className="flex-grow flex flex-col justify-start">
           {flite}
         </section>

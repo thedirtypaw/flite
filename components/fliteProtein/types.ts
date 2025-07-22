@@ -23,9 +23,9 @@ export interface HeroImageProps {
 
 export interface TwoColumnProps {
   title: string;
-  column1Text: string;
+  column1Text: string | React.ReactNode;
   column1Button: React.ReactNode;
-  column2Text: string;
+  column2Text: string | React.ReactNode;
   column2Button: React.ReactNode;
 }
 
