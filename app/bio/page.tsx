@@ -67,14 +67,16 @@ function Bio2Page() {
             />
 
             {/* Philosophy Two-Column Section */}
-            <div className="flex flex-wrap justify-center content-padding w-full mx-auto mb-16">
-                <TwoColumns
-                    title="The Philosophy Behind Biodiverse Farming"
-                    column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    column1Button={null}
-                    column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-                    column2Button={null}
-                />
+            <div className="flex flex-wrap content-padding w-full mx-auto mb-16">
+                <div className="w-full max-w-screen-xl">
+                    <TwoColumns
+                        title="The Philosophy Behind Biodiverse Farming"
+                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        column1Button={null}
+                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+                        column2Button={null}
+                    />
+                </div>
             </div>
 
             {/* Biodiversity Features Grid */}
@@ -128,49 +130,52 @@ function Bio2Page() {
             </div>
 
             {/* Existing Biodiverse Farms Section */}
-            <div className="flex flex-wrap justify-center content-padding w-full mx-auto">
-                <TwoColumns
-                    title="Existing Biodiverse Farms"
-                    column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    column1Button={
-                        <a
-                            href="#"
-                            className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
-                        >
-                            <img
-                                src="/link.svg"
-                                alt="Visit"
-                                className="w-8 h-8 flex-shrink-0"
-                            />
-                            Visit Their Website
-                        </a>
-                    }
-                    column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
-                    column2Button={
-                        <a
-                            href="#"
-                            className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
-                        >
-                            <img
-                                src="/link.svg"
-                                alt="Visit"
-                                className="w-8 h-8 flex-shrink-0"
-                            />
-                            Visit Their Website
-                        </a>
-                    }
-                />
+            <div className="flex flex-wrap content-padding w-full mx-auto">
+                <div className="w-full max-w-screen-xl">
+                    <TwoColumns
+                        title="Existing Biodiverse Farms"
+                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        column1Button={
+                            <a
+                                href="#"
+                                className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
+                            >
+                                <img
+                                    src="/link.svg"
+                                    alt="Visit"
+                                    className="w-8 h-8 flex-shrink-0"
+                                />
+                                Visit Their Website
+                            </a>
+                        }
+                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                        column2Button={
+                            <a
+                                href="#"
+                                className="flex items-center gap-2 text-[#e3176e] hover:underline body-text"
+                            >
+                                <img
+                                    src="/link.svg"
+                                    alt="Visit"
+                                    className="w-8 h-8 flex-shrink-0"
+                                />
+                                Visit Their Website
+                            </a>
+                        }
+                    />
+                </div>
             </div>
-
             {/* Global Farmers Section */}
-            <div className="flex flex-wrap justify-center content-padding w-full mx-auto mt-16">
-                <TwoColumns
-                    title="Farmers Around the World"
-                    column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    column1Button={null}
-                    column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."
-                    column2Button={null}
-                />
+            <div className="flex flex-wrap content-padding w-full mx-auto mt-16">
+                <div className="w-full max-w-screen-xl">
+                    <TwoColumns
+                        title="Farmers Around the World"
+                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        column1Button={null}
+                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."
+                        column2Button={null}
+                    />
+                </div>
             </div>
 
             {/* CTA */}

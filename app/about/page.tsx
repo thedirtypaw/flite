@@ -21,7 +21,7 @@ const mainPartners = [
     },
     {
         id: 2,
-        image: "/grafica_pisica.png", 
+        image: "/grafica_pisica.png",
         name: "Dr. Michael Chen",
         title: "Chief Science Officer",
         linkedinUrl: "https://linkedin.com/in/michaelchen"
@@ -55,7 +55,7 @@ const teamMembers = [
         id: 2,
         image: "/grafica_pisica.png",
         name: "Lisa Park",
-        title: "Marketing Director", 
+        title: "Marketing Director",
         linkedinUrl: "https://linkedin.com/in/lisapark"
     },
     {
@@ -86,14 +86,16 @@ function AboutPage() {
         <div className="flex w-full overflow-hidden content-padding flex-col">
 
             {/* The Team Two-Column Section */}
-            <div className="flex flex-wrap justify-center content-padding w-full mx-auto mb-16">
-                <TwoColumns
-                    title="The Team"
-                    column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    column1Button={null}
-                    column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
-                    column2Button={null}
-                />
+            <div className="flex flex-wrap content-padding w-full mx-auto mb-16">
+                <div className="w-full max-w-screen-xl">
+                    <TwoColumns
+                        title="The Team"
+                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        column1Button={null}
+                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
+                        column2Button={null}
+                    />
+                </div>
             </div>
 
             {/* Main Partners Section - 4 columns */}
@@ -137,14 +139,16 @@ function AboutPage() {
             </div>
 
             {/* Funding Two-Column Section */}
-            <div className="flex flex-wrap justify-center content-padding w-full mx-auto mt-16">
-                <TwoColumns
-                    title="Funding"
-                    column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    column1Button={null}
-                    column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
-                    column2Button={null}
-                />
+            <div className="flex flex-wrap content-padding w-full mx-auto mt-16">
+                <div className="w-full max-w-screen-xl">
+                    <TwoColumns
+                        title="Funding"
+                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        column1Button={null}
+                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
+                        column2Button={null}
+                    />
+                </div>
             </div>
 
             {/* CTA */}

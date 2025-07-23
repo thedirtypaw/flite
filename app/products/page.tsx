@@ -59,20 +59,22 @@ export default function ProductsPage() {
       />
 
       {/* What We Can Do For You Section - Convert to TwoColumns */}
-      <div className="flex flex-wrap justify-center content-padding w-full mx-auto mb-16">
-        <TwoColumns
-          title="What We Can Do For You"
-          column1Text={<p>
-            Transform your product line with our innovative approach to functional ingredients. We specialize in creating premium, health-focused products that resonate with today's conscious consumers.
-            <br /><br />
-            From sleek, minimalist packaging that appeals to urban professionals to bold, vibrant designs that capture the attention of fitness enthusiasts, we work with you to create products that not only perform exceptionally but also look stunning on the shelf.
-          </p>}
-          column1Button={null}
-          column2Text={<p>
-            Our smaller, more targeted product formats allow for premium positioning and higher margins while meeting the specific needs of niche markets. Whether you're looking to launch a new brand, expand an existing product line, or create private label solutions, our team brings together cutting-edge food science, sustainable sourcing, and market-driven design to deliver products that exceed expectations and drive growth.
-          </p>}
-          column2Button={null}
-        />
+      <div className="flex flex-wrap content-padding w-full mx-auto mb-16">
+        <div className="w-full max-w-screen-xl">
+          <TwoColumns
+            title="What We Can Do For You"
+            column1Text={<p>
+              Transform your product line with our innovative approach to functional ingredients. We specialize in creating premium, health-focused products that resonate with today's conscious consumers.
+              <br /><br />
+              From sleek, minimalist packaging that appeals to urban professionals to bold, vibrant designs that capture the attention of fitness enthusiasts, we work with you to create products that not only perform exceptionally but also look stunning on the shelf.
+            </p>}
+            column1Button={null}
+            column2Text={<p>
+              Our smaller, more targeted product formats allow for premium positioning and higher margins while meeting the specific needs of niche markets. Whether you're looking to launch a new brand, expand an existing product line, or create private label solutions, our team brings together cutting-edge food science, sustainable sourcing, and market-driven design to deliver products that exceed expectations and drive growth.
+            </p>}
+            column2Button={null}
+          />
+        </div>
       </div>
 
       {/* Product Range Image Section */}
@@ -89,14 +91,16 @@ export default function ProductsPage() {
 
 
       {/* Biome Health Two-Column Section */}
-      <div className="flex flex-wrap justify-center content-padding w-full mx-auto mt-16">
-        <TwoColumns
-          title="The Importance of Biome Health"
-          column1Text="Your gut microbiome is the foundation of your health, housing trillions of beneficial bacteria that influence everything from digestion and immunity to mood and cognitive function. A healthy biome enhances nutrient absorption, produces essential vitamins, and maintains the delicate balance that keeps your body functioning optimally. When your microbiome thrives, you experience better energy levels, improved mental clarity, stronger immune responses, and enhanced overall well-being."
-          column2Text="Our triple-processed protein powder doesn't just feed your muscles – it nourishes your entire microbiome ecosystem. The fermentation process introduces beneficial probiotics while creating bioactive compounds that support gut health. The germination and hydrolysis steps increase bioavailability, ensuring your body can efficiently utilize every nutrient. This comprehensive approach transforms simple pea protein into a functional food that actively contributes to your daily health, supporting not just your fitness goals but your long-term wellness journey."
-          column1Button={null}
-          column2Button={null}
-        />
+      <div className="flex flex-wrap content-padding w-full mx-auto mt-16">
+        <div className="w-full max-w-screen-xl">
+          <TwoColumns
+            title="The Importance of Biome Health"
+            column1Text="Your gut microbiome is the foundation of your health, housing trillions of beneficial bacteria that influence everything from digestion and immunity to mood and cognitive function. A healthy biome enhances nutrient absorption, produces essential vitamins, and maintains the delicate balance that keeps your body functioning optimally. When your microbiome thrives, you experience better energy levels, improved mental clarity, stronger immune responses, and enhanced overall well-being."
+            column2Text="Our triple-processed protein powder doesn't just feed your muscles – it nourishes your entire microbiome ecosystem. The fermentation process introduces beneficial probiotics while creating bioactive compounds that support gut health. The germination and hydrolysis steps increase bioavailability, ensuring your body can efficiently utilize every nutrient. This comprehensive approach transforms simple pea protein into a functional food that actively contributes to your daily health, supporting not just your fitness goals but your long-term wellness journey."
+            column1Button={null}
+            column2Button={null}
+          />
+        </div>
       </div>
 
 

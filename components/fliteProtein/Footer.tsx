@@ -20,10 +20,11 @@ const companyLinksColumn2: FooterProps[] = [
 ];
 
 const legalLinks: FooterProps[] = [
-  { label: "GDPR", href: "/privacy" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" }
+  { label: "GDPR", href: "/legal/gdpr" },
+  { label: "Privacy Policy", href: "/legal/privacy" },
+  { label: "Terms of Service", href: "/legal/terms" }
 ];
+
 
 export const Footer: React.FC = () => {
   return (
