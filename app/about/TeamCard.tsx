@@ -1,55 +1,55 @@
 'use client'
 
 import * as React from 'react'
+import { TeamCardProps } from '../../components/fliteProtein/types'
 
-interface TeamCardProps {
-    id: number
-    image: string
-    name: string
-    title: string
-    linkedinUrl: string | null
-    size?: 'large' | 'small'
-}
-
-export const TeamCard: React.FC<TeamCardProps> = ({ 
-    image, 
+const TeamCard: React.FC<TeamCardProps> = ({ 
     name, 
-    title, 
-    linkedinUrl, 
-    size = 'large' 
+    role, 
+    image, 
+    linkedIn,
+    description
 }) => {
     const handleClick = () => {
-        if (linkedinUrl) {
-            window.open(linkedinUrl, '_blank')
+        if (linkedIn) {
+            window.open(linkedIn, '_blank')
         }
     }
 
-    const imageHeight = size === 'large' ? 'h-48' : 'h-32'
-    const padding = size === 'large' ? 'p-4' : 'p-3'
-
     return (
-        <div
-            className={`bg-[#f6ebd4] rounded-xl overflow-hidden shadow-sm transition-all duration-300 ${
-                linkedinUrl 
-                    ? 'hover:shadow-lg transform hover:-translate-y-1 cursor-pointer' 
-                    : ''
-            }`}
-            onClick={handleClick}
-        >
-            <img
-                src={image}
-                alt={name}
-                loading="lazy"
-                className={`w-full ${imageHeight} object-cover rounded-t-xl`}
-            />
-            <div className={`${padding} text-center`}>
-                <h3 className="text-[#a23865] text-lg font-bold mb-1">
-                    {name}
-                </h3>
-                <p className="text-sm text-gray-700">
-                    {title}
+        <div className="group relative">
+            <div
+                className={`bg-[#f6ebd4] rounded-xl overflow-hidden shadow-sm transition-all duration-300 ${
+                    linkedIn 
+                        ? 'hover:shadow-lg transform hover:-translate-y-1 cursor-pointer' 
+                        : ''
+                }`}
+                onClick={handleClick}
+            >
+                <img
+                    src={image}
+                    alt={name}
+                    loading="lazy"
+                    className="w-full h-48 object-cover rounded-t-xl"
+                />
+                <div className="p-4 text-center">
+                    <h3 className="text-[#a23865] text-lg font-bold mb-1">
+                        {name}
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                        {role}
+                    </p>
+                </div>
+            </div>
+            
+            {/* Description overlay on hover */}
+            <div className="absolute inset-0 bg-[#f6ebd4] rounded-xl p-4 opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex items-center justify-center">
+                <p className="text-sm text-gray-700 text-center leading-relaxed">
+                    {description}
                 </p>
             </div>
         </div>
     )
 }
+
+export default TeamCard

@@ -1,162 +1,118 @@
+
+
 import * as React from 'react'
 import { Metadata } from 'next'
 import { TwoColumns } from '../../components/fliteProtein/TwoColumns'
-import CTAButton from '../../components/fliteProtein/CTAbutton'
 import { GlobalH2 } from '../../components/fliteProtein/fonts'
-import { TeamCard } from './TeamCard'
+import  TeamCard  from './TeamCard'
 
 export const metadata: Metadata = {
-    title: 'About Us - Meet Our Team',
-    description: 'Learn about the passionate team behind Flite Protein and our mission to revolutionize sustainable nutrition.',
+    title: 'Contact - Flite',
+    description: 'Meet our team and connect with us.',
 }
 
-// Main Partners Data (4 columns, 1st row)
-const mainPartners = [
-    {
-        id: 1,
-        image: "/grafica_pisica.png",
-        name: "Sarah Johnson",
-        title: "CEO & Founder",
-        linkedinUrl: "https://linkedin.com/in/sarahjohnson"
-    },
-    {
-        id: 2,
-        image: "/grafica_pisica.png",
-        name: "Dr. Michael Chen",
-        title: "Chief Science Officer",
-        linkedinUrl: "https://linkedin.com/in/michaelchen"
-    },
-    {
-        id: 3,
-        image: "/grafica_pisica.png",
-        name: "Emma Rodriguez",
-        title: "Head of Operations",
-        linkedinUrl: "https://linkedin.com/in/emmarodriguez"
-    },
-    {
-        id: 4,
-        image: "/grafica_pisica.png",
-        name: "James Wilson",
-        title: "Senior Advisor",
-        linkedinUrl: null // No LinkedIn - no hover effect
-    }
-];
-
-// Team Members Data (5 columns, 2nd row)
-const teamMembers = [
-    {
-        id: 1,
-        image: "/grafica_pisica.png",
-        name: "Alex Thompson",
-        title: "Product Manager",
-        linkedinUrl: "https://linkedin.com/in/alexthompson"
-    },
-    {
-        id: 2,
-        image: "/grafica_pisica.png",
-        name: "Lisa Park",
-        title: "Marketing Director",
-        linkedinUrl: "https://linkedin.com/in/lisapark"
-    },
-    {
-        id: 3,
-        image: "/grafica_pisica.png",
-        name: "David Kumar",
-        title: "Lead Developer",
-        linkedinUrl: "https://linkedin.com/in/davidkumar"
-    },
-    {
-        id: 4,
-        image: "/grafica_pisica.png",
-        name: "Maria Santos",
-        title: "Quality Assurance",
-        linkedinUrl: "https://linkedin.com/in/mariasantos"
-    },
-    {
-        id: 5,
-        image: "/grafica_pisica.png",
-        name: "Tom Anderson",
-        title: "Business Development",
-        linkedinUrl: "https://linkedin.com/in/tomanderson"
-    }
-];
-
-function AboutPage() {
+function ContactPage() {
     return (
         <div className="flex w-full overflow-hidden content-padding flex-col">
-
-            {/* The Team Two-Column Section */}
+            {/* Vision Section */}
             <div className="flex flex-wrap content-padding w-full mx-auto mb-16">
                 <div className="w-full max-w-screen-xl">
                     <TwoColumns
-                        title="The Team"
-                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        title="Our Vision"
+                        column1Text={
+                            <>
+                                <p>At Flite, we're pioneering a revolution in sustainable agriculture through our innovative protein-rich crops. Our mission is to transform farming practices by introducing biodiverse solutions that benefit both farmers and the environment. We believe that the future of agriculture lies in working harmoniously with nature, not against it.</p>
+                                <br />
+                                <p>Our approach combines traditional farming wisdom with cutting-edge scientific research, creating sustainable systems that enhance soil health, support biodiversity, and produce nutrient-dense crops. We're committed to developing solutions that make regenerative agriculture not just environmentally sound, but economically viable for farmers.</p>
+                            </>
+                        }
                         column1Button={null}
-                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
+                        column2Text={
+                            <>
+                                <p>Through our work with farmers, scientists, and industry experts, we're building a network of knowledge and practice that's reshaping agricultural landscapes. We understand that true sustainability comes from creating systems that benefit all stakeholders - from the soil microbiome to the end consumer.</p>
+                                <br />
+                                <p>Our team brings together diverse expertise in agriculture, technology, nutrition, and business, united by a common goal: to create a more sustainable and resilient food system. We're not just growing crops; we're nurturing a movement towards a healthier, more biodiverse future in farming.</p>
+                            </>
+                        }
                         column2Button={null}
                     />
                 </div>
             </div>
 
-            {/* Main Partners Section - 4 columns */}
-            <div className="mt-12 content-padding w-full mx-auto">
-                <GlobalH2>
-                    Leadership
-                </GlobalH2>
-                <div className="grid mt-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
-                    {mainPartners.map((partner) => (
-                        <TeamCard
-                            key={partner.id}
-                            id={partner.id}
-                            image={partner.image}
-                            name={partner.name}
-                            title={partner.title}
-                            linkedinUrl={partner.linkedinUrl}
-                            size="large"
-                        />
-                    ))}
-                </div>
-            </div>
-
-            {/* Team Members Section - 5 columns */}
-            <div className="mt-16 content-padding w-full mx-auto">
-                <GlobalH2>
-                    Advisors
-                </GlobalH2>
-                <div className="grid mt-8 grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 w-full">
-                    {teamMembers.map((member) => (
-                        <TeamCard
-                            key={member.id}
-                            id={member.id}
-                            image={member.image}
-                            name={member.name}
-                            title={member.title}
-                            linkedinUrl={member.linkedinUrl}
-                            size="small"
-                        />
-                    ))}
-                </div>
-            </div>
-
-            {/* Funding Two-Column Section */}
-            <div className="flex flex-wrap content-padding w-full mx-auto mt-16">
-                <div className="w-full max-w-screen-xl">
-                    <TwoColumns
-                        title="Funding"
-                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                        column1Button={null}
-                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
-                        column2Button={null}
+            {/* Team Section */}
+            <div className="w-full content-padding max-w-screen-xl mx-auto">
+                <GlobalH2>Leadership</GlobalH2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <TeamCard
+                        name="Rachel Sargent"
+                        role="CEO and co-founder"
+                        image="/team/rachel.webp"
+                        linkedIn="https://www.linkedin.com/in/rachel-sargent-abb1972/"
+                        description="Entrepreneur for 30 years in M&A, finance, consulting, HoReCa. Founded Osprey Partners M&A boutique, AICA global advisory network, a social enterprise restaurant, food writing. Electrical engineering degree from UCL,UK. UK Chartered accountant. Present: Masters degree in nutrition and food science at USAMV CN."
+                    />
+                    <TeamCard
+                        name="James Atkins"
+                        role="CSO and co-founder"
+                        image="/team/james.webp"
+                        linkedIn="https://www.linkedin.com/in/james-atkins-8928374a/"
+                        description="Entrepreneur focussed on climate change and biodiversity. Founder of Vertis Environmental Finance. Co-founder of Zsámboki Biokert, Danube Kids and Planet League. Author and blogger."
+                    />
+                    <TeamCard
+                        name="Mihai Anitei"
+                        role="Head of Engineering"
+                        image="/team/mihai.webp"
+                        linkedIn="https://www.linkedin.com/in/mihai-anitei-305500b/"
+                        description="Experienced CEO of large industrial facilities in Romania including Ameropa, Azo Mures, Agrana, Greiff, St Gobain. Degrees / Phd in electromechanical engineering, agribusiness and industrial outsourcing."
+                    />
+                    <TeamCard
+                        name="Tudor Nicolau"
+                        role="Marketing"
+                        image="/team/tudor.webp"
+                        description="Degree in graphic design; functions of aesthetics and the aesthetic of functions. Worked in advertising, web design and marketing. Former chef, passionate about sports and sport nutrition."
                     />
                 </div>
-            </div>
 
-            {/* CTA */}
-            <div className="flex justify-center mt-10 content-padding">
-                <CTAButton text="Get in Touch!" href="/contact" />
+                <GlobalH2 className="mt-16">Advisors</GlobalH2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <TeamCard
+                        name="Máté Szász"
+                        role="Sales and nutrition"
+                        image="/team/mate.webp"
+                        linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
+                        description="Sports Diagnostics and Scientific lead for Synlab. Nutrition advisor to the Hungarian Olympic Committee. Former head of sales, Scitech."
+                    />
+                    <TeamCard
+                        name="Dr Dan Vodnar"
+                        role="Food science and technology"
+                        image="/team/dan.webp"
+                        linkedIn="https://www.linkedin.com/in/dan-c-vodnar-16739082/"
+                        description="Professor, Faculty of Food, Science and Technology, USAMV Cluj-Napoca and member of the Romanian Academy. Gut microbiome and fermentation expert."
+                    />
+                    <TeamCard
+                        name="Chris Butters"
+                        role="Finance"
+                        image="/team/chris.webp"
+                        linkedIn="https://www.linkedin.com/in/chris-butters-b54b1718/"
+                        description="Experienced M & A advisor in UK and Central Europe"
+                    />
+                    <TeamCard
+                        name="Giovanni Quaglia"
+                        role="Operations"
+                        image="/team/gio.webp"
+                        linkedIn="https://www.linkedin.com/in/giovanniquaglia/"
+                        description="Manager and CFO roles in international agribusiness"
+                    />
+                    <TeamCard
+                        name="Gregor Tims"
+                        role="Biodiversity advisor"
+                        image="/team/gregor.webp"
+                        linkedIn="https://www.linkedin.com/in/gregor-tims-30ba8a78/"
+                        description="Masters thesis on incentivising Romanian farmers to farm for biodiversity."
+                    />
+                </div>
             </div>
         </div>
     )
 }
 
-export default AboutPage
+export default ContactPage

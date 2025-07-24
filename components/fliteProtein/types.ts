@@ -25,8 +25,20 @@ export interface TwoColumnProps {
   title: string;
   column1Text: string | React.ReactNode;
   column1Button: React.ReactNode;
+  column1Image?: string;
+  column1ImageAlt?: string;
   column2Text: string | React.ReactNode;
   column2Button: React.ReactNode;
+  column2Image?: string;
+  column2ImageAlt?: string;
+}
+
+export interface TeamCardProps {
+  name: string
+  role: string
+  image: string
+  description: string
+  linkedIn?: string
 }
 
 export interface ArticleProps {
