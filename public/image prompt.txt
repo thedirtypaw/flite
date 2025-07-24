@@ -1,0 +1,14 @@
+1. Subject: Clearly define the main focus of the image. Be as specific as possible, including details like the type of object, person, or scene. 
+2. Style: Specify the desired artistic style, such as photorealistic, watercolor, or anime. Mentioning specific artists or art movements can also help. 
+3. Composition: Describe the arrangement of elements within the image, including camera angles, perspective, and framing. Phrases like "close-up," "wide shot," or "centered composition" can be helpful. 
+4. Color and Lighting: Specify the color palette, lighting conditions, and mood you want to convey. Words like "vibrant," "muted," "soft," or "dramatic" can be useful. 
+5. Details: Include any other specific elements you want to see in the image, such as clothing, background details, or specific objects. 
+6. Experimentation: Don't be afraid to try different combinations of elements and refine your prompts based on the results. AI image generation is an iterative process. 
+
+
+in order of importance: 
+1. subject: aerial view illustration of a thriving biodiverse farming operation
+2. style: flat style illustration, no line strokes, neat delimitations, simple shapes
+3: composition: isometric view, 4:1 ratio, central part is the most complex, the outer you go the less elements you have
+4. color and lightning: good daylight lightning, nothing out of the ordinary
+5. details: has to include hedges, different types of fields, tractor on field , some sort of body of water

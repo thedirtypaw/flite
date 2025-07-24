@@ -14,45 +14,38 @@ export const metadata: Metadata = {
 const biodiversityFeatures = [
     {
         id: 1,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Soil Regeneration",
-        description: "Advanced techniques that restore soil health and increase carbon sequestration naturally."
+        image: "/bio/crops.webp",
+        icon: "/bio/circles.svg", // Changed from emoji to SVG path
+        title: "Biodiversity",
+        description: "Creating diverse ecosystems that support multiple species, from beneficial insects to soil organisms."
     },
     {
         id: 2,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Pollinator Networks",
-        description: "Creating habitats that support diverse pollinator species essential for ecosystem balance."
+        image: "/bio/soil.webp",
+        icon: "/bio/soil.svg", // Changed from emoji to SVG path
+        title: "Soil quality & Microbiome",
+        description: "Nurturing living soil through beneficial microorganisms that improve nutrient cycling and plant health"
     },
     {
         id: 3,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Water Conservation",
-        description: "Innovative water management systems that preserve this precious resource for future generations."
+        image: "/bio/hedges.webp",
+        icon: "/bio/puzzle.svg", // Changed from emoji to SVG path
+        title: "Ecological infrastructure",
+        description: "Building natural systems like hedgerows, wetlands, and wildlife corridors that support farm productivity."
     },
     {
         id: 4,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Crop Diversity",
-        description: "Implementing polyculture systems that increase resilience and reduce dependency on monocultures."
+        image: "/bio/bee.webp",
+        icon: "/bio/bee.svg", // Changed from emoji to SVG path
+        title: "Natural Service Providers",
+        description: "Partnering with pollinators, predatory insects, and soil organisms that provide essential services."
     },
     {
         id: 5,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Circular Systems",
-        description: "Closed-loop farming practices that minimize waste and maximize resource efficiency."
-    },
-    {
-        id: 6,
-        image: "/grafica_pisica.png",
-        icon: "/link.svg", // Changed from emoji to SVG path
-        title: "Data-Driven Insights",
-        description: "Using technology and monitoring to optimize biodiversity outcomes and farm productivity."
+        image: "/bio/tools.webp",
+        icon: "/bio/eco.svg", // Changed from emoji to SVG path
+        title: "Life Cycle Assessment (LCA)",
+        description: "Measuring environmental impact from seed to harvest, optimizing resource use and minimizing waste."
     }
 ];
 
@@ -71,9 +64,21 @@ function Bio2Page() {
                 <div className="w-full max-w-screen-xl">
                     <TwoColumns
                         title="The Philosophy Behind Biodiverse Farming"
-                        column1Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        column1Text={
+                            <>
+                              <p>For millennia, farmers practiced biodiversity out of necessity. Without industrial fertilizers or pesticides, they relied on crop rotation, companion planting, and natural pest control. Mixed farming systems weren't just sustainable—they were survival. Diverse crops meant resilience against unpredictable weather, pest outbreaks, and market fluctuations that could devastate single-crop operations.</p>
+                              <br />
+                              <p>The industrial revolution promised efficiency through simplification. Monocultures maximized short-term yields, chemical inputs replaced natural processes, and farming became a factory model. We gained unprecedented productivity but lost the wisdom of working with nature's complexity. The soil, once teeming with life, became merely a medium for delivering synthetic nutrients to genetically uniform crops.</p>
+                            </>
+                          }
                         column1Button={null}
-                        column2Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+                        column2Text={
+                            <>
+                              <p>Today, we face a new necessity. Climate change demands resilient food systems. Depleted soils need regeneration. Consumers seek nutrient-dense foods free from chemical residues. The old industrial model, once revolutionary, now threatens the very foundation it was built to exploit.</p>
+                              <br />
+                              <p>Biodiverse farming bridges ancient wisdom with modern urgency. We're not returning to the past—we're evolving forward. Using scientific understanding to enhance traditional practices, we create systems that feed both people and planet. This isn't nostalgia; it's pragmatic adaptation for our survival.</p>
+                            </>
+                          }
                         column2Button={null}
                     />
                 </div>
@@ -102,7 +107,7 @@ function Bio2Page() {
                                     <img
                                         src={feature.icon}
                                         alt={feature.title}
-                                        className="w-6 h-6 flex-shrink-0"
+                                        className="w-10 h-10 flex-shrink-0"
                                     />
                                     <h3 className="text-[#a23865] text-lg font-bold group-hover:text-[#8a2d54] transition-colors">
                                         {feature.title}
@@ -118,14 +123,14 @@ function Bio2Page() {
             </div>
 
             {/* Large Farm Image Section */}
-            <div className="flex flex-col items-center content-padding w-full mx-auto my-16">
+            <div className="flex flex-col content-padding w-full mx-auto my-16">
                 <img
-                    src="/product_range.png"
+                    src="/bio/farm2.webp"
                     alt="Biodiverse farm landscape"
-                    className="w-full max-w-4xl h-auto object-contain mb-6"
+                    className="w-full h-auto object-contain mb-6"
                 />
-                <p className="text-center mb-8">
-                    Example of a thriving biodiverse farming operation
+                <p className="img-caption">
+                    Illustration of a thriving biodiverse farming operation
                 </p>
             </div>
 
