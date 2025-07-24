@@ -1,5 +1,3 @@
-
-
 import * as React from 'react'
 import { Metadata } from 'next'
 import { TwoColumns } from '../../components/fliteProtein/TwoColumns'
@@ -7,11 +5,11 @@ import { GlobalH2 } from '../../components/fliteProtein/fonts'
 import  TeamCard  from './TeamCard'
 
 export const metadata: Metadata = {
-    title: 'Contact - Flite',
+    title: 'About - Flite',
     description: 'Meet our team and connect with us.',
 }
 
-function ContactPage() {
+function AboutPage() {
     return (
         <div className="flex w-full overflow-hidden content-padding flex-col">
             {/* Vision Section */}
@@ -40,9 +38,9 @@ function ContactPage() {
             </div>
 
             {/* Team Section */}
-            <div className="w-full content-padding max-w-screen-xl mx-auto">
+            <div className="w-full content-padding mx-auto">
                 <GlobalH2>Leadership</GlobalH2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 w-full">
                     <TeamCard
                         name="Rachel Sargent"
                         role="CEO and co-founder"
@@ -55,7 +53,7 @@ function ContactPage() {
                         role="CSO and co-founder"
                         image="/team/james.webp"
                         linkedIn="https://www.linkedin.com/in/james-atkins-8928374a/"
-                        description="Entrepreneur focussed on climate change and biodiversity. Founder of Vertis Environmental Finance. Co-founder of Zsámboki Biokert, Danube Kids and Planet League. Author and blogger."
+                        description="Entrepreneur focussed on climate change and biodiversity. Founder of Vertis Environmental Finance. Co-founder of Zsmboki Biokert, Danube Kids and Planet League. Author and blogger."
                     />
                     <TeamCard
                         name="Mihai Anitei"
@@ -73,9 +71,9 @@ function ContactPage() {
                 </div>
 
                 <GlobalH2 className="mt-16">Advisors</GlobalH2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-8 w-full">
                     <TeamCard
-                        name="Máté Szász"
+                        name="Mt Szsz"
                         role="Sales and nutrition"
                         image="/team/mate.webp"
                         linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
@@ -115,4 +113,4 @@ function ContactPage() {
     )
 }
 
-export default ContactPage
+export default AboutPage
