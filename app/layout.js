@@ -22,11 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
         <ConditionalLayout>
-          <div
-            key={typeof window !== 'undefined' ? window.location.pathname : ''}
-          >
-            {children}
-          </div>
+          {children}
         </ConditionalLayout>
       </body>
     </html>
