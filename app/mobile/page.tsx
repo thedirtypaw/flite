@@ -4,7 +4,7 @@ export default function MobilePage() {
   return (
     <div className="w-full h-screen">
       <Image 
-        src="/mobile-layout.jpg" 
+        src="/landing.webp" 
         alt="Mobile Layout"
         fill
         style={{ objectFit: 'contain' }}
