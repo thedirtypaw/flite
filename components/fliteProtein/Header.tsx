@@ -8,10 +8,11 @@ import { HeaderProps } from "./types";
 
 const HeaderItems: HeaderProps[] = [
   { label: "Home", href: "/homepage" },
-  { label: "Knowledge Base", href: "/knowledge" },
-  { label: "Products", href: "/products" },
-  { label: "Bio 2.0", href: "/bio" },
-  { label: "About Us", href: "/about" },
+  { label: "Mobile", href: "/mobile" },
+  // { label: "Knowledge Base", href: "/knowledge" },
+  // { label: "Products", href: "/products" },
+  // { label: "Bio 2.0", href: "/bio" },
+  // { label: "About Us", href: "/about" },
 ];
 
 export const Header: React.FC = () => {

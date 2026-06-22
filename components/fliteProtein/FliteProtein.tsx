@@ -29,7 +29,7 @@ export default async function FliteProtein() {
           }
         />
         <HeroImage
-          mainImage="/grafica_pisica.png"
+          mainImage="/insula.png"
           mainImageAlt="Protein powder background"
         />
       </div>
