@@ -5,6 +5,16 @@ const PASSWORD = 'birdies'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  
+  // TEMPORARY: Only allow /mobile page
+  if (pathname === '/mobile' || pathname === '/') {
+    return NextResponse.next()
+  }
+  
+  // Block all other pages - redirect to mobile
+  return NextResponse.redirect(new URL('/mobile', request.url))
+  
+  /* OLD VERSION - UNCOMMENT TO RESTORE AUTH FLOW
   const authCookie = request.cookies.get('auth')?.value
   
   // Check password submission first
@@ -32,13 +42,11 @@ export function middleware(request: NextRequest) {
 
   // Not authenticated and not on auth page - redirect to auth
   return NextResponse.redirect(new URL('/auth', request.url))
+  */
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except static files
-     */
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ]
 }

@@ -9,7 +9,7 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const isAuthPage = pathname === '/auth'
   const isMobilePage = pathname === '/mobile'
 
-  if (isAuthPage) {
+  if (isAuthPage || isMobilePage) {
     return <>{children}</>
   }
 
