@@ -253,7 +253,9 @@ const FlowField: React.FC<FlowFieldProps> = ({
       const aspect = w / h;
       camera.aspect = aspect;
       // portrait: pull the camera back so the diagonal still fills the frame
-      camera.position.z = aspect < 1 ? BASE_Z * Math.min(1.7, 1 + (1 - aspect) * 0.9) : BASE_Z;
+      const F = 2 * Math.tan((42 * Math.PI / 180) / 2); // fov factor
+      const ART_W = 10, ART_H = 7;                        // world size to fill
+      camera.position.z = Math.min(ART_W / (F * aspect), ART_H / F);
       camera.updateProjectionMatrix();
     };
     fit();

@@ -31,9 +31,9 @@ export default function MobilePage() {
       </header>
 
       {/* Section 1 */}
-      <section className="relative h-[80vh] overflow-hidden">
+      <section className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <FlowField className="absolute inset-0 pointer-events-none mix-blend-multiply" />
-        <div className={`text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+        <div className={`text-5xl text-pink-700 font-black relative z-10 px-6 py-12 ${gabarito.className}`}>
           Your Title 1
         </div>
         <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
