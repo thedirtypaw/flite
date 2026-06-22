@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { basic, gabarito } from "../../components/fliteProtein/fonts";
+import FlowField from "../../components/fliteProtein/FlowField";
 
 export default function MobilePage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,8 @@ export default function MobilePage() {
       </header>
 
       {/* Section 1 */}
-      <section className="px-6 py-12">
+      <section className="relative h-[80vh] overflow-hidden">
+        <FlowField className="absolute inset-0 pointer-events-none mix-blend-multiply" />
         <div className={`text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
           Your Title 1
         </div>
