@@ -7,6 +7,7 @@ import { Footer } from './fliteProtein/Footer'
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isAuthPage = pathname === '/auth'
+  const isMobilePage = pathname === '/mobile'
 
   if (isAuthPage) {
     return <>{children}</>
