@@ -64,7 +64,7 @@ function AboutPage() {
                     />
                     <TeamCard
                         name="Tudor Nicolau"
-                        role="Marketing"
+                        role="Communications"
                         image="/team/tudor.webp"
                         description="Degree in graphic design; functions of aesthetics and the aesthetic of functions. Worked in advertising, web design and marketing. Former chef, passionate about sports and sport nutrition."
                     />

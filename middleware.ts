@@ -11,9 +11,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
   
+  /*
   // Block all other pages - redirect to mobile
   return NextResponse.redirect(new URL('/mobile', request.url))
-  
+  */
+
+
   /* OLD VERSION - UNCOMMENT TO RESTORE AUTH FLOW
   const authCookie = request.cookies.get('auth')?.value
   

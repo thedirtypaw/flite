@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { basic, gabarito } from "../../components/fliteProtein/fonts";
 import FlowField from "../../components/fliteProtein/FlowField";
+import  TeamCard  from '../about/TeamCard';
 
 export default function MobilePage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,10 +52,38 @@ export default function MobilePage() {
         </div>
       </section>
 
+      
+
       {/* CONTENT — one shared column for every remaining section */}
       <main className={col}>
 
-        {/* Section 2 */}
+      {/* Section 4 */}
+      <section className="py-12">
+          <img src="/ciconia.webp" alt="Section 4" className="w-full h-auto rounded-lg" />
+          <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+          Whole-Matrix Protein Formulation  <br />
+          Because your body wasn't designed to receive one nutrient at a time
+          </div>
+          
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>What it does for you</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+            One 50 gram serving of Ciconia gives you protein, slow-release starches, and prebiotic fibres — three things your body needs together, in the proportions that actually work. You don&apos;t need to take it alongside something else. Mix it with water, milk or a smoothie and you have a complete meal.
+          </p>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Steady energy, not a sugar spike</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+            The starches in Ciconia are prepared in a special way — they&apos;re cooled and re-formed into shapes that release slowly into your bloodstream. This helps keep your blood sugar steady rather than spiking and crashing, which means more even energy and less hunger between meals.
+          </p>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Feeds the good bacteria in your gut</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+            When the helpful bacteria in your gut are well-fed, they produce compounds that strengthen your gut lining, calm inflammation and even influence your mood. Ciconia delivers the kind of fibre these bacteria thrive on — fibre that most foods either lack or destroy during processing.
+          </p>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Gentle on sensitive digestion — and allergen-friendly</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+            Ciconia is sprouted and fermented before it reaches you. This breaks down the proteins that usually cause allergic reactions in pea products, and removes compounds that often cause bloating. People with IBS or sensitive digestion typically tolerate Ciconia much better. No dairy, no soy, no gluten, no eggs.
+          </p>
+        </section>
+
+        {/*
         <section className="py-12">
           <h2 className={`text-2xl text-[#a23865] ${basic.className}`}>
             Nutritional products for non-communicable diseases
@@ -72,12 +101,13 @@ export default function MobilePage() {
             Single-fraction isolates leave consumers exposed to digestive distress from residual unrefined fibres. Resistant starch crystallinity and postbiotic synergies, essential for managing the three target NCDs are absent.
           </p>
           <img src="/pudra.webp" alt="Section 2" className="mt-6 w-full h-auto rounded-lg" />
-        </section>
+        </section> 
+        */}
 
         {/* Section 3 */}
         <section className="py-12">
           <div className={`text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
-            Your Title 3
+            Our Products
           </div>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Therapeutic function:</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
@@ -102,30 +132,7 @@ export default function MobilePage() {
           </p>
         </section>
 
-        {/* Section 4 */}
-        <section className="py-12">
-          <img src="/ciconia.webp" alt="Section 4" className="w-full h-auto rounded-lg" />
-          <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
-            Ciconia - Flagship whole-matrix formulation
-          </div>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>A complete meal in one serving</h2>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>What it does for you</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            One 50 gram serving of Ciconia gives you protein, slow-release starches, and prebiotic fibres — three things your body needs together, in the proportions that actually work. You don&apos;t need to take it alongside something else. Mix it with water, milk or a smoothie and you have a complete meal.
-          </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Steady energy, not a sugar spike</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            The starches in Ciconia are prepared in a special way — they&apos;re cooled and re-formed into shapes that release slowly into your bloodstream. This helps keep your blood sugar steady rather than spiking and crashing, which means more even energy and less hunger between meals.
-          </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Feeds the good bacteria in your gut</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            When the helpful bacteria in your gut are well-fed, they produce compounds that strengthen your gut lining, calm inflammation and even influence your mood. Ciconia delivers the kind of fibre these bacteria thrive on — fibre that most foods either lack or destroy during processing.
-          </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Gentle on sensitive digestion — and allergen-friendly</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Ciconia is sprouted and fermented before it reaches you. This breaks down the proteins that usually cause allergic reactions in pea products, and removes compounds that often cause bloating. People with IBS or sensitive digestion typically tolerate Ciconia much better. No dairy, no soy, no gluten, no eggs, no oats, no barley.
-          </p>
-        </section>
+        
 
         {/* Section 5 */}
         <section className="py-12">
@@ -153,6 +160,105 @@ export default function MobilePage() {
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             Embedded in our P&amp;L. Founding partner: SOR (BirdLife International Romania). Funds practical support for farmers improving their land.
           </p>
+        </section>
+
+        {/* Section 6 */}
+        <section className="py-12">
+                    <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+            Team and Advisors
+          </div>
+
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
+            At Flite, we're pioneering a revolution in sustainable agriculture through our innovative protein-rich crops. Our mission is to transform farming practices by introducing biodiverse solutions that benefit both farmers and the environment. We believe that the future of agriculture lies in working harmoniously with nature, not against it.
+          </h2>
+
+          <h2>
+            Our approach combines traditional farming wisdom with cutting-edge scientific research, creating sustainable systems that enhance soil health, support biodiversity, and produce nutrient-dense crops. We're committed to developing solutions that make regenerative agriculture not just environmentally sound, but economically viable for farmers.
+          </h2>
+
+{/* Team Section */}
+
+              <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+                Leadership
+              </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 w-full">
+                    <TeamCard
+                        name="Rachel Sargent"
+                        role="CEO and co-founder"
+                        image="/team/rachel.webp"
+                        linkedIn="https://www.linkedin.com/in/rachel-sargent-abb1972/"
+                        description="Entrepreneur for 30 years in M&A, finance, consulting, HoReCa. Founded Osprey Partners M&A boutique, AICA global advisory network, a social enterprise restaurant, food writing. Electrical engineering degree from UCL,UK. UK Chartered accountant. Present: Masters degree in nutrition and food science at USAMV CN."
+                    />
+                    <TeamCard
+                        name="James Atkins"
+                        role="CSO and co-founder"
+                        image="/team/james.webp"
+                        linkedIn="https://www.linkedin.com/in/james-atkins-8928374a/"
+                        description="Entrepreneur focussed on climate change and biodiversity. Founder of Vertis Environmental Finance. Co-founder of Zsmboki Biokert, Danube Kids and Planet League. Author and blogger."
+                    />
+                    <TeamCard
+                        name="Mihai Anitei"
+                        role="Head of Engineering"
+                        image="/team/mihai.webp"
+                        linkedIn="https://www.linkedin.com/in/mihai-anitei-305500b/"
+                        description="Experienced CEO of large industrial facilities in Romania including Ameropa, Azo Mures, Agrana, Greiff, St Gobain. Degrees / Phd in electromechanical engineering, agribusiness and industrial outsourcing."
+                    />
+                    <TeamCard
+                        name="Tudor Nicolau"
+                        role="Communications"
+                        image="/team/tudor.webp"
+                        description="Degree in graphic design; functions of aesthetics and the aesthetic of functions. Worked in advertising, web design and marketing. Former chef, passionate about sports and sport nutrition."
+                    />
+                </div>
+
+                <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+                Advisors
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-8 w-full">
+                    <TeamCard
+                        name="Mt Szsz"
+                        role="Sales and nutrition"
+                        image="/team/mate.webp"
+                        linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
+                        description="Sports Diagnostics and Scientific lead for Synlab. Nutrition advisor to the Hungarian Olympic Committee. Former head of sales, Scitech."
+                    />
+                    <TeamCard
+                        name="Dr Dan Vodnar"
+                        role="Food science and technology"
+                        image="/team/dan.webp"
+                        linkedIn="https://www.linkedin.com/in/dan-c-vodnar-16739082/"
+                        description="Professor, Faculty of Food, Science and Technology, USAMV Cluj-Napoca and member of the Romanian Academy. Gut microbiome and fermentation expert."
+                    />
+                    <TeamCard
+                        name="Chris Butters"
+                        role="Finance"
+                        image="/team/chris.webp"
+                        linkedIn="https://www.linkedin.com/in/chris-butters-b54b1718/"
+                        description="Experienced M & A advisor in UK and Central Europe"
+                    />
+                    <TeamCard
+                        name="Giovanni Quaglia"
+                        role="Operations"
+                        image="/team/gio.webp"
+                        linkedIn="https://www.linkedin.com/in/giovanniquaglia/"
+                        description="Manager and CFO roles in international agribusiness"
+                    />
+                    <TeamCard
+                        name="Gregor Tims"
+                        role="Biodiversity advisor"
+                        image="/team/gregor.webp"
+                        linkedIn="https://www.linkedin.com/in/gregor-tims-30ba8a78/"
+                        description="Masters thesis on incentivising Romanian farmers to farm for biodiversity."
+                    />
+                </div>
+            
+         <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+          Getting in touch
+         </div>
+          
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>You can write to us at getintouch@fliteprotein.earth </h2>
+                  
         </section>
 
       </main>
