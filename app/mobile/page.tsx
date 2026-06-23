@@ -109,7 +109,7 @@ export default function MobilePage() {
           <div className={`text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Our Products
           </div>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Therapeutic function:</h2>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}> Have Therapeutic Functions:</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             One product range targets three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes.
           </p>
@@ -136,7 +136,7 @@ export default function MobilePage() {
 
         {/* Section 5 */}
         <section className="py-12">
-          <img src="/your-image-5.jpg" alt="Section 5" className="w-full h-auto rounded-lg" />
+          <img src="/insula.png" alt="Section 5" className="w-full h-auto rounded-lg" />
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Biodiversity - integrated, not an add-on
           </div>
@@ -217,7 +217,7 @@ export default function MobilePage() {
 
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-8 w-full">
                     <TeamCard
-                        name="Mt Szsz"
+                        name="Máté Szász"
                         role="Sales and nutrition"
                         image="/team/mate.webp"
                         linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
