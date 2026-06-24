@@ -40,10 +40,10 @@ export default function MobilePage() {
           <div className={`text-4xl md:text-6xl lg:text-8xl text-pink-700 font-black  ${gabarito.className}`}>
             Therapeutic Nutrition
           </div>
-          <h2 className={`text-6xl sm:text-3xl mt-4 text-[#a23865] ${basic.className}`}>
+          <h2 className={`text-2xl md:text-4xl lg:text-6xl mt-4 text-[#a23865] ${basic.className}`}>
             We make superior quality plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
           </h2>
-          <p className={`mt-6 text-3xl sm:text-2xl text-[#d87294] ${basic.className}`}>
+          <p className={`mt-6 text-xl md:text-2xl lg:text-4xl text-[#d87294] ${basic.className}`}>
             With our zero-waste patentable process and whole-matrix formulation
             From organic yellow peas grown at nature-friendly farms, for healthcare practitioners and active patients
           </p>
