@@ -142,7 +142,7 @@ export default function MobilePage() {
           </p>
 
           <a href="https://www.usamvcluj.ro//" target="_blank" rel="noopener noreferrer">
-            <img src="/usamv.webp" alt="Section 5" className="w-[5vw] h-auto rounded-lg mr-auto mt-8" />
+            <img src="/usamv.webp" alt="Section 5" className="w-[15vw] h-auto rounded-lg mr-auto mt-8" />
           </a>
 
         </section>
@@ -174,7 +174,7 @@ export default function MobilePage() {
             It operates nationwide in Romania through branches and school groups. Since 1997, it has been a partner of BirdLife International – a global network comprising over 115 national organizations dedicated to the conservation of birds and nature.
           </p>
           <a href="https://www.sor.ro/" target="_blank" rel="noopener noreferrer">
-            <img src="/sor.webp" alt="Section 5" className="w-[5vw] h-auto rounded-lg mr-auto mt-8" />
+            <img src="/sor.webp" alt="Section 5" className="w-[15vw] h-auto rounded-lg mr-auto mt-8" />
           </a>
 
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Birds as the Thermometer of Farm Health</h2>
