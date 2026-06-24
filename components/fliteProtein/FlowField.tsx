@@ -26,7 +26,8 @@ const BASE_Z = 9;            // camera distance (smaller = bands appear larger)
 const HALF_WIDTH = 1.5;      // band thickness
 const TWIST_AMP = 2.3;       // how far each band rolls over
 const SPREAD_L = 0.03;       // left ends: ~converged
-const SPREAD_R = 1.0;        // right ends: fanned out
+const SPREAD_R = 0.3;        // right ends: fanned out
+const BEND = 0.5;            // wave height (1 = original, lower = flatter waves)
 const NOISE1 = 0.09;         // subtle longitudinal ribbon noise (coarse)
 const NOISE2 = 0.045;        //                                  (finer)
 const START: [number, number, number] = [-6.6, -3.7, 0.0];  // diagonal start
@@ -48,22 +49,18 @@ const BANDS: BandDef[] = [
     stripes: 84, stripeDark: 0.80, stripeWidth: 0.045,
     count: 4, pos: [0.0, 0.25, 0.70, 1.0],
     col: [[0.99,0.86,0.42],[0.99,0.78,0.36],[1.00,0.66,0.30],[1.00,0.56,0.26]] },
-  // green -> yellow  (MIDDLE)
-  { y: 0.0, phase: 4.3, seed: 2.4, speed: 0.61, twistFreq: 1.66, envSkew: 0.82,
-    stripes: 76, stripeDark: 0.78, stripeWidth: 0.060,
-    count: 3, pos: [0.0, 0.55, 1.0, 1.0],
-    col: [[0.52,0.86,0.46],[0.78,0.88,0.40],[0.98,0.86,0.34],[0.98,0.86,0.34]] },
+  
   // blue -> violet  (BOTTOM, sits under the headline)
   { y: -2.4, phase: 0.0, seed: 0.0, speed: 0.83, twistFreq: 1.30, envSkew: 1.00,
     stripes: 80, stripeDark: 0.82, stripeWidth: 0.050,
-    count: 4, pos: [0.0, 0.30, 0.65, 1.0],
-    col: [[0.40,0.66,0.98],[0.52,0.62,0.99],[0.55,0.45,0.97],[0.60,0.34,0.95]] },
+    count: 4, pos: [0.0, 0.33, 0.66, 1.0],
+    col: [[0.823,0.180,0.157],[0.890,0.090,0.431],[0.992,0.525,0.322],[0.882,0.737,0.694]] },
 ];
 
 /* ============================== shaders ================================= */
 const VERT = /* glsl */ `
   uniform float uTime, uPhase, uYOffset, uSeed, uSpeed, uTwistFreq, uEnvSkew;
-  uniform float uHalfWidth, uTwistAmp, uSpreadL, uSpreadR, uNoise1, uNoise2;
+  uniform float uHalfWidth, uTwistAmp, uSpreadL, uSpreadR, uNoise1, uNoise2, uBend;
   uniform vec3 uStart, uDelta;
   varying vec2 vUv; varying vec3 vN; varying vec3 vViewPos;
 
@@ -76,8 +73,8 @@ const VERT = /* glsl */ `
   vec3 center(float u, float t){
     vec3 p = uStart + uDelta*u;
     float e = env(u);
-    float base = sin(u*PI*1.5+0.5)*0.55 + sin(u*PI*3.0+1.1)*0.18;
-    float anim = e*(wob(u*PI*1.5+0.5,t,0.18)*0.55 + wob(u*PI*3.0+1.1,t,0.13)*0.18);
+    float base = (sin(u*PI*1.5+0.5)*0.55 + sin(u*PI*3.0+1.1)*0.18) * uBend;
+    float anim = e*(wob(u*PI*1.5+0.5,t,0.18)*0.55 + wob(u*PI*3.0+1.1,t,0.13)*0.18) * uBend;
     float lon  = e*(sin(u*PI*5.3 + uSeed*1.9 + t*0.05)*uNoise1
                   + sin(u*PI*9.1 + uSeed*1.3)*uNoise2);
     p += perpDir()*(base + anim + lon);
@@ -223,7 +220,7 @@ const FlowField: React.FC<FlowFieldProps> = ({
           uSeed: { value: bd.seed }, uSpeed: { value: bd.speed },
           uTwistFreq: { value: bd.twistFreq }, uEnvSkew: { value: bd.envSkew },
           uHalfWidth: { value: HALF_WIDTH }, uTwistAmp: { value: TWIST_AMP },
-          uSpreadL: { value: SPREAD_L }, uSpreadR: { value: SPREAD_R },
+          uSpreadL: { value: SPREAD_L }, uSpreadR: { value: SPREAD_R }, uBend: { value: BEND },
           uNoise1: { value: NOISE1 }, uNoise2: { value: NOISE2 },
           uStart: { value: startV }, uDelta: { value: deltaV },
           uLight: { value: light }, uFresnelPow: { value: 2.5 }, uFresnelInt: { value: 0.35 },

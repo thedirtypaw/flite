@@ -35,9 +35,9 @@ export default function MobilePage() {
 
       {/* HERO — full width; ALL its text lives inside the z-10 column */}
       <section className="relative h-[100svh] overflow-hidden">
-        <FlowField className="absolute inset-0 pointer-events-none mix-blend-multiply" />
-        <div className={`relative z-10 ${col} h-full flex flex-col justify-center`}>
-          <div className={`text-5xl sm:text-7xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+        <FlowField className="absolute inset-0 pointer-events-none" />
+        <div className={`relative z-10 ${col} h-full flex flex-col justify-center text-white mix-blend-difference`}>
+          <div className={`text-5xl sm:text-7xl text-pink-700 font-black  ${gabarito.className}`}>
             Therapeutic Nutrition
           </div>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
@@ -81,6 +81,12 @@ export default function MobilePage() {
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             Ciconia is sprouted and fermented before it reaches you. This breaks down the proteins that usually cause allergic reactions in pea products, and removes compounds that often cause bloating. People with IBS or sensitive digestion typically tolerate Ciconia much better. No dairy, no soy, no gluten, no eggs.
           </p>
+
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Storytelling: The Bird Series</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          Every product we make is named after a bird whose cultural meaning communicates the product’s purpose and properties. The bird names create a third brand territory — neither clinical nor wellness — that is distinctive, trademark-protectable, and regulation-proof.
+
+          </p>
         </section>
 
         {/*
@@ -106,65 +112,84 @@ export default function MobilePage() {
 
         {/* Section 3 */}
         <section className="py-12">
-          <div className={`text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+          <img src="/peas.webp" alt="Section 5" className="w-full h-auto mt-8 rounded-lg" />
+
+          <div className={`mt-8 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Our Products
           </div>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}> Have Therapeutic Functions:</h2>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}> Have therapeutic functions and target three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            One product range targets three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes.
+           
           </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Protein peptides repair muscles:</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Slow-release resistant starch helps control blood sugar; prebiotic soluble fibres feed the good bacteria in the gut, and antioxidant postbiotics.
+          Besides the specialised therapeutics, the protein peptides repair muscles, 
+          Slow-release resistant starch helps control blood sugar; prebiotic soluble fibres feed the good bacteria in the gut, and antioxidant postbiotics.
           </p>
-          <img src="/pudra.webp" alt="Section 3" className="mt-6 w-full h-auto rounded-lg" />
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Better digestion and bio-availability:</h2>
+
+          
+
+          <h2 className={`text-2xl mt-8 text-[#a23865] ${basic.className}`}>Better digestion and bio-availability</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             Our process uses gentle technology – germination, enzymatic hydrolysis and lactic fermentation. This gives better bioavailability and digestion.
+          
+          
+          Transparency to the source is due to our raw materials being organic yellow peas traceable to specific Romanian farms. Certified with proprietary biodiversity scorecard. Aligned with 10 UN SDGs.
           </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Transparency to the source:</h2>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>The Science behind it: USAMV Cluj - A Cornerstone of Credible Research</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Our raw materials are organic yellow peas traceable to Romanian farms. Certified with proprietary biodiversity scorecard. Aligned with 10 UN SDGs.
+        USAMV Cluj stands as one of Romania's premier research institutions, with decades of published work in food science, fermentation technology, and agricultural innovation. Its faculty, including members of the Romanian Academy, bridge rigorous academic inquiry with real-world application, making it a trusted partner for ventures that demand scientific 
+        credibility rather than marketing claims. For years, collaborations with USAMV Cluj have grounded product development in peer-reviewed research, ensuring that what reaches the market is backed by genuine expertise and validated methodology.
           </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>The Science behind it:</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Our partnership with USAMV Cluj grounds the product range in proprietary, published scientific research
-          </p>
+
+          <a href="https://www.usamvcluj.ro//" target="_blank" rel="noopener noreferrer">
+            <img src="/usamv.webp" alt="Section 5" className="w-[5vw] h-auto rounded-lg mr-auto mt-8" />
+          </a>
+
         </section>
 
         
 
         {/* Section 5 */}
         <section className="py-12">
-          <img src="/insula.png" alt="Section 5" className="w-full h-auto rounded-lg" />
+          
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Biodiversity - integrated, not an add-on
           </div>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
             We reward crop suppliers for increasing farmland biodiversity.
           </h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>Better soil, better crops, loyal suppliers</p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Nutritional quality starts in the soil.</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Biodiverse farmland produces crops with higher protein content, richer micronutrient profiles and stronger bioactive compounds. Our tri-modal process amplifies what&apos;s in the pea — but input quality is everything.
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>Better soil, better crops, loyal suppliers, nutritional quality starts in the soil.
+           Biodiverse farmland produces crops with higher protein content, richer micronutrient profiles and stronger bioactive compounds. Our tri-modal process amplifies what&apos;s in the pea — but input quality is everything. 
+           Exclusive organic sourcing means our yellow peas come from organic farms in Romania with rich soils and high biodiversity. Long-term relationships with farmers, not opaque commodity market purchases.
           </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Exclusive organic sourcing</h2>
+          
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Our yellow peas come from organic farms in Romania with rich soils and high biodiversity. Long-term relationships with farmers, not opaque commodity market purchases.
+          Plus a premium for biodiversity performance means that farmers who score well on our scorecard receive a price premium. This rewards the practices that produce better crops — and creates real switching costs.
           </p>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Premium for biodiversity performance</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Farmers who score well on our scorecard receive a price premium. This rewards the practices that produce better crops — and creates real switching costs.
-          </p>
+          <img src="/new_island.webp" alt="Section 5" className="w-full h-auto rounded-lg" />
+
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>5% of profits support biodiversity</h2>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Embedded in our P&amp;L. Founding partner: SOR (BirdLife International Romania). Funds practical support for farmers improving their land.
+            Embedded in our P&amp;L. Founding partner: SOR (BirdLife International Romania). Funds practical support for farmers improving their land. The Romanian Ornithological Society (SOR) is a non-governmental, non-profit organization that carries out activities for the protection of birds and nature with the support of its members and volunteers, funded through donations and projects.
+            It operates nationwide in Romania through branches and school groups. Since 1997, it has been a partner of BirdLife International – a global network comprising over 115 national organizations dedicated to the conservation of birds and nature.
           </p>
+          <a href="https://www.sor.ro/" target="_blank" rel="noopener noreferrer">
+            <img src="/sor.webp" alt="Section 5" className="w-[5vw] h-auto rounded-lg mr-auto mt-8" />
+          </a>
+
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Birds as the Thermometer of Farm Health</h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          Birds are the first and most sensitive responders to ecological change on farmland. Their presence, diversity, and breeding success directly reflect the availability of insect prey, hedgerow habitat, soil invertebrate density, 
+          and chemical load — factors that define a farm's biological health long before soil tests or yield reports catch up. A farm rich in bird species is not merely scenic; it is functionally biodiverse, with intact food webs, lower pesticide dependence, and resilient ecosystems. Where birds thrive, the land is working.
+          </p>
+
+          
+
         </section>
 
         {/* Section 6 */}
         <section className="py-12">
-                    <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+          <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Team and Advisors
           </div>
 
@@ -172,12 +197,13 @@ export default function MobilePage() {
             At Flite, we're pioneering a revolution in sustainable agriculture through our innovative protein-rich crops. Our mission is to transform farming practices by introducing biodiverse solutions that benefit both farmers and the environment. We believe that the future of agriculture lies in working harmoniously with nature, not against it.
           </h2>
 
-          <h2>
+          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             Our approach combines traditional farming wisdom with cutting-edge scientific research, creating sustainable systems that enhance soil health, support biodiversity, and produce nutrient-dense crops. We're committed to developing solutions that make regenerative agriculture not just environmentally sound, but economically viable for farmers.
-          </h2>
-
-{/* Team Section */}
-
+          </p>
+          </section>
+          
+          {/* Team Section */}
+          <section className="py-12">
               <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
                 Leadership
               </div>
@@ -211,7 +237,7 @@ export default function MobilePage() {
                     />
                 </div>
 
-                <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+                <div className={`mt-16 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
                 Advisors
                 </div>
 
@@ -245,20 +271,21 @@ export default function MobilePage() {
                         description="Manager and CFO roles in international agribusiness"
                     />
                     <TeamCard
-                        name="Gregor Tims"
-                        role="Biodiversity advisor"
-                        image="/team/gregor.webp"
-                        linkedIn="https://www.linkedin.com/in/gregor-tims-30ba8a78/"
-                        description="Masters thesis on incentivising Romanian farmers to farm for biodiversity."
+                        name="Jennifer Austin"
+                        role="Biodiversity Lead"
+                        image="/team/jen.webp"
+                        linkedIn="https://www.linkedin.com/in/austinjk/"
+                        description="Social entrepreneur, healthcare, wildlife"
                     />
                 </div>
             
-         <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
+         <div className={`mt-12 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
           Getting in touch
          </div>
-          
+
+        <a href="mailto:getintouch@fliteprotein.earth">
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>You can write to us at getintouch@fliteprotein.earth </h2>
-                  
+        </a>      
         </section>
 
       </main>
