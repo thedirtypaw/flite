@@ -37,13 +37,13 @@ export default function MobilePage() {
       <section className="relative h-[100svh] overflow-hidden">
         <FlowField className="absolute inset-0 pointer-events-none" />
         <div className={`relative z-10 ${col} h-full flex flex-col justify-center text-white mix-blend-difference`}>
-          <div className={`text-4xl md:text-6xl lg:text-8xl text-pink-700 font-black  ${gabarito.className}`}>
+          <div className={`text-5xl md:text-8xl text-pink-700 font-black  ${gabarito.className}`}>
             Therapeutic Nutrition
           </div>
-          <h2 className={`text-2xl md:text-4xl lg:text-6xl mt-4 text-[#a23865] ${basic.className}`}>
+          <h2 className={`text-2xl md:text-6xl  mt-4 text-[#a23865] ${basic.className}`}>
             We make superior quality plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
           </h2>
-          <p className={`mt-6 text-xl md:text-2xl lg:text-4xl text-[#d87294] ${basic.className}`}>
+          <p className={`mt-6 text-xl md:text-4xl text-[#d87294] ${basic.className}`}>
             With our zero-waste patentable process and whole-matrix formulation
             From organic yellow peas grown at nature-friendly farms, for healthcare practitioners and active patients
           </p>
