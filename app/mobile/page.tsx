@@ -37,16 +37,14 @@ export default function MobilePage() {
       <section className="relative h-[100svh] overflow-hidden">
         <FlowField className="absolute inset-0 pointer-events-none" />
         <div className={`relative z-10 ${col} h-full flex flex-col justify-center text-white mix-blend-difference`}>
-          <div className={`text-5xl sm:text-7xl text-pink-700 font-black  ${gabarito.className}`}>
+          <div className={`text-8xl sm:text-8xl text-pink-700 font-black  ${gabarito.className}`}>
             Therapeutic Nutrition
           </div>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
+          <h2 className={`text-6xl mt-4 text-[#a23865] ${basic.className}`}>
             We make superior quality plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
           </h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`mt-6 text-3xl text-[#d87294] ${basic.className}`}>
             With our zero-waste patentable process and whole-matrix formulation
-          </p>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             From organic yellow peas grown at nature-friendly farms, for healthcare practitioners and active patients
           </p>
         </div>
@@ -58,7 +56,7 @@ export default function MobilePage() {
       <main className={col}>
 
       {/* Section 4 */}
-      <section className="py-12">
+      <section className="py-6">
           <img src="/ciconia.webp" alt="Section 4" className="w-full h-auto rounded-lg" />
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
           Whole-Matrix Protein Formulation  <br />
@@ -111,7 +109,7 @@ export default function MobilePage() {
         */}
 
         {/* Section 3 */}
-        <section className="py-12">
+        <section className="py-6">
           <img src="/peas.webp" alt="Section 5" className="w-full h-auto mt-8 rounded-lg" />
 
           <div className={`mt-8 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
@@ -150,7 +148,7 @@ export default function MobilePage() {
         
 
         {/* Section 5 */}
-        <section className="py-12">
+        <section className="py-6">
           
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Biodiversity - integrated, not an add-on
@@ -188,7 +186,7 @@ export default function MobilePage() {
         </section>
 
         {/* Section 6 */}
-        <section className="py-12">
+        <section className="py-6">
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Team and Advisors
           </div>
@@ -203,7 +201,7 @@ export default function MobilePage() {
           </section>
           
           {/* Team Section */}
-          <section className="py-12">
+          <section className="py-6">
               <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
                 Leadership
               </div>
