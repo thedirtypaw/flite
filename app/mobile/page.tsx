@@ -281,8 +281,8 @@ export default function MobilePage() {
           Getting in touch
          </div>
 
-        <a href="mailto:tudor.nicolau@gmail.com">
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>You can write to us at tudor.nicolau@gmail.com </h2>
+        <a href="mailto:getintouch@fliteprotein.earth">
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>You can write to us at getintouch@fliteprotein.earth </h2>
         </a>      
         </section>
 
