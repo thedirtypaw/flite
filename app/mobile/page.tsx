@@ -59,29 +59,29 @@ export default function MobilePage() {
       <section className="py-6">
           <img src="/ciconia.webp" alt="Section 4" className="w-full h-auto rounded-lg" />
           <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
-          Whole-Matrix Protein Formulation  <br />
-          Because your body wasn't designed to receive one nutrient at a time
+          Whole-Matrix Protein Formulation
           </div>
+          <h2 className={`text-2xl text-[#a23865] ${basic.className}`}>Because your body wasn't designed to receive one nutrient at a time</h2>
           
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>What it does for you</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <h2 className={`text-2xl mt-8 text-[#a23865] ${basic.className}`}>What it does for you</h2>
+          <p className={`mt-2 text-lg text-[#d87294] ${basic.className}`}>
             One 50 gram serving of Ciconia gives you protein, slow-release starches, and prebiotic fibres — three things your body needs together, in the proportions that actually work. You don&apos;t need to take it alongside something else. Mix it with water, milk or a smoothie and you have a complete meal.
           </p>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Steady energy, not a sugar spike</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`mt-2 text-lg text-[#d87294] ${basic.className}`}>
             The starches in Ciconia are prepared in a special way — they&apos;re cooled and re-formed into shapes that release slowly into your bloodstream. This helps keep your blood sugar steady rather than spiking and crashing, which means more even energy and less hunger between meals.
           </p>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Feeds the good bacteria in your gut</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`mt-2 text-lg text-[#d87294] ${basic.className}`}>
             When the helpful bacteria in your gut are well-fed, they produce compounds that strengthen your gut lining, calm inflammation and even influence your mood. Ciconia delivers the kind of fibre these bacteria thrive on — fibre that most foods either lack or destroy during processing.
           </p>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Gentle on sensitive digestion — and allergen-friendly</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`mt-2 text-lg text-[#d87294] ${basic.className}`}>
             Ciconia is sprouted and fermented before it reaches you. This breaks down the proteins that usually cause allergic reactions in pea products, and removes compounds that often cause bloating. People with IBS or sensitive digestion typically tolerate Ciconia much better. No dairy, no soy, no gluten, no eggs.
           </p>
 
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Storytelling: The Bird Series</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`mt-2 text-lg text-[#d87294] ${basic.className}`}>
           Every product we make is named after a bird whose cultural meaning communicates the product’s purpose and properties. The bird names create a third brand territory — neither clinical nor wellness — that is distinctive, trademark-protectable, and regulation-proof.
 
           </p>
@@ -115,11 +115,11 @@ export default function MobilePage() {
           <div className={`mt-8 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Our Products
           </div>
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}> Have therapeutic functions and target three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <h2 className={`text-2xl mt-2 text-[#a23865] ${basic.className}`}> Have therapeutic functions and target three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes</h2>
+          <p className={` text-lg text-[#d87294] ${basic.className}`}>
            
           </p>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={` text-lg text-[#d87294] ${basic.className}`}>
           Besides the specialised therapeutics, the protein peptides repair muscles, 
           Slow-release resistant starch helps control blood sugar; prebiotic soluble fibres feed the good bacteria in the gut, and antioxidant postbiotics.
           </p>
@@ -127,14 +127,14 @@ export default function MobilePage() {
           
 
           <h2 className={`text-2xl mt-8 text-[#a23865] ${basic.className}`}>Better digestion and bio-availability</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={` text-lg text-[#d87294] ${basic.className}`}>
             Our process uses gentle technology – germination, enzymatic hydrolysis and lactic fermentation. This gives better bioavailability and digestion.
           
           
           Transparency to the source is due to our raw materials being organic yellow peas traceable to specific Romanian farms. Certified with proprietary biodiversity scorecard. Aligned with 10 UN SDGs.
           </p>
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>The Science behind it: USAMV Cluj - A Cornerstone of Credible Research</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={` text-lg text-[#d87294] ${basic.className}`}>
         USAMV Cluj stands as one of Romania's premier research institutions, with decades of published work in food science, fermentation technology, and agricultural innovation. Its faculty, including members of the Romanian Academy, bridge rigorous academic inquiry with real-world application, making it a trusted partner for ventures that demand scientific 
         credibility rather than marketing claims. For years, collaborations with USAMV Cluj have grounded product development in peer-reviewed research, ensuring that what reaches the market is backed by genuine expertise and validated methodology.
           </p>
@@ -156,18 +156,18 @@ export default function MobilePage() {
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>
             We reward crop suppliers for increasing farmland biodiversity.
           </h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>Better soil, better crops, loyal suppliers, nutritional quality starts in the soil.
+          <p className={` text-lg text-[#d87294] ${basic.className}`}>Better soil, better crops, loyal suppliers, nutritional quality starts in the soil.
            Biodiverse farmland produces crops with higher protein content, richer micronutrient profiles and stronger bioactive compounds. Our tri-modal process amplifies what&apos;s in the pea — but input quality is everything. 
            Exclusive organic sourcing means our yellow peas come from organic farms in Romania with rich soils and high biodiversity. Long-term relationships with farmers, not opaque commodity market purchases.
           </p>
           
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`text-lg text-[#d87294] ${basic.className}`}>
           Plus a premium for biodiversity performance means that farmers who score well on our scorecard receive a price premium. This rewards the practices that produce better crops — and creates real switching costs.
           </p>
           <img src="/new_island.webp" alt="Section 5" className="w-full h-auto rounded-lg" />
 
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>5% of profits support biodiversity</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`text-lg text-[#d87294] ${basic.className}`}>
             Embedded in our P&amp;L. Founding partner: SOR (BirdLife International Romania). Funds practical support for farmers improving their land. The Romanian Ornithological Society (SOR) is a non-governmental, non-profit organization that carries out activities for the protection of birds and nature with the support of its members and volunteers, funded through donations and projects.
             It operates nationwide in Romania through branches and school groups. Since 1997, it has been a partner of BirdLife International – a global network comprising over 115 national organizations dedicated to the conservation of birds and nature.
           </p>
@@ -176,7 +176,7 @@ export default function MobilePage() {
           </a>
 
           <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Birds as the Thermometer of Farm Health</h2>
-          <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
+          <p className={`text-lg text-[#d87294] ${basic.className}`}>
           Birds are the first and most sensitive responders to ecological change on farmland. Their presence, diversity, and breeding success directly reflect the availability of insect prey, hedgerow habitat, soil invertebrate density, 
           and chemical load — factors that define a farm's biological health long before soil tests or yield reports catch up. A farm rich in bird species is not merely scenic; it is functionally biodiverse, with intact food webs, lower pesticide dependence, and resilient ecosystems. Where birds thrive, the land is working.
           </p>
