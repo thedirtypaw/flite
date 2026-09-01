@@ -41,7 +41,7 @@ export default function MobilePage() {
             Therapeutic Nutrition
           </div>
           <h2 className={`text-2xl md:text-6xl  mt-4 text-[#a23865] ${basic.className}`}>
-            We make superior quality plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
+            We make easy-to-digest, naturally mild tasting, plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
           </h2>
           <p className={`mt-6 text-xl md:text-4xl text-[#d87294] ${basic.className}`}>
             With our zero-waste patentable process and whole-matrix formulation
