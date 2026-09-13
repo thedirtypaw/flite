@@ -38,10 +38,10 @@ export default function MobilePage() {
         <FlowField className="absolute inset-0 pointer-events-none" />
         <div className={`relative z-10 ${col} h-full flex flex-col justify-center text-white mix-blend-difference`}>
           <div className={`text-5xl md:text-8xl text-pink-700 font-black  ${gabarito.className}`}>
-            Therapeutic Nutrition
+            Natural Nutrition
           </div>
           <h2 className={`text-2xl md:text-6xl  mt-4 text-[#a23865] ${basic.className}`}>
-            We make easy-to-digest, naturally mild tasting, plant-based therapeutic nutrition products for brain, metabolic and gastrointestinal health
+            We make easy-to-digest, naturally mild tasting, plant-based natural nutrition products for brain, metabolic and gastrointestinal health
           </h2>
           <p className={`mt-6 text-xl md:text-4xl text-[#d87294] ${basic.className}`}>
             With our zero-waste patentable process and whole-matrix formulation
@@ -96,7 +96,7 @@ export default function MobilePage() {
             What is Flite&apos;s whole matrix protein formulation?
           </div>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
-            Our three-way, natural processing optimises the therapeutic performance of yellow pea protein, fibre and starch, which act in tandem, matching the needs of practitioners and their patients.
+            Our three-way, natural processing optimises the natural performance of yellow pea protein, fibre and starch, which act in tandem, matching the needs of practitioners and their patients.
           </p>
           <p className={`mt-6 text-lg text-[#d87294] ${basic.className}`}>
             Why our Whole matrix? We make whole matrix protein formulations that use the whole pea — protein, starch and fibre together — because the body wasn&apos;t designed to receive one nutrient at a time.
@@ -115,7 +115,7 @@ export default function MobilePage() {
           <div className={`mt-8 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
             Our Products
           </div>
-          <h2 className={`text-2xl mt-2 text-[#a23865] ${basic.className}`}> Have therapeutic functions and target three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes</h2>
+          <h2 className={`text-2xl mt-2 text-[#a23865] ${basic.className}`}> Have functions that target three NCD domains: brain/cognitive, gastrointestinal/oncology, metabolic/diabetes</h2>
           <p className={` text-lg text-[#d87294] ${basic.className}`}>
            
           </p>
@@ -175,7 +175,7 @@ export default function MobilePage() {
             <img src="/sor.webp" alt="Section 5" className="w-[15vw] h-auto rounded-lg mr-auto mt-8" />
           </a>
 
-          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Birds as the Thermometer of Farm Health</h2>
+          <h2 className={`text-2xl mt-4 text-[#a23865] ${basic.className}`}>Birds as the barometer of Farm Health</h2>
           <p className={`text-lg text-[#d87294] ${basic.className}`}>
           Birds are the first and most sensitive responders to ecological change on farmland. Their presence, diversity, and breeding success directly reflect the availability of insect prey, hedgerow habitat, soil invertebrate density, 
           and chemical load — factors that define a farm's biological health long before soil tests or yield reports catch up. A farm rich in bird species is not merely scenic; it is functionally biodiverse, with intact food webs, lower pesticide dependence, and resilient ecosystems. Where birds thrive, the land is working.

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Next generation protein",
-  description: "Best Protein Ever",
+  title: "Natural Nutrition",
+  description: "Designed for optimal absorption",
 };
 
 export default function RootLayout({ children }) {
