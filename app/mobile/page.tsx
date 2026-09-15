@@ -205,75 +205,73 @@ export default function MobilePage() {
               <div className={`mt-6 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
                 Leadership
               </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 w-full">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-8 w-full">
                     <TeamCard
                         name="Rachel Sargent"
-                        role="CEO and co-founder"
+                        role="CEO and Co-founder"
                         image="/team/rachel.webp"
                         linkedIn="https://www.linkedin.com/in/rachel-sargent-abb1972/"
-                        description="Entrepreneur for 30 years in M&A, finance, consulting, HoReCa. Founded Osprey Partners M&A boutique, AICA global advisory network, a social enterprise restaurant, food writing. Electrical engineering degree from UCL,UK. UK Chartered accountant. Present: Masters degree in nutrition and food science at USAMV CN."
+                        description="25 years M&A, finance, consulting, HoReCa.  UCL Electrical Engineering,  UK Chartered Accountant, MSc Nutrition and Food Science, USAMV Cluj"
                     />
                     <TeamCard
                         name="James Atkins"
-                        role="CSO and co-founder"
+                        role="CSO and Co-founder"
                         image="/team/james.webp"
                         linkedIn="https://www.linkedin.com/in/james-atkins-8928374a/"
-                        description="Entrepreneur focussed on climate change and biodiversity. Founder of Vertis Environmental Finance. Co-founder of Zsmboki Biokert, Danube Kids and Planet League. Author and blogger."
+                        description="Climate & biodiversity entrepreneur, Founder of Vertis Environmental Finance. UK Chartered Accountant."
                     />
                     <TeamCard
-                        name="Mihai Anitei"
-                        role="Head of Engineering"
-                        image="/team/mihai.webp"
-                        linkedIn="https://www.linkedin.com/in/mihai-anitei-305500b/"
-                        description="Experienced CEO of large industrial facilities in Romania including Ameropa, Azo Mures, Agrana, Greiff, St Gobain. Degrees / Phd in electromechanical engineering, agribusiness and industrial outsourcing."
+                        name="Carla Bodea"
+                        role="HCP Relationship Manager"
+                        image="/team/carla.webp"
+                        description="Certified nutrition practitioner [MSc Finance UBB Cluj, MSc Nutrition & Food Science USAMV Cluj"
                     />
                     <TeamCard
                         name="Tudor Nicolau"
-                        role="Communications"
+                        role="Design & Storytelling"
                         image="/team/tudor.webp"
-                        description="Degree in graphic design; functions of aesthetics and the aesthetic of functions. Worked in advertising, web design and marketing. Former chef, passionate about sports and sport nutrition."
-                    />
-                </div>
-
-                <div className={`mt-16 text-5xl text-pink-700 font-black leading-none ${gabarito.className}`}>
-                Advisors
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-8 w-full">
-                    <TeamCard
-                        name="Máté Szász"
-                        role="Sales and nutrition"
-                        image="/team/mate.webp"
-                        linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
-                        description="Sports Diagnostics and Scientific lead for Synlab. Nutrition advisor to the Hungarian Olympic Committee. Former head of sales, Scitech."
+                        description="Graphic design, advertising, marketing professional. Degree in Fine Arts from Bucharest University."
                     />
                     <TeamCard
-                        name="Dr Dan Vodnar"
-                        role="Food science and technology"
-                        image="/team/dan.webp"
-                        linkedIn="https://www.linkedin.com/in/dan-c-vodnar-16739082/"
-                        description="Professor, Faculty of Food, Science and Technology, USAMV Cluj-Napoca and member of the Romanian Academy. Gut microbiome and fermentation expert."
-                    />
-                    <TeamCard
-                        name="Chris Butters"
-                        role="Finance"
-                        image="/team/chris.webp"
-                        linkedIn="https://www.linkedin.com/in/chris-butters-b54b1718/"
-                        description="Experienced M & A advisor in UK and Central Europe"
-                    />
-                    <TeamCard
-                        name="Giovanni Quaglia"
-                        role="Operations"
-                        image="/team/gio.webp"
-                        linkedIn="https://www.linkedin.com/in/giovanniquaglia/"
-                        description="Manager and CFO roles in international agribusiness"
+                        name="Gergő Gregus-Fóris"
+                        role="Business Analyst"
+                        image="/team/mihai.webp"
+                        description="Cash flow forecasting and financial modelling. UBB Cluj Political Science. CFA1 candidate."
                     />
                     <TeamCard
                         name="Jennifer Austin"
                         role="Biodiversity Lead"
                         image="/team/jen.webp"
                         linkedIn="https://www.linkedin.com/in/austinjk/"
-                        description="Social entrepreneur, healthcare, wildlife"
+                        description="Social entrepreneur, healthcare, technology. Wildlife Conservation strategy & impact, Flite Biodiversity scorecard. MBA UCLA, US"
+                    />
+                    <TeamCard
+                        name="Mihai Anitei"
+                        role="Engineering & Production"
+                        image="/team/mihai.webp"
+                        linkedIn="https://www.linkedin.com/in/mihai-anitei-305500b/"
+                        description="25 yrs CEO of large industrial Agri&Food facilities in Romania, Europe and US. MSc Electromechanical engineering, PhD Industrial Outsourcing"
+                    />
+                    <TeamCard
+                        name="Chris Butters"
+                        role="Advisor, Finance"
+                        image="/team/chris.webp"
+                        linkedIn="https://www.linkedin.com/in/chris-butters-b54b1718/"
+                        description="M&A advisor, former PWC CEE Corporate Finance lead partner. Capital markets & growth advisory. UK Chartered Accountant."
+                    />
+                    <TeamCard
+                        name="Giovanni Quaglia"
+                        role="Advisor, Operations"
+                        image="/team/gio.webp"
+                        linkedIn="https://www.linkedin.com/in/giovanniquaglia/"
+                        description="25 yrs Manager and CFO, international agribusiness. Multi-market scaling & ops excellence. Chartered Management Accountant."
+                    />
+                  <TeamCard
+                        name="Máté Szász"
+                        role="Advisor, Nutrition"
+                        image="/team/mate.webp"
+                        linkedIn="https://www.linkedin.com/in/mate-szasz-a35674145/"
+                        description="20 yrs Sales & marketing director in nutrition supplements. Hungarian Olympic Cttee lead for Nutrition. MSc Nuclear Biology "
                     />
                 </div>
             
