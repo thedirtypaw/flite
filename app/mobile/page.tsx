@@ -235,7 +235,7 @@ export default function MobilePage() {
                     <TeamCard
                         name="Gergő Gregus-Fóris"
                         role="Business Analyst"
-                        image="/team/mihai.webp"
+                        image="/team/gergo.webp"
                         description="Cash flow forecasting and financial modelling. UBB Cluj Political Science. CFA1 candidate."
                     />
                     <TeamCard
